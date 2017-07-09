@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrivenerProject Version="1.5" Creator="SCRMAC-2.8.1.2-26324" Device="C02SR6DZHF1R" Modified="2017-06-07 23:36:42 -0500" ModID="6FD512D5-B1F1-4BB5-A5AD-8160EE66D0ED">
+    <Binder>
+        <BinderItem ID="0" UUID="81966392-9E72-45B8-A9A8-FCA5950961AE" Type="DraftFolder" Created="2017-03-15 15:11:01 -0500" Modified="2017-03-15 15:11:01 -0500">
+            <Title>Draft</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem ID="19" UUID="74E81B08-AEC3-4E92-A5A6-51DD62347EDA" Type="Text" Created="2017-03-16 11:40:37 -0500" Modified="2017-03-20 23:34:26 -0500">
+                    <Title>Abstract</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1417,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="3" UUID="3726A2B9-F3A3-4838-8153-3B92958583D0" Type="Folder" Created="2017-03-15 15:11:01 -0500" Modified="2017-03-20 23:34:02 -0500">
+                    <Title>Introduction</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="22" UUID="E1EAB418-25FF-4161-B84E-AB48E95A0FCD" Type="Text" Created="2017-05-01 11:00:10 -0500" Modified="2017-06-07 23:31:40 -0500">
+                            <Title>How Duplications Arise</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>626,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="25" UUID="59E0D91C-CD97-42C3-9725-7F8C9E2548E0" Type="Text" Created="2017-06-07 23:31:19 -0500" Modified="2017-06-07 23:31:40 -0500">
+                            <Title>Evolutionary Fates of Duplicates</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1071,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="23" UUID="FBD3C547-5ED1-45F7-AB71-9149C029EE09" Type="Text" Created="2017-05-01 11:28:33 -0500" Modified="2017-05-01 14:24:25 -0500">
+                            <Title>Technological Improvements</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>660,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="21" UUID="57353568-054F-480B-BADF-C2711BB60B58" Type="Text" Created="2017-03-27 09:22:52 -0500" Modified="2017-06-07 21:42:49 -0500">
+                            <Title>Major Questions</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>822,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="4" UUID="8C05D71B-19E8-4029-8926-C810F6B3EC51" Type="Folder" Created="2017-03-15 15:12:37 -0500" Modified="2017-03-15 15:12:42 -0500">
+                    <Title>Materials and Methods</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="7" UUID="8F0C1950-AE13-4FC0-9DC2-FB02C3EEF20D" Type="Text" Created="2017-03-15 16:42:05 -0500" Modified="2017-03-20 22:47:16 -0500">
+                            <Title>Genome Sequences and Databases</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>371,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="8" UUID="D5A49A58-3453-4A88-BC52-C5CC1EE77DA8" Type="Text" Created="2017-03-15 16:42:17 -0500" Modified="2017-06-07 23:30:42 -0500">
+                            <Title>Tandem Duplicate Identification</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>rtf</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>2358,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="20" UUID="C581A1D8-CDC4-4A03-BBD6-7D3ADECE9C54" Type="Text" Created="2017-03-16 11:52:12 -0500" Modified="2017-05-03 14:53:03 -0500">
+                            <Title>Orthologue Identification And Evolutionary Hypothesis Testing</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>rtf</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1498,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="9" UUID="F46F7746-2AD6-4F63-A72F-3F2EB3B48B55" Type="Text" Created="2017-03-15 16:42:49 -0500" Modified="2017-03-20 23:29:33 -0500">
+                            <Title>Duplication Dating</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>520,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="5" UUID="57F5CF4D-4E92-4E5C-B8AE-FBEC208CF1D7" Type="Folder" Created="2017-03-15 15:12:44 -0500" Modified="2017-03-15 15:12:46 -0500">
+                    <Title>Results</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="16" UUID="6E033483-020C-4FD3-B9FD-A3231B567A99" Type="Text" Created="2017-03-15 17:14:58 -0500" Modified="2017-03-27 09:36:48 -0500">
+                            <Title>Tandem Duplicate Gene Clusters</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>rtf</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>195,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="18" UUID="C9E9AEE1-E9E1-49CA-AEDF-02DEB2E5B671" Type="Text" Created="2017-03-15 17:15:40 -0500" Modified="2017-03-15 17:16:04 -0500">
+                            <Title>Functional Roles of Tandem Duplicates</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="6" UUID="F0AA31BC-2CDE-45E2-A131-DA2A6409272A" Type="Folder" Created="2017-03-15 15:12:48 -0500" Modified="2017-03-15 15:12:50 -0500">
+                    <Title>Discussion</Title>
+                    <MetaData>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="1" UUID="6E0AF692-586B-4689-B788-0356C677B9CD" Type="ResearchFolder" Created="2017-03-15 15:11:01 -0500" Modified="2017-03-15 17:04:51 -0500">
+            <Title>Figures</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem ID="10" UUID="3B6A5585-53F7-480B-90DE-C08B81C4180F" Type="PDF" Created="2017-02-24 10:27:42 -0600" Modified="2017-03-15 17:04:55 -0500">
+                    <Title>Figure 1</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>0</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="11" UUID="6BC69812-0936-4F0B-A427-0B3CF12F5F84" Type="PDF" Created="2017-01-30 21:43:40 -0600" Modified="2017-03-15 17:07:05 -0500">
+                    <Title>FIgure 2a</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>0</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="12" UUID="F573FD67-3575-4703-BE1F-C0C84644330D" Type="Image" Created="2017-03-01 09:53:07 -0600" Modified="2017-03-15 17:07:26 -0500">
+                    <Title>Figure 2b</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>png</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.44</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="13" UUID="1B038D39-E449-491C-BE0B-05C0D8B4F503" Type="PDF" Created="2017-01-04 08:33:36 -0600" Modified="2017-03-15 17:08:00 -0500">
+                    <Title>Figure 3a</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>0</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="14" UUID="B272CB77-0C9D-4627-9BEB-604007B26611" Type="PDF" Created="2017-02-21 23:04:28 -0600" Modified="2017-03-15 17:08:12 -0500">
+                    <Title>Figure 3b</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>0</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="2" UUID="1152C342-842E-406C-97B3-268195ADE7AD" Type="TrashFolder" Created="2017-03-15 15:11:01 -0500" Modified="2017-03-15 15:11:01 -0500">
+            <Title>Trash</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem ID="15" UUID="CBD22EF5-909A-47A3-9B69-BE9460CD4E49" Type="Text" Created="2017-03-15 17:12:46 -0500" Modified="2017-03-15 17:12:51 -0500">
+                    <Title>Data Availability</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="17" UUID="97F92889-A435-45EB-9E49-06DC1FF6D9C9" Type="Text" Created="2017-03-15 17:15:11 -0500" Modified="2017-03-20 23:26:38 -0500">
+                    <Title>Transposable Elements in Tandem Duplicates</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>rtf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>773,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="24" UUID="719DCBF5-9CD5-4A25-B687-CC30964B57B1" Type="Text" Created="2017-06-07 23:30:24 -0500" Modified="2017-06-07 23:30:46 -0500">
+                    <Title>Transposable Element Similarity</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>850,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+    </Binder>
+    <Collections>
+        <Collection Type="Binder" ID="CC4A5BE0-1BCC-4D0D-A480-361CEADFCB8D" Color="0.962266 0.962266 0.962266">
+            <Title>Binder</Title>
+        </Collection>
+        <Collection Type="RecentSearch" ID="07832F21-6A91-4380-85CB-56112C7E23D9" Color="0.922 0.91 0.98">
+            <Title>Search Results</Title>
+            <SearchSettings Operator="Exact" Type="All" CaseSensitive="No">?</SearchSettings>
+        </Collection>
+    </Collections>
+    <LabelSettings>
+        <Title>Label</Title>
+        <DefaultLabelID>-1</DefaultLabelID>
+        <Labels>
+            <Label ID="-1">No Label</Label>
+            <Label ID="0" Color="0.900008 0.919997 0.949996">Concept</Label>
+            <Label ID="1" Color="0.985 0.874998 0.850004">Chapter</Label>
+        </Labels>
+    </LabelSettings>
+    <StatusSettings>
+        <Title>Status</Title>
+        <DefaultStatusID>-1</DefaultStatusID>
+        <StatusItems>
+            <Status ID="-1">No Status</Status>
+            <Status ID="0">To Do</Status>
+            <Status ID="1">First Draft</Status>
+            <Status ID="2">Revised Draft</Status>
+            <Status ID="3">Final Draft</Status>
+            <Status ID="4">Done</Status>
+        </StatusItems>
+    </StatusSettings>
+    <ProjectTargets Notify="No">
+        <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2017-03-15 15:11:01 -0500" IgnoreDeadline="Yes">0</DraftTarget>
+        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" ResetType="Midnight" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
+        <PreviousSession Words="137" Characters="841" Date="2017-06-07 21:30:54 -0500"></PreviousSession>
+    </ProjectTargets>
+    <PrintSettings PaperSize="612.0,792.0" LeftMargin="72.000099" RightMargin="72.000099" TopMargin="90.000198" BottomMargin="90.000198" PaperType="na-letter" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="No" ReverseOrder="No" PagesAcross="1" PagesDown="1"></PrintSettings>
+</ScrivenerProject>

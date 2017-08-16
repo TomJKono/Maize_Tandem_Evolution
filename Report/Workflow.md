@@ -261,4 +261,107 @@ older than duplications that are pricate to a subgenome. Nonsyntenic tandem
 duplicates show a high proportion of recent duplicates.
 
 ## Evolutionary Hypothesis Tests
+We are interested in whether tandem duplicates show different evolutionary rates
+than non-tandem genes in maize. To test this, we compare sequence substitution
+rates among maize tandem duplications, maize genes generally, and grass
+orthologues.
+
+### Identifying Grass Orthologues
+We identified orthologues among publicly available grass genomes from
+Phytozome V12 and Ensembl Plants V34 with Orthofinder. The amino acid sequences
+from the following genome assmeblies were used as input:
+
+| Species                   | Assembly Ver. | Anno. Ver. | Source            |
+|---------------------------|---------------|------------|-------------------|
+| *Aegilops tauschii*       | ASM34733v1    | ASM34733v1 | Ensembl Plants 34 |
+| *Brachypodium distachyon* | 3.1           | 3.1        | Phytozome V12     |
+| *Hordeum vulgare*         | ASM32608v1    | ASM32608v1 | Ensembl Plants 34 |
+| *Leersia perrieri*        | Lperr_V1.4    | Lperr_V1.4 | Ensembl Plants 34 |
+| *Oropetium thomaeum*      | 1.0           | 1.0        | Phytozome V12     |
+| *Oryza sativa*            | IRGSP-1.0     | IRGSP-1.0  | Ensembl Plants 34 |
+| *Panicum hallii*          | 2.0           | 2.0        | Phytozome V12     |
+| *Panicum virgatum*        | 1.1           | 1.1        | Phytozome V12     |
+| *Phyllostachys edulis*    | 1.0           | 1.0        | BambooGDB         |
+| *Setaria italica*         | 2.2           | 2.2        | Phytozome V12     |
+| *Sorghum bicolor*         | 3.1           | 3.1        | Phytozome V12     |
+| *Triticum aestivum*       | TGACv1        | TGACv1     | Ensembl Plants 34 |
+| *Triticum urartu*         | ASM34745v1    | ASM34745v1 | Ensembl Plants 34 |
+
+Orthofinder was run with the default 'dendroblast' orthologue search method,
+and default parameters for MCL clustering. Amino acid sequences from B73 and
+PH207 were kept in separate files. Be sure to download both the amino acid
+sequences and the nucleotide sequences. The amino acids sequences will be used
+to identify orthologues, and the nucleotide sequences will be used in alignment
+and tree building. The amino acid files are saved in `Ortho_Base` and the
+nucleotide files are saved in `Ortho_Nuc`.
+
+Orthologue searching was run on MSI, and the job file is given in
+`Scripts/Jobs/Orthofinder.job`.
+
+### Generating Trees
+The next step in generating the input files is to generate nucleotide sequence
+alignments and phylogenetic trees that relate the sequences in each orthologous
+group. Because Orthofidner uses a modification of BLAST scores, it does not
+produce any alignments nor trees. We must do this on our own.
+
+First, retrieve the sequences that are part of each orthogroup. We use the CSV
+orthogroup output file, and the directory of amino acid input files for
+Orthofinder. The `Scripts/Data_Handling/Generate_Orthogroup_Seqs.py` script
+will do this:
+
+```bash
+mkdir Orthogroup_Seqs/
+python Generate_Orthogroup_Seqs.py \
+    Orthogroups.csv.gz \
+    /path/to/Ortho_Base/ \
+    Orthogroup_Seqs/
+```
+
+Note that this script requires `samtools` to be available, because it uses
+`samtools faidx` to retrieve sequences from the amino acid FASTA files.
+
+Then, we align each orthogroup with ClustalOmega:
+
+```bash
+mkdir Aligned/
+cd Orthogroup_Seqs/
+for i in *.fa
+do
+    clustalo -v -i ${i} -t Protein --full-iter --iter=10 --out ../Aligned/${i/.fa/_Aligned.fa}
+done
+```
+
+This can take a long time, so we do it on MSI.
+
+Then, the orthogroup alignments need to be backtranslated from amino acids to
+nucleotides. The script `Scripts/Data_Handling/Backtranslate_Orthogroup.py`
+will do this:
+
+```bash
+mkdir Backtranslated/
+cd Aligned/
+for i in *Aligned.fa
+do
+    python Backtranslate_Orthogroup.py /path/to/Ortho_Nuc ${i} > ../Backtranslated/${i/_Aligned/_Backtranslated}
+done
+```
+
+This step is relatively fast.
+
+Finally, we use RAxML to estimate a tree of the sequences in the aligned and
+backtranslated orthogroup. We use the following parameters:
+
+- Default rapid hill-climbing search algorithm (`-f d`)
+- GTR+Gamma nucleotide substitution model (`-m GTRGAMMAX`)
+
+```bash
+mkdir Trees/
+cd Backtranslated/
+for i in *Backtranslated.fa
+do
+    raxml -f d -m GTRGAMMAX -n ${i/_Backtranslated.fa/} -s ${i} -p 123 -w /full/path/to/Trees
+done
+```
+
+### CodeML (PAML) Tests
 ## Software Versions and Environment

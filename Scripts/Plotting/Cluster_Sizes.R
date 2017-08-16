@@ -1,0 +1,52 @@
+# Script to plot the distributions of cluster sizes for B73 and PH207
+
+# Read in data files
+b73_tandem <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Filtering/B73_True_Tandem_Clusters.txt", header=FALSE)
+ph207_tandem <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Filtering/PH207_True_Tandem_Clusters.txt", header=FALSE)
+
+# Define a function to return the number of genes in the comma-separated list
+count_genes <- function(glist) {
+    # Cast to character
+    c_glist <- as.character(glist)
+    # Split on commas, cast to vector
+    genes <- unlist(strsplit(c_glist, ","))
+    # Return the length
+    return(length(genes))
+}
+
+# Apply the counting function over the second column of the data files
+b_counts <- sapply(b73_tandem$V2, count_genes)
+p_counts <- sapply(ph207_tandem$V2, count_genes)
+
+# Count up the numbers. We use a custom function here because we want to have
+# counts of 0 for some cluster sizes
+b_tab <- sapply(
+    seq(2, 20),
+    function(x) {
+        return(sum(b_counts == x))
+        })
+p_tab <- sapply(
+    seq(2, 20),
+    function(x) {
+        return(sum(p_counts == x))
+        })
+
+# Put them into a matrix for plotting
+to_plot <- matrix(
+    c(b_tab, p_tab),
+    ncol=2,
+    byrow=FALSE)
+# And plot it
+pdf(file="Tandem_Cluster_Sizes.pdf", 6, 6)
+at <- barplot(
+    t(to_plot),
+    beside=TRUE,
+    col=c("darkblue", "darkred"),
+    axes=FALSE,
+    ylab="Number of Clusters",
+    xlab="Number of Genes in Cluster",
+    main="Distribution of Cluster Sizes")
+axis(side=2)
+axis(side=1, labels=seq(2, 20), at=apply(at, 2, mean), cex.axis=0.7)
+legend("topright", c("B73 Tandem", "PH207 Tandem"), fill=c("darkblue", "darkred"))
+dev.off()

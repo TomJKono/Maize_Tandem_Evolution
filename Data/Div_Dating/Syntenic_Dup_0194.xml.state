@@ -1,0 +1,39 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:Syntenic_Dup_0194'>(0:12.09743036456885,(((1:8.582077267415311,3:8.582077267415311)7:1.132666215402855,2:9.714743482818166)6:2.065444332215117,4:11.780187815033283)5:0.3172425495355675)8:0.0</statenode>
+<statenode id='birthRate.t:Syntenic_Dup_0194'>birthRate.t:Syntenic_Dup_0194[1 1] (-Infinity,Infinity): 0.12463082509614708 </statenode>
+<statenode id='rateAC.s:Syntenic_Dup_0194'>rateAC.s:Syntenic_Dup_0194[1 1] (0.0,Infinity): 0.3869889400607597 </statenode>
+<statenode id='rateAG.s:Syntenic_Dup_0194'>rateAG.s:Syntenic_Dup_0194[1 1] (0.0,Infinity): 0.5792351374736507 </statenode>
+<statenode id='rateAT.s:Syntenic_Dup_0194'>rateAT.s:Syntenic_Dup_0194[1 1] (0.0,Infinity): 0.2862272190254211 </statenode>
+<statenode id='rateCG.s:Syntenic_Dup_0194'>rateCG.s:Syntenic_Dup_0194[1 1] (0.0,Infinity): 0.3664876794893422 </statenode>
+<statenode id='rateGT.s:Syntenic_Dup_0194'>rateGT.s:Syntenic_Dup_0194[1 1] (0.0,Infinity): 0.11255290796461095 </statenode>
+<statenode id='rateCT.s:Syntenic_Dup_0194'>rateCT.s:Syntenic_Dup_0194[1 1] (0.0,Infinity): 0.3870124762264842 </statenode>
+<statenode id='mutationRate.s:Syntenic_Dup_0194'>mutationRate.s:Syntenic_Dup_0194[1 1] (0.0,Infinity): 1.0 </statenode>
+<statenode id='Indicators.c:Syntenic_Dup_0194'>Indicators.c:Syntenic_Dup_0194[8 1] (null,true): true false false false true false false true </statenode>
+<statenode id='clockrates.c:Syntenic_Dup_0194'>clockrates.c:Syntenic_Dup_0194[8 1] (0.0,1.7976931348623157E308): 4.0463196885427456E-19 1.195965741341495E-15 3.740927599921453E-9 5.418727175859851E-4 0.023093002365238462 2.3846539197016856E-19 0.010331210253754415 1.2493072529450612E-24 </statenode>
+<statenode id='meanClockRate.c:Syntenic_Dup_0194'>meanClockRate.c:Syntenic_Dup_0194[1 1] (-Infinity,Infinity): 0.050353131342222815 </statenode>
+<statenode id='freqParameter.s:Syntenic_Dup_0194'>freqParameter.s:Syntenic_Dup_0194[4 1] (0.0,1.0): 0.19493713497433698 0.3056549779120466 0.32086157409635774 0.1785463130172585 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"YuleBirthRateScaler.t:Syntenic_Dup_0194","p":0.1889381284802911,"accept":74604,"reject":193603,"acceptFC":74108,"rejectFC":193459,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeScaler.t:Syntenic_Dup_0194","p":0.7152865488186514,"accept":56494,"reject":212105,"acceptFC":56422,"rejectFC":211501,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeRootScaler.t:Syntenic_Dup_0194","p":0.6753224614572122,"accept":21295,"reject":247693,"acceptFC":21245,"rejectFC":247068,"rejectIv":85429,"rejectOp":85429},
+{"id":"YuleModelUniformOperator.t:Syntenic_Dup_0194","p":"NaN","accept":550568,"reject":2133802,"acceptFC":549416,"rejectFC":2128356,"rejectIv":6,"rejectOp":0},
+{"id":"YuleModelSubtreeSlide.t:Syntenic_Dup_0194","p":2.4373869074569114,"accept":244329,"reject":1097129,"acceptFC":243136,"rejectFC":1095031,"rejectIv":439726,"rejectOp":184369},
+{"id":"YuleModelNarrow.t:Syntenic_Dup_0194","p":"NaN","accept":17383,"reject":1326364,"acceptFC":17305,"rejectFC":1323202,"rejectIv":492916,"rejectOp":0},
+{"id":"YuleModelWide.t:Syntenic_Dup_0194","p":"NaN","accept":683,"reject":268020,"acceptFC":680,"rejectFC":267401,"rejectIv":211842,"rejectOp":153634},
+{"id":"YuleModelWilsonBalding.t:Syntenic_Dup_0194","p":"NaN","accept":318,"reject":267526,"acceptFC":318,"rejectFC":266879,"rejectIv":190569,"rejectOp":158783},
+{"id":"RateACScaler.s:Syntenic_Dup_0194","p":0.3720676344687064,"accept":2236,"reject":6779,"acceptFC":2231,"rejectFC":6766,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:Syntenic_Dup_0194","p":0.4250249217990547,"accept":2284,"reject":6626,"acceptFC":2278,"rejectFC":6615,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:Syntenic_Dup_0194","p":0.3269218715171942,"accept":2366,"reject":6554,"acceptFC":2351,"rejectFC":6543,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:Syntenic_Dup_0194","p":0.4790156428451366,"accept":2428,"reject":6560,"acceptFC":2423,"rejectFC":6548,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:Syntenic_Dup_0194","p":0.24462192193086169,"accept":2436,"reject":6501,"acceptFC":2423,"rejectFC":6482,"rejectIv":0,"rejectOp":0},
+{"id":"RateCTScaler.s:Syntenic_Dup_0194","p":0.3942830110869033,"accept":2284,"reject":6664,"acceptFC":2275,"rejectFC":6650,"rejectIv":0,"rejectOp":0},
+{"id":"FixMeanMutationRatesOperator","p":5713.914630385016,"accept":178914,"reject":0,"acceptFC":178448,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"IndicatorsBitFlip.c:Syntenic_Dup_0194","p":"NaN","accept":59583,"reject":1284751,"acceptFC":59137,"rejectFC":1281898,"rejectIv":1821,"rejectOp":0},
+{"id":"ClockRateScaler.c:Syntenic_Dup_0194","p":0.20448865791850293,"accept":405934,"reject":937603,"acceptFC":404403,"rejectFC":935916,"rejectIv":0,"rejectOp":0},
+{"id":"randomClockScaler.c:Syntenic_Dup_0194","p":0.6716160140093577,"accept":18715,"reject":71228,"acceptFC":18685,"rejectFC":71052,"rejectIv":0,"rejectOp":0},
+{"id":"randomClockUpDownOperator.c:Syntenic_Dup_0194","p":0.5984361443828341,"accept":68064,"reject":200602,"acceptFC":67761,"rejectFC":200227,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:Syntenic_Dup_0194","p":0.04166476295779676,"accept":2524,"reject":6449,"acceptFC":2513,"rejectFC":6442,"rejectIv":0,"rejectOp":0}
+]}
+-->

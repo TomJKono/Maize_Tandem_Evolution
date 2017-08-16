@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.4">
+
+
+    <data
+id="Test_Cluster_Aligned"
+name="alignment">
+                    <sequence id="seq_Sobic.007G065800.1" taxon="Sobic.007G065800.1" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ATGGCCTCTTCCACGACCTTCCTTGTTCTCACCACTCTTCTTGCACTGCTCACATGCCAAGTCATTGCTTCTGATCCAAGCCCTCTGCAGGATTTCTGTGTAGCTGACATGGATTCTCATGTGCGTGTCAATGGCTTTGTTTGCAAAGACACAAAGGATGTCAAGGCAGACGACTTCTTCCTAGCAGCAAACCTCGACAAGCCAAGGGACACGACAGTTAGCAAAGTTGGGTCTAATGTCACATTGATCAATGTCATGCGGATTCCTGGCCTCAACACCCTTGGGATCTCCTTGGCAAGGATTGACTATGCTCCACAAGGAGAGAACCCTCCTCACACGCATCCCCATGCTACTGAGATCCTAACTGTGTTGGAGGGCACACTGTATGTCGGATTCGTGACATCGAACCAAAACAACGTTAACAAGTTATTCACCAAGACTCTCAATAAGGGCGATGTGTTCGTATTCCCAGAGGGACTCATCCACTTCCAGTTCAACCCTCACCCTGACAAGCCTGCAGTTGCACTTGCTGCACTTAGCAGCCAGAACCCA--------------------------------------------------------------GGTGCTATTACCATTGCCAATGCTGTTTTCGGATCGAAGCCACCGATATCTGATGATGTCCTAGCCAAGGCATTTCAAGTGGAGAAGAAGACTGTGGACTGGCTCCAGGCTCAGTTCTGGGGTGACAACTGA------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                    <sequence id="seq_Zm00001d000006_T001" taxon="Zm00001d000006_T001" totalcount="4" value="----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------AAAGCAACAACAGAAGCAAACATAATT---------AAGCAGTTGGTGGTCATTAGCGTACTGCACAGAGTGCCT---------------ACAGAAAAGCTAGAGAAGTAAACAAAATGGC---TGCGTCCTCGTACTTCCTTCTTGCTGCTTTTCTAGCGGTGGTTGCTTCCCATGCCACCGCTTCCGATCCTAGCCCGCTCCAGGATTTCTGTGTTGCGGACATGCACTCTCCTGTGAAGGTGAATGGATTTGTTTGCAAGGACTCCATGGCCGTGACCGCAGATGACTTCTTCAAAGCAGCCAATCTTGATAAGGCTAGAGACACCATGAAGAGCAAGGTGGGATCCAATGTCACTTTGATCAACGTCATCCAGCTCCCTGGCCTCAACACTCTTGGCATCTCCCTGGCACGTATCGACTACGCGCCATTGGGCGAGAACCCGCCGCACACCCACCCACGTGCCACGGAGATCCTCACGGTTCTTGAGGGGACACTCTACGTCGGGTTTGTCACCTCCAACCCAAAC---------AAGCTATTTGCCAAGGTGCTCAACAAGGGTGATGTGTTCGTATTCCCCCAAGGTCTCATCCATTTCCAATTCAACCCGGTCTATAACAAGCCGGCCGTTGCTATCGCGGCGCTCAGCAGCCAGAACCCT--------------------------------------------------------------GGGGTTATTACCATCGCCAATGCGGTCTTCGGATCAAAGCCACCGATTTCGGATGATGTCTTGGCAAAGGCTTTCCAGGTGGAGAAGGGGACAATTGATTGGCTCCAGGCTCAATTCTGGGAGAACAACCACTACTAAATAAATCACATATAGCTTATCGTATCAAAGAATGCTTTTAAAT-ATGCACTTTG---AGTAATACAACTACATGATTTGAGTTTTCATGGTAAAATAGGCCCTAAAATAAGAAGGTAGAATT-TCGAGTGTTTTGGGTGCTATTTTGTATCGCATGC-TTCTTGGTGCAATGACCTCTATGGAAGTTCGAAATAATAA"/>
+                    <sequence id="seq_Zm00001d000008_T001" taxon="Zm00001d000008_T001" totalcount="4" value="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ACAGTAGTGCCAACATTAAATGGC---TGCGTCCTCGTACTTCCTTCTTGCTGCTTTTCTAGCAGTAACAGCTTCTCATGCCACCGCTTCCGATCCTAGCCCGCTCCAGGATTTCTGTGTTGCTGATATTCACTCTCCTGTGAAGGTGAATGGATTTGTTTGTAAGGATCCTATGGCGGTGATCCCAGATGACTTCTTCAAAGCAGCCAACCTTGATAAGGCTAGAGACACCATGAAGAGCAAGGTGGGGTCCAATGTCACTTTGATCAATGTCATGCAGCTCCCTGGCCTCAACACTCTTGGTATCTCCCTGGCACGTATCGACTACGCGCCATTGGGCGAGAACCCGCCGCACACCCACCCACGTGCCACGGAGATCCTCACGGTTCTCGAGGGGACACTGTACGTCGGGTTTGTCACCTCCAACCCAAAC---------AAGCTATTTGCCAAGGTGCTCAACAAGGGTGATGTGTTCGTATTCCCCCAAGGTCTCATCCATTTTCAATTCAACCCGGTCTATGACAAGCCGGCCGTTGCTATCGCGGCGCTCAGTAGCCAGAACCCT--------------------------------------------------------------GGGGTTATTACTATCGCCAATGCGGTCTTTGGATCAAAGCCACCGATTTCGGATGATGTCTTGGCCAAGGCTTTCCAGGTGGAGAAGGGGACGATTGATTGGCTCCAGGCTCAATTTTGGGAGAATAACCACTACTAAATAAATCACATATGACTTATCATATAAAACAATGCTTTTTACATATGCACTTTGAGTAACAATACAACTACATGTTTTTAGGTTTCATGGTAAAATAGGCCCTAAAATAAAAAGGTAGAGGT-TCCAGTGTTTTGGGTGCTATTTTGTATCGCATGA-TTCTTGGTGCAATGACCTCTATGGAAGTTCTAAATAATAA"/>
+                    <sequence id="seq_Zm00001d000012_T001" taxon="Zm00001d000012_T001" totalcount="4" value="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------AACGCACCAGCTCGCCATAGTTGTTTCATACACAATACA----AGCATCCTCTCTGCTACTG--------AATA---------------TCAAATTCCACTCTGGGAAGATAGAAATGGCGTCTTGTAGCTTTCATCTTCTCAGCGTTATTCTCATCGTGATCGCTTCTTCTGGCGCCTGGGCTACGGATCCTAGTCCTCTCCAGGACTTCTGCGTTGCAGACAAAGAATCGCCTGTACGTGTGAATGGGTTGCCCTGCAAGGATATTAAGGATGTCAAGGTCGACGACTTCTTCCTAGCAGCCGACCTCGACAAGCCAAGGGATACGACGATGAGCAAGGTCAAGTCAAATGTCACATTGATCAATGTGATGAAGCTGGCCGGCCTAAACACCTTGGGCATCTCCATGGCTAGGATTGACTATGCCCCTCAAGGACAGAACCCACCACATACGCATCCCCGTGCCACTGAGATCTTAACGGTTCTTGAAGGATCACTCTATGTTGGTTTTGTCACATCTAACCCAGACA------ACAAATTCATTAGCAAGCTACTCAACAAGGGAGATGTTTTCGTGTTCCCCCAAGGTCTAATCCACTTTCAGTTCAATCCAAGTCATGATAAGCCAGCGGTTGCCATTGCCGCACTCAACAGCCAAAACCCTGG--------------------------------------------------------------TGCCATTACCATTTCTAACGCTGTATTTGGATCGAAACCACCAATCGCGGACGACGTTCTTGCCAAGGCATTTCAGGTGGACAAGAAGGTTGTGGATTGGCTCCAAGCTCAGTTTTGGGAGGACAACCATAACTAAGTGAAGGAGGCTATTGCCATTGTTTTT---ACACACCGATGTAATA-----------AGTAACAACACTATTTTCATTCATTTGTTTGATGTAGCAAACTGCTA---TATACCTTTTGACATACATATGTATTTTGTTAAAATGTCAAATGACCACAGTTATAAACGTGAAATCTTATATTGATT-------------"/>
+                    <sequence id="seq_Zm00001d000017_T001" taxon="Zm00001d000017_T001" totalcount="4" value="--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ACTACGTTCAGGGTAGATAGAAATGGCATCCTCCAGCTTTTATCTT---CTCAGCGTTCTTCTCATCGTGATCGCTTCTTGCGCCTGGGCTACGGATCCTAGTCCTCTCCAGGACTTCTGCGTTGCAGACAAAGAATCGCCTGTACGTGTGAATGGGTTTCCCTGCAAGGATGTTAAGGATGTCAAGGTCGACGACTTCTTCCTAGCAGCCGACCTCGACAAGCCAAGGGATACGACGATGAGCAAGGTCAAGTCAAATGTCACATTGATCAATGTGATGAAGCTGGCCGGCCTAAACACCTTGGGCATCTCCATGGCTAGGATTGACTATGCCCCTCAAGGACAGAACCCACCACATACGCATCCTCGTGCCACTGAGATCTTAACTGTTCTTGAAGGATCACTCTATGTTGGTTTTGTCACATCTAACCCAGACA------ACAAATTCATTAGCAAGCTACTCAACAAGGGAGATGTTTTCGTGTTCCCACAAGGTCTAATCCACTTTCAGTTCAATCCAAGTCATGACAAGCCAGCAGTTGCCATTGCCGCACTCAACAGCCAAAACCCTGG--------------------------------------------------------------TGCCATTACCATTTCTAACGCAGTATTTGGTTCGAAACCACCAATCGCGGACAACGTTCTTGCCAAGGCATTTCAGGTGGACAAGAAGGTTGTGGATTGGCTCCAAGCTCAGTTTTGGGAGGACAACCATAACTAAGTGAAGGAGGCTATTGCCCTTGTTTTT---ACACACCGATGTAATA-----------AGTAACAACATTGTTTTCATTCATTTGTTTGATGTATCAAACTACTA---TATACCTTTTGCCATACATAT--ATTCTGTTAAAATGTCAAATGACCACAGTTATAAACGTGAAATCTTATATTGATT-------------"/>
+                    <sequence id="seq_Zm00001d000018_T002" taxon="Zm00001d000018_T002" totalcount="4" value="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------CCAGCTCGCCATAGCTGATTCATATACAATACA----AGCATCCT------------------------------------------CTCCGAGGGCAGATCGATAGAAATGGTGTCCTCCAACTTTTATCTTCTCAG---CGTTCTTCTCATCGCCATCGCTTCTGGCGCACGGGCTACGGATCCTAGTCCTCTCCAAGACTTCTGCGTTGCAGACAAAGAATCGACAGTACGTGTGAATGGGTTGCCCTGCAAGGATATTAAGGATGTCAAGGTGGACGACTTCTTCCTAGCAGCCGACCTCGACAAGCCAAGGGATACGACGACGAACAAGGTCAAGTCAAATGTCACGTTGATCAATGTGATGAAGCTGGCCGGTCTAAACACCTTAGGCATCTCCATGGCCAGGATTGACTATGCCCCTCAAGGACAGAACCCACCACATACTCATCCCCGTGCCACTGAGATCTTAACGGTTCTTGAAGGATCACTCTATGTGGGTTTTGTCACATCTAACCCAGACA------ACAAATTCTTTAGCAAGCTGCTCAACAAGGGTGATGTTTTCGTGTTCCCACAAGGCCTAATCCACTTTCAGTTCAATCCAAGTCATGACAAGCCAGCAGTTGCCCTCGCCGCACTCAGCAGCCAGAACCCTGG--------------------------------------------------------------TGCCATTACCATTTCTAATGCAGTATTTGGATCAAAACCACCAATCGCGGATGATGTTCTTGCCAAGGCGTTTCAGGTGGACAAGAAGGTTGTGGACTGGCTCCAAGCTCAGTTTTGGGAGGACAACCATAACTAAGTGAAGCTTGTGCGCTATTGTCATTGTTTTATGCACCTATGTAACA-----------ATCAACAACATTAATTTGATTTATTTGTATTATGTAGCAAAGTACTA---TGTACTTGATGCCATATATATTCT-----ATAAAATGTTAAATGACCTCAGTTATAAATGTTAAATGATATAT------------------"/>
+                    <sequence id="seq_Zm00008a037037_T01" taxon="Zm00008a037037_T01" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ATGGTGTCCTCCAACTTTTATCTTCTCAG---CGTTCTTCTCATCGCCATCGCTTCTGGCGCACGGGCTACGGATCCTAGTCCTCTCCAAGACTTCTGCGTTGCAGACAAAGAATCGACTGTACGTGTGAATGGGTTGCCCTGCAAGGATATTAAGGATGTCAAGGTGGACGACTTCTTCCTAGCAGCCGACCTCGACAAGCCAAGGGATACGACGACGAACAAGGTCAAGTCAAATGTCACGTTGATCAATGTGATGAAGCTGGCCGGTCTAAACACCTTAGGCATCTCCATGGCCAGGATTGACTATGCCCCTCAAGGACAGAACCCACCACATACTCATCCCCGTGCCACTGAGATCTTAACGGTTCTTGAAGGATCACTCTATGTGGGTTTTGTCACATCTAACCCAGACA------ACAAATTCTTTAGCAAGCTGCTCAACAAGGGTGATGTTTTCGTGTTCCCACAAGGCCTAATCCACTTTCAGTTCAATCCAAGTCATGACAAGCCAGCAGTTGCCCTCGCCGCACTCAGCAGCCAGAACCCTGG--------------------------------------------------------------TGCCATTACCATTTCTAATGCAGTATTTGGATCAAAACCACCAATCGCGGATGATGTTCTTGCCAAGGCGTTTCAGGTGGACAAGAAGGTTGTAGACTGGCTCCAAGCTCAGTTTTGGGAGGACAACCATAACTAA------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                    <sequence id="seq_Zm00008a037039_T01" taxon="Zm00008a037039_T01" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ATGGCATCCTCCAGCTTTTATCTT---CTCAGCGTTCTTCTCATCGTGATCGCTTCTGGCGCCTGGGCTACGGATCCTAGTCCTCTCCAGGACTTCTGCGTTGCAGACAAAGAATCGCCTGTACTTGTCAATGGGTTTGCCTGCAAGGATGTTAAGGATGTCAAGGTCGACGACTTCTTCCTAGCAGCCGACCTCGACAAGCCAAGGGATACGACGATGAGCAAGGTCAAGTCAAATGTCACATTGATCAATGTGATGAAGCTGGCCGGCCTAAACACCTTGGGCATCTCCATGGCTAGAATTGACTATGCCCCTCAAGGACAGAACCCACCACATACGCATCCCCGTGCCACTGAGATCTTAACTGTTCTTGAAGGATCACTCTATGTTGGTTTTGTCACATCTAACCCAGACA------ACAAATTCATTAGCAAGCTACTCAACAAGGGAGATGTTTTCGTGTTCCCACAAGGTCTAATCCACTTTCAGTTCAATCCAAGTCATGACAAGCCAGCGGTTGCCATTGCCGCACTCAACAGCCAAAACCCTGG--------------------------------------------------------------TGCCATTACCATTTCTAACGCAGTATTTGGATCGAAACCACCAATCGCGGACGACGTTCTTGCCAAGGCATTTCAGGTGGACAAGAAGGTTGTGGATTGGCTCCAAGCTCAGTTTTGGGAGGACAACCATAACTAA------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                    <sequence id="seq_Zm00008a037041_T01" taxon="Zm00008a037041_T01" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ATGGCGTCTTGTAGCTTTCATCTTCTCAGCGTTATTCTCATCGTGATCGCTTCTTCTGGCGCCTGGGCTACGGATCCTAGTCCTC---------------TCCAGGACTTCTGCGTTGCAGACAAAGAATNGCTACGGATCCTAGTCCTCTCCAGGACTTCTGCGTTGCAGACAAAGAATCGCCTGGAACATGAAACCAGTTTGATTAGCTTTCTAACACTTGTATGCCACTTCATTGATGCTGCAGTACGTGTGAATGGGTTGCCCTGCAAGGATATTAAGGATGTCAAGGTCGACGACTTCTTCCTAGCAGCCGACCTCGACAAGCCAAGGGATACAACGATGAGCAAGGTCAAGTCAAATGTCACATTGATCAATGTGATGAAGCTGGCCGGCCTAAACACCTTGGGCATCTCCATGGCTAGGATTGACTATGCCCCTCAAGGACAGAACCCACCACATACGCATCCCCGTGCCACTGAGATCTTAACGGTTCTTGAAGGATCACTCTATGTTGGTTTTGTCACATCTAACCCAGACA------ACAAATTCATTAGCAAGCTACTCAACAAGGGAGATGTTTTCGTGTTCCCACAAGGTCTAATCCACTTTCAGTTCAATCCAAGTCATGATAAGCCAGCGGTTGCCATTGCCGCACTCAACAGCCAAAACCCTGGTGCCATTACCATTTCTAACNGCCAGCGGTTGCCATTGCCGCACTCAACAGCCAAAACCCTGGTGCCATTACCATTTCTAACGCTGTATTTGGATCGAAACCACCAATCGCGGACGACGTTCTTGCCAAGGCATTTCAGGTGGATAAGAAGGTTGTGGATTGGCTCCAAGCTCAGTTTTGGGAGGACAACCATAACTAAGTGA--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                    <sequence id="seq_Zm00008a037043_T01" taxon="Zm00008a037043_T01" totalcount="4" value="ATGGTTGCAAAGATCGGCCTCCAAAAGGTGTACACGGTGGAGGATCGTTTGGACGGCGCTCAGCGTGAAGAAAAGCAAACCGTACTGAAGGTCAATGGATTTGTTTGCAAGGACCCTATGGCCGTGACCGCAGATGACTTCTTCAAAGCAGCCAACCTTGATAAGGCTAGAGACACCATGAAGAGCAAGGTGGGATCCAATGTCACTTTGATCAACGTCATCCAGCTCCCTGGCCTCAACACTCTTGGCATCTCCCTGGCACGTATCGACTACGCGCCATTGGGCGAGAACCCGCCGCACACCCACCCACGTGCCACGGAGATCCTCACGGTTCTTGAGGGGACACTCTACGTCGGGTTTTTCACCTCCAACCCAAACAAGCTATTTGCCAAGGTCCTCAACAAGGGTGATGTGTTTGTATTCCCCCAAGGTCTCATCCATTTCCAATTCAACCCGGTCTACAACAAGCCGGCCGTTGCAATCGCGGCGCTCAGCAGCCAGAACCCTGGGGTTATTACCATCGCTAATGCGGTCTTTGGATCAAAGCCACCGATTTCGGATGATGTCTTGGCCAAGGCATTCCAGGTAACCAAGTTGTGTGATATTATCCACGACACAGTCGGTTCTTTCATCATCTGGTTCCAGCAACCAAAGACTACTTCTCATGCCACCGCTTCCGATCCTAGCCCGCTCCAGGATTTCTGTGTTGCTGATATTCACTCTCCTGTGAAGGTGAATGGATTTGTTTGTAAGGATCCTATGGCGGTGACCCCAGATGACTTCTTCAAAGCAGCCAATCTTGATAAAGCTAGAGACACCATGAAGAGTAAGGTGGGGTCCAATGTCACTTTGATCAACGTCATCCAGCTCCCTGGCCTCAACACTCTTGGCATCTCCCTGGCACGTATCGACTACGCGCCATTGGGCGAGAACCCGCCGCACACCCACCCACGTGCCACGGAGATCCTCACGGTTCTCGAGGGGACACTGTACGTCGGGTTTGTCACCTCCAACCCAAAC---------AAGCTATTTGCCAAGGTGCTCAACAAGGGCGATGTGTTCGTGTTCCCCCAAGGTCTCATCCATTTTCAATTCAACCCGGTCTATGACAAGCCGGCCGTTGCTATCGCGGCTCTCAGCAGCCAGAACCCT--------------------------------------------------------------GGGGTTATTACCATCGCCAATGCGGTCTTTGGATCAAAGCCACCGATTTCGGATGATGTCTTGGCCAAGGCTTTTCAGGTGGAGAAGGGGACGATTGATTGGCTCCAGGCTCAATTCTGGGAGAACAACCACTACTAA------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                </data>
+
+
+    
+
+
+    
+
+
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="MCMC" chainLength="10000000">
+    <state id="state" storeEvery="5000">
+        <tree id="Tree.t:Test_Cluster_Aligned" name="stateNode">
+            <taxonset id="TaxonSet.Test_Cluster_Aligned" spec="TaxonSet">
+                <alignment idref="Test_Cluster_Aligned"/>
+            </taxonset>
+        </tree>
+        <parameter id="gammaShape.s:Test_Cluster_Aligned" name="stateNode">1.0</parameter>
+        <parameter id="kappa.s:Test_Cluster_Aligned" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="mutationRate.s:Test_Cluster_Aligned" name="stateNode">1.0</parameter>
+        <stateNode id="Indicators.c:Test_Cluster_Aligned" spec="parameter.BooleanParameter" dimension="18">false</stateNode>
+        <parameter id="clockrates.c:Test_Cluster_Aligned" dimension="18" name="stateNode">1.0</parameter>
+        <parameter id="birthRateY.t:Test_Cluster_Aligned" name="stateNode">1.0</parameter>
+        <parameter id="meanClockRate.c:Test_Cluster_Aligned" name="stateNode">1.0</parameter>
+    </state>
+
+    <init id="RandomTree.t:Test_Cluster_Aligned" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:Test_Cluster_Aligned" taxa="@Test_Cluster_Aligned">
+        <populationModel id="ConstantPopulation0.t:Test_Cluster_Aligned" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:Test_Cluster_Aligned" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="CalibratedYuleModel.t:Test_Cluster_Aligned" spec="beast.evolution.speciation.CalibratedYuleModel" birthRate="@birthRateY.t:Test_Cluster_Aligned" tree="@Tree.t:Test_Cluster_Aligned"/>
+            <prior id="RRateChangesPrior.c:Test_Cluster_Aligned" name="distribution">
+                <x id="RRateChanges.c:Test_Cluster_Aligned" spec="util.Sum">
+                    <arg idref="Indicators.c:Test_Cluster_Aligned"/>
+                </x>
+                <distr id="Poisson.0" spec="beast.math.distributions.Poisson">
+                    <parameter id="RealParameter.5" estimate="false" name="lambda">0.6931471805599453</parameter>
+                </distr>
+            </prior>
+            <prior id="CalibratedYuleBirthRatePrior.t:Test_Cluster_Aligned" name="distribution" x="@birthRateY.t:Test_Cluster_Aligned">
+                <Uniform id="Uniform.5" name="distr" upper="1000.0"/>
+            </prior>
+            <prior id="RRatesPrior.c:sTest_Cluster_Aligned" name="distribution" x="@clockrates.c:Test_Cluster_Aligned">
+                <Gamma id="Gamma.0" name="distr">
+                    <parameter id="RealParameter.3" estimate="false" name="alpha">0.5</parameter>
+                    <parameter id="RealParameter.4" estimate="false" name="beta">2.0</parameter>
+                </Gamma>
+            </prior>
+            <prior id="GammaShapePrior.s:Test_Cluster_Aligned" name="distribution" x="@gammaShape.s:Test_Cluster_Aligned">
+                <Exponential id="Exponential.0" name="distr">
+                    <parameter id="RealParameter.0" estimate="false" name="mean">1.0</parameter>
+                </Exponential>
+            </prior>
+            <prior id="KappaPrior.s:Test_Cluster_Aligned" name="distribution" x="@kappa.s:Test_Cluster_Aligned">
+                <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                    <parameter id="RealParameter.1" estimate="false" name="M">1.0</parameter>
+                    <parameter id="RealParameter.2" estimate="false" name="S">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <distribution id="Maize-Sorghum.prior" spec="beast.math.distributions.MRCAPrior" monophyletic="true" tree="@Tree.t:Test_Cluster_Aligned">
+                <taxonset id="Maize-Sorghum" spec="TaxonSet">
+                    <taxon id="Sobic.007G065800.1" spec="Taxon"/>
+                    <taxon id="Zm00001d000006_T001" spec="Taxon"/>
+                    <taxon id="Zm00001d000008_T001" spec="Taxon"/>
+                    <taxon id="Zm00001d000012_T001" spec="Taxon"/>
+                    <taxon id="Zm00001d000017_T001" spec="Taxon"/>
+                    <taxon id="Zm00001d000018_T002" spec="Taxon"/>
+                    <taxon id="Zm00008a037037_T01" spec="Taxon"/>
+                    <taxon id="Zm00008a037039_T01" spec="Taxon"/>
+                    <taxon id="Zm00008a037041_T01" spec="Taxon"/>
+                    <taxon id="Zm00008a037043_T01" spec="Taxon"/>
+                </taxonset>
+                <Normal id="Normal.0" name="distr">
+                    <parameter id="RealParameter.6" estimate="false" name="mean">11.9</parameter>
+                    <parameter id="RealParameter.7" estimate="false" name="sigma">1.0</parameter>
+                </Normal>
+            </distribution>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.Test_Cluster_Aligned" spec="ThreadedTreeLikelihood" data="@Test_Cluster_Aligned" tree="@Tree.t:Test_Cluster_Aligned">
+                <siteModel id="SiteModel.s:Test_Cluster_Aligned" spec="SiteModel" gammaCategoryCount="4" mutationRate="@mutationRate.s:Test_Cluster_Aligned" shape="@gammaShape.s:Test_Cluster_Aligned">
+                    <parameter id="proportionInvariant.s:Test_Cluster_Aligned" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="hky.s:Test_Cluster_Aligned" spec="HKY" kappa="@kappa.s:Test_Cluster_Aligned">
+                        <frequencies id="empiricalFreqs.s:Test_Cluster_Aligned" spec="Frequencies" data="@Test_Cluster_Aligned"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="RandomLocalClock.c:Test_Cluster_Aligned" spec="beast.evolution.branchratemodel.RandomLocalClockModel" clock.rate="@meanClockRate.c:Test_Cluster_Aligned" indicators="@Indicators.c:Test_Cluster_Aligned" rates="@clockrates.c:Test_Cluster_Aligned" tree="@Tree.t:Test_Cluster_Aligned"/>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="gammaShapeScaler.s:Test_Cluster_Aligned" spec="ScaleOperator" parameter="@gammaShape.s:Test_Cluster_Aligned" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="KappaScaler.s:Test_Cluster_Aligned" spec="ScaleOperator" parameter="@kappa.s:Test_Cluster_Aligned" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="FixMeanMutationRatesOperator" spec="DeltaExchangeOperator" delta="0.75" weight="2.0">
+        <parameter idref="mutationRate.s:Test_Cluster_Aligned"/>
+        <weightvector id="weightparameter" spec="parameter.IntegerParameter" estimate="false" lower="0" upper="0">1556</weightvector>
+    </operator>
+
+    <operator id="IndicatorsBitFlip.c:Test_Cluster_Aligned" spec="BitFlipOperator" parameter="@Indicators.c:Test_Cluster_Aligned" weight="15.0"/>
+
+    <operator id="ClockRateScaler.c:Test_Cluster_Aligned" spec="ScaleOperator" parameter="@clockrates.c:Test_Cluster_Aligned" scaleFactor="0.5" weight="15.0"/>
+
+    <operator id="CalibratedYuleModelTreeScaler.t:Test_Cluster_Aligned" spec="ScaleOperator" scaleFactor="0.5" tree="@Tree.t:Test_Cluster_Aligned" weight="3.0"/>
+
+    <operator id="CalibratedYuleModelTreeRootScaler.t:Test_Cluster_Aligned" spec="ScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:Test_Cluster_Aligned" weight="3.0"/>
+
+    <operator id="CalibratedYuleModelUniformOperator.t:Test_Cluster_Aligned" spec="Uniform" tree="@Tree.t:Test_Cluster_Aligned" weight="30.0"/>
+
+    <operator id="CalibratedYuleModelSubtreeSlide.t:Test_Cluster_Aligned" spec="SubtreeSlide" tree="@Tree.t:Test_Cluster_Aligned" weight="15.0"/>
+
+    <operator id="CalibratedYuleModelNarrow.t:Test_Cluster_Aligned" spec="Exchange" tree="@Tree.t:Test_Cluster_Aligned" weight="15.0"/>
+
+    <operator id="CalibratedYuleModelWide.t:Test_Cluster_Aligned" spec="Exchange" isNarrow="false" tree="@Tree.t:Test_Cluster_Aligned" weight="3.0"/>
+
+    <operator id="CalibratedYuleModelWilsonBalding.t:Test_Cluster_Aligned" spec="WilsonBalding" tree="@Tree.t:Test_Cluster_Aligned" weight="3.0"/>
+
+    <operator id="CalibratedYuleBirthRateScaler.t:Test_Cluster_Aligned" spec="ScaleOperator" parameter="@birthRateY.t:Test_Cluster_Aligned" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="randomClockScaler.c:Test_Cluster_Aligned" spec="ScaleOperator" parameter="@meanClockRate.c:Test_Cluster_Aligned" scaleFactor="0.5" weight="1.0"/>
+
+    <operator id="randomClockUpDownOperator.c:Test_Cluster_Aligned" spec="UpDownOperator" scaleFactor="0.75" weight="3.0">
+        <up idref="meanClockRate.c:Test_Cluster_Aligned"/>
+        <down idref="Tree.t:Test_Cluster_Aligned"/>
+    </operator>
+
+    <logger id="tracelog" fileName="Test_Cluster_Aligned.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.Test_Cluster_Aligned"/>
+        <log id="TreeHeight.t:Test_Cluster_Aligned" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:Test_Cluster_Aligned"/>
+        <log idref="gammaShape.s:Test_Cluster_Aligned"/>
+        <log idref="kappa.s:Test_Cluster_Aligned"/>
+        <log idref="mutationRate.s:Test_Cluster_Aligned"/>
+        <log idref="Indicators.c:Test_Cluster_Aligned"/>
+        <log idref="clockrates.c:Test_Cluster_Aligned"/>
+        <log idref="RRateChanges.c:Test_Cluster_Aligned"/>
+        <log idref="CalibratedYuleModel.t:Test_Cluster_Aligned"/>
+        <log idref="birthRateY.t:Test_Cluster_Aligned"/>
+        <log idref="Maize-Sorghum.prior"/>
+        <log idref="meanClockRate.c:Test_Cluster_Aligned"/>
+    </logger>
+
+    <logger id="screenlog" logEvery="1000">
+        <log idref="posterior"/>
+        <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:Test_Cluster_Aligned" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:Test_Cluster_Aligned" spec="beast.evolution.tree.TreeWithMetaDataLogger" branchratemodel="@RandomLocalClock.c:Test_Cluster_Aligned" tree="@Tree.t:Test_Cluster_Aligned"/>
+    </logger>
+
+</run>
+
+</beast>

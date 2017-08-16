@@ -1,0 +1,41 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:Test_Cluster_Aligned'>((0:5.619700850772077,((1:1.3128283486449674,9:1.3128283486449674)17:0.28650724753450474,2:1.5993355961794722)12:4.020365254592605)14:4.869418584945095,(((3:0.3270772105007262,8:0.3270772105007262)16:0.3674465514602458,(4:0.17261988909856532,7:0.17261988909856532)10:0.5219038728624067)11:1.3237353451850593,(5:0.09298571696203882,6:0.09298571696203882)13:1.9252733901839925)15:8.47086032857114)18:0.0</statenode>
+<statenode id='gammaShape.s:Test_Cluster_Aligned'>gammaShape.s:Test_Cluster_Aligned[1 1] (0.001,1000.0): 0.40386853955569973 </statenode>
+<statenode id='proportionInvariant.s:Test_Cluster_Aligned'>proportionInvariant.s:Test_Cluster_Aligned[1 1] (0.0,1.0): 0.0 </statenode>
+<statenode id='rateAC.s:Test_Cluster_Aligned'>rateAC.s:Test_Cluster_Aligned[1 1] (0.0,Infinity): 0.11934895934846404 </statenode>
+<statenode id='rateAG.s:Test_Cluster_Aligned'>rateAG.s:Test_Cluster_Aligned[1 1] (0.0,Infinity): 0.39605273791184253 </statenode>
+<statenode id='rateAT.s:Test_Cluster_Aligned'>rateAT.s:Test_Cluster_Aligned[1 1] (0.0,Infinity): 0.2872952533765586 </statenode>
+<statenode id='rateCG.s:Test_Cluster_Aligned'>rateCG.s:Test_Cluster_Aligned[1 1] (0.0,Infinity): 0.2044493433587354 </statenode>
+<statenode id='rateCT.s:Test_Cluster_Aligned'>rateCT.s:Test_Cluster_Aligned[1 1] (0.0,Infinity): 0.5566991699968157 </statenode>
+<statenode id='rateGT.s:Test_Cluster_Aligned'>rateGT.s:Test_Cluster_Aligned[1 1] (0.0,Infinity): 0.2520069120336023 </statenode>
+<statenode id='Indicators.c:Test_Cluster_Aligned'>Indicators.c:Test_Cluster_Aligned[18 1] (null,true): false true true false false false false false true false false false true false false false false false </statenode>
+<statenode id='clockrates.c:Test_Cluster_Aligned'>clockrates.c:Test_Cluster_Aligned[18 1] (0.0,1.7976931348623157E308): 3.694232493600854E-7 1.4774027450098512 2.8122238561736068E-11 12.337068798370888 8.952936970690194E-11 2.5424226088322223E-5 1.1615100152654515E-8 3.795546565284597 21.611166474992054 5.2745512588920464E-5 3.483612246999045E-16 9.48166633828512E-14 3.0753795221301647 0.09170261253643089 1.5713752485540994E-6 1.5525796897955007E-25 0.02378464441492851 1.7813491268729592E-5 </statenode>
+<statenode id='birthRateY.t:Test_Cluster_Aligned'>birthRateY.t:Test_Cluster_Aligned[1 1] (-Infinity,Infinity): 0.5413637063575953 </statenode>
+<statenode id='meanClockRate.c:Test_Cluster_Aligned'>meanClockRate.c:Test_Cluster_Aligned[1 1] (-Infinity,Infinity): 0.06865310754535275 </statenode>
+<statenode id='freqParameter.s:Test_Cluster_Aligned'>freqParameter.s:Test_Cluster_Aligned[4 1] (0.0,1.0): 0.2682013160561585 0.2585088097270369 0.22323747030240276 0.2500524039144023 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"gammaShapeScaler.s:Test_Cluster_Aligned","p":0.528600923663107,"accept":1867,"reject":7277,"acceptFC":1862,"rejectFC":7259,"rejectIv":0,"rejectOp":0},
+{"id":"proportionInvariantScaler.s:Test_Cluster_Aligned","p":0.7634435521147661,"accept":0,"reject":9152,"acceptFC":0,"rejectFC":9134,"rejectIv":9152,"rejectOp":9152},
+{"id":"RateACScaler.s:Test_Cluster_Aligned","p":0.4014697547039075,"accept":2326,"reject":6690,"acceptFC":2313,"rejectFC":6676,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:Test_Cluster_Aligned","p":0.49170763954394,"accept":2332,"reject":6584,"acceptFC":2320,"rejectFC":6559,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:Test_Cluster_Aligned","p":0.43254403568861116,"accept":2449,"reject":6665,"acceptFC":2441,"rejectFC":6651,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:Test_Cluster_Aligned","p":0.38107912883184336,"accept":2403,"reject":6766,"acceptFC":2395,"rejectFC":6750,"rejectIv":0,"rejectOp":0},
+{"id":"RateCTScaler.s:Test_Cluster_Aligned","p":0.5255503492728043,"accept":2470,"reject":6665,"acceptFC":2465,"rejectFC":6645,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:Test_Cluster_Aligned","p":0.4298900128782729,"accept":2282,"reject":6867,"acceptFC":2273,"rejectFC":6855,"rejectIv":0,"rejectOp":0},
+{"id":"IndicatorsBitFlip.c:Test_Cluster_Aligned","p":"NaN","accept":14350,"reject":1349416,"acceptFC":14244,"rejectFC":1346117,"rejectIv":57347,"rejectOp":0},
+{"id":"ClockRateScaler.c:Test_Cluster_Aligned","p":0.16177252518177013,"accept":352964,"reject":1012083,"acceptFC":350990,"rejectFC":1010673,"rejectIv":5,"rejectOp":0},
+{"id":"CalibratedYuleModelTreeScaler.t:Test_Cluster_Aligned","p":0.6784404536273387,"accept":53888,"reject":219400,"acceptFC":53816,"rejectFC":218780,"rejectIv":0,"rejectOp":0},
+{"id":"CalibratedYuleModelTreeRootScaler.t:Test_Cluster_Aligned","p":0.6785617270659772,"accept":59176,"reject":213842,"acceptFC":59126,"rejectFC":213203,"rejectIv":19279,"rejectOp":19279},
+{"id":"CalibratedYuleModelUniformOperator.t:Test_Cluster_Aligned","p":"NaN","accept":438126,"reject":2291558,"acceptFC":436885,"rejectFC":2285927,"rejectIv":11,"rejectOp":0},
+{"id":"CalibratedYuleModelSubtreeSlide.t:Test_Cluster_Aligned","p":1.2759578181079194,"accept":239068,"reject":1126551,"acceptFC":238289,"rejectFC":1123856,"rejectIv":365662,"rejectOp":365658},
+{"id":"CalibratedYuleModelNarrow.t:Test_Cluster_Aligned","p":"NaN","accept":27788,"reject":1336026,"acceptFC":27736,"rejectFC":1332743,"rejectIv":6,"rejectOp":0},
+{"id":"CalibratedYuleModelWide.t:Test_Cluster_Aligned","p":"NaN","accept":363,"reject":272310,"acceptFC":361,"rejectFC":271576,"rejectIv":144275,"rejectOp":144274},
+{"id":"CalibratedYuleModelWilsonBalding.t:Test_Cluster_Aligned","p":"NaN","accept":90,"reject":273410,"acceptFC":88,"rejectFC":272748,"rejectIv":87789,"rejectOp":87789},
+{"id":"CalibratedYuleBirthRateScaler.t:Test_Cluster_Aligned","p":0.20235651438628996,"accept":66675,"reject":206661,"acceptFC":66094,"rejectFC":206562,"rejectIv":0,"rejectOp":0},
+{"id":"randomClockScaler.c:Test_Cluster_Aligned","p":0.6490571822026949,"accept":20884,"reject":70071,"acceptFC":20851,"rejectFC":69884,"rejectIv":1,"rejectOp":0},
+{"id":"randomClockUpDownOperator.c:Test_Cluster_Aligned","p":0.5961943011957446,"accept":66680,"reject":206734,"acceptFC":66377,"rejectFC":206398,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:Test_Cluster_Aligned","p":0.04420615719898247,"accept":2415,"reject":6677,"acceptFC":2397,"rejectFC":6669,"rejectIv":0,"rejectOp":0}
+]}
+-->

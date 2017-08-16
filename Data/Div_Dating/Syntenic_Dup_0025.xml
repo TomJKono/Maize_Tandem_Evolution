@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.4">
+
+
+    <data
+id="Syntenic_Dup_0025"
+name="alignment">
+                    <sequence id="seq_Sobic.002G068800.1" taxon="Sobic.002G068800.1" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ATGCCGCCGGCGCCGGCTGCGCGGAAGAAGCGCCTGGTCCGCGCGGGCCTCCTAACCGCCGCGGTCGGGTACTTCGCCTTCGTGCTCCTCTTCGAGCTCCCCTTGCTGCCCTTCCTGGCGTCGTCGTCCTCCCCCGCCGCCACCTCC---TCCTCCTCGTCGCTCCCCTTCCAGCACCCGCGCCGGCGGGAGCTAGAGGCCGCGGCGGCGGCGTTCACGTCGCCGTACTCCCCCGCCCGCCCCTCCAAGCCAGCCTTCCCCGCCGCCGCA---CCGGGC------------------CCGAGCTCAACGCCCCGGCTCCCGATCTTCTCGTCCCTCCTCCTCCTCCCGCGGCCCAACGCCACGGCCACCCCGTTCGACACCACCGCCGCCGACGCCTTCGCCGCG---------------------------------------------------------------GCCAAGCCGCACCTCGCCCACCTCCAGTCCATCCCCAACCCCGCCTCCGCCTCCACCTCCGCGTCCGCGCCCGCGTCGTCGCCGCCGCCGCCGACATGCCCCGCGTCCATCTCCGTGCACCGGGAGCAGCTGCCCTACGACGGCGTGCGCGTGGTGGAGCTCCCCTGCGGGCTCGCCGTGGGCTCGCACGTTACCGTGGTGGCCCGGCCCCGACCCGCCAGGCCCGAGTACGACCCCAAGATCGCCGAGCGCAAGGACGGGGAGGCCGCCGTCATGGTGTCG------------------------------CAGTTCATGGTCGAGCTGGTCGGCACC---------------------------AAGGCCGTCGACGGCGAGGCGCCGCCCAGGATCCTGCACTTCAACCCCAGGATCCGCGGGGACTACAGCCGGAAGCCCGTC---------------------------------------------------ATCGAGATGAACAGCTGCTACCGGATGCAGTGGGGGCAGTCGCAGCGCTGCGAGGGATTCGCCTCCCGCCCCGCCGAGGACACCGTTGACGGGCAACTCAAGTGTGAGAAATGGATTCACGACGATGACAACAAGTCAGAGGAATCAAAGATGAAATGGTGGGTGAAACGATTGATTGGCAGACCAAAGGATGTCCACATCAGTTGGCCATACCCGTTCACAGAAGGCAAGCTATTTGTTATGACTTTAACAGCTGGTTTGGAAGGTTACCATGTCAATGTTGATGGGCGGCAT---------------------------------------GTTGCTTCATTTCCTTACCGCACTGGTTACTCTCTTGAGGATGCAACTGCGTTGTCTCTGAATGGAGACATTGATATCGAGTCAATTTTTGCTAGTTCTCTACCCAATTCACATCCTAGTTTTGCTCCCGAGCGATACCTTGAGATGTCTGAACAGTGGAAAGCCCCACCGCTG------CCCACTGAACCTGTTGAGCTTTTCATAGGCATTCTCTCTGCAGCC------------------AGCCATTTTGCTGAGCGTATGGCTGTAAGGAAATCATGGATGATGTATACA---------------------------------------------------------AGGAAATCATCCAATATTGTAGCTCGGTTCTTTGTGGCTCTGAATGGAAAAAAGGAAGTTAATGCAGAGCTCAAGAAGGAGGCAGAGTTCTTCCAGGACATTGTTATAGTGCCTTTTATTGATAGCTATGACCTTGTTGTGTTGAAGACCGTTGCCATTGCTGAGTATGGGGTGCGCGTTGTCCCTGCAAAGTACGTAATGAAATGTGATGATGATACATTCGTCAGGATCGATTCAGTACTGGAT---------CAAGTGAAGAAAGGTCGAAATGATAAAAGCGTT------TATGTCGGAAGTATAAACTAC------TTCCATCGACCACTAAGATCTGGCAAGTGGGCAGTAACTTATGAGGAATGGCCGGAA------GAAGTGTACCCGAATTATGCGAATGGACCTGGCTATGTAATTTCATCTGATATTGCTCACTACATCGTGTCTGAATTCGACAATCAGACACTTCGGCTGTTTAAGATGGAGGATGTGAGCATGGGCATGTGGGTGGAGAAGTTCAACAAGACGCGGCGGCCGGTGGAGATCCGGCACGACGTGCGGTTCTACCAGTCGGGCTGCTACAACGGCTACTTCACGGCGCACTACCAGTCCCCGCAGCACATGATCTGCCTGTGGCGGAAGCTGCAGTCTGGGAGTGCCCGGTGCTGCAATGTGAGATGA---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                    <sequence id="seq_Zm00001d007762_T001" taxon="Zm00001d007762_T001" totalcount="4" value="---------CCGCCCCGTCGTTCCTCCCAATGCTCCGCACCCGGACCCGCCCTCGCCCACGCGCACGCCGCGCGCCCGCGACGCCGTAGCAGCGCGCGCCGTCGAGTGGTGGGGCTAGGATCTGCGTCGAGTGATGAGAAAGGCAGCGTCGACGGCGATGGCGGGGGCGGGGGCTACCTTCCGCCGCCGCGCGATGGAGGGGCTGGCGACCGTGCTGCT---------------------------------------------------------------------CCTCTACGCGCTCCTCGTGCTCGCCCTCGAGTCGCCGCTCGTCTCCACCTCGCC---ATTCGGTGGCGCCGCGGG------CGGTACAGCGCGGAAGCTCCACCTCTCCTTCGGCGC---------------------------------GGGCGAGCGCGCGGCGCCCGTCCCCGGCGCGTCGGCGCACGGGCAGGATCATCGGCTCTCCCGCTTCGCCTCCGGCCTCGACGTCCGCCTCCTCGACTCCGCCCGCTCCGGCGCGCTCCGCCGGTCCATAGCGGACGCCGTCGCGGCGGGCGCCCGCGCGTTCTCCGACCT------------CGAGGCCCTCGACCCCGCCGCCGTCGCCGCGCCCTCCGGCGAGAGCGACGCGGCCAGGTGCCCGCACTCGATCGCGCTCACCGCGGAGGAGCTCGGCGCGCGGGGCCGCGTGGTGGAGCTGCCCTGCGGGCTCGCGCTGGGGTCCCACATCACGGTCGCCGCGACGCCCCGGGCGCCGCACGAGGAGCGGAACCCCGCGATCGCGGTGCTCAGGGACGGGGAGCGGCACGCCATGGTGTCTCAGTTCATGGTGGAGCTGCAGGGGCTCAGGGCGGTCGACGGCGA------------------------------------------GGACCCGCCCCGCGTGCTCCACTTCAACCCGCGCCTCCGCGGGGACTGGAGCGGCCACCCGGTGATCGAGCAGAACACCTGCTACCGCATGAGCTGGGGCGCCGCGCAGCGCTGCGATGGATGGAGGTCACGCCCGGATGAGGAGACTGTGGATGGGTTGGTCAAGTGCGAGAAGTGGATTAGGGACGATGATGACAGGTTGGAGAAATCGAAGACAACATCAAAGACGGCATGGTGGCTGAATCGGCTGATCGGGCAGAAGGAGGAGGTCAATTTCGGTTGGCCATTTCCTTTCGTGGAGGGCAGGCTCTTTGTTCTTACTCTCAGTGCTGGGTTGGAGGGTTACCATGTGAGCGTTGATGGGCGACA------------------TGTCACTTCGTTTCCTTACCGCACTGGGTTTGTGTTGGAGGACGCTAC---------AGGCCTGTCACTGAATGGGGACCTAGATGTGCATTC------AGTGATTGCAGGGTCTTTGCCCACTACACACCCAAGTTT---------------------TGCGCCACATAATTATCTGGAGTTTTCTAATGTTTGGCAGGCTCCTCTGCTGCCTGATGAGCCAGTTGAGATTTTCATTGGCATTCTGTCAGCAGCCAATCATTTTGCTGAACGTATGGGTGTGAG------------------------GAAGACATGGATGTCTGCTGTCCA---------CAAGTCACCAAACATGGTGGCTCGTTTCTT------------------CGTTGCACTGCATGGCAGAATGGAAGTGAATGCGGAGTTGAAGAAGGAAGCTGAATTTTTTCGGGACATTGTTTTTGTGCCCTTCCTGGACAACTATGATCTTGTTGTTATGAAGACTCTTGCAATATGCGAGTATGGGGTTCATGTTGTCTCTGCTAAATATGTAATGAAGTGTGATGATGATACTTTCGTGAGACTTGATTCAGTAGTCACTGAAATTAAGAAGGTACCAGGTGGGAGAAGTCTTTACATGGGGAGTATGAATATACAACACAAGCCACT---------------------------------ACGCCATGGGAAATGGGCTGTAACCTATGA---------------GGAGTGGCCACAAGAGGTGTATCCGTTATA---TGCAAATGGCCCTGGATATGTTATATCATCTGATATTGCTGATTTTATCATGTCAGAATTCATGAAGCAAAAGTTGATGCTCTTCAAAATGGAAGATGTGAGCTTGGGTGTGTGGGTTGAGCAGTTCAATAAGACAAGACCCGTTGAATACGTTCACAGCGA------CAAATTTTGTCCAAATGGATGCGTCCCTGACTACTATACTGCTCATTACCAATCGCC---------------------AAGGCTAATGCTATGCATGTGGCAGAAGTTACTGGAAGGAAGACCAGACTGTTGCAATGCGAGATAACAATGATGGCGTAGTTCAAAAAAGAAGAAGAAAACAAC------------------------------------------------------------------------------------------AATTACAGAATGAGTAGCATTTGACCATCATCCATAGAGCCAGTCTCATGTAATCAACAAATTAGGTTATAAAGTAAT------CTGCATTACATGGGATTAATT------CATACATCTTCATGGTAGTTTATATCCTCCTTGAGTCATGCAACT------------------------------------------------------------------------------------------------------------------------------GATCCTACCTAGTCACAACAGTGGGCAAGCCAGCACACTAATAATTGTGCTCTGTGCTCTCTTTGAGCGCCCAAACACATAGGTAGAAGTTGGCAGGTGCTCTGGAGATGCCCGGGGACTTAATTTGGAAATATAGAGAGTCGA---------------------------------------------------AATAGTTCAGTTAAGTTATTACTGTTTCCAGAATGGCTTTAAGGTCTGGTTGTAGTTGCAGCTAAACACATCTGGTTAACAGGGCAACCTTCAAGA------TTTCAGTCAATTTGTTTAACGCATTAT"/>
+                    <sequence id="seq_Zm00001d007764_T001" taxon="Zm00001d007764_T001" totalcount="4" value="AGCCTCCTCACAACACAAGGGTCCATGCCCTGCGCCGCCGCCGCGGCG---------ACCCCCCACCCCGCGTCCCCCGCAACGGTC---------------------------ACAGCTCACCTCAGCTCAACGCGCCCAGACCCGGCGACCCCGACCCTCCTCTCCAGCTAGTATTTACCACCACCCAGCCCCCTTCCCGCACCGCACCAAACGGCTACTACCCCTCCCCTCCCCTCCCAGGCTCCCACCCCCACTGCCTTCCAGAACCTTCCGCCGTCCGCGATGCCGACACCGCCTCCGCGGAAGAAGCGCCTGGTCCGCGCAGGCCTCCTCGCCGCCGCGGCCGGTTACTTCGCCTTCGTCCTCCTCTTCGAGCTGCCCCTGCTGCCCTTTCTGGCGTCGTCCTCCCCCGCCGCCACCACCTCCTCCTCCTCCTCCTCGCTCCCCTTCCAGCACCCGCGCCGGCGGGAGCTGGAGGCCGCGGCGGCGGCGTTCACGTCCCCGTTCTCGCCCGCCCGCCCCTCCAAGCGGGCCTTCCCCGCCGCCGCCGCACCGGCC------------------CCGGGCTCCACGCCGCGGCTCCCGATCTTCTCTTCCCTCCTCCTCCTCCCGCGGCCCAATGCCACGGCCACCCCCTTCGACAACACCGCCGCCGACGCCTTCGCCGCG---------------------------------------------------------------GCCAAGCCGCACCTCGCCCACCTCCAGGCCACGGCCAACCCCACCGCCGCGTCTGCGCCC---------------GCGTCGTCGCCGCCGCCGACCTGCCCCGCCTCGGTCGCCGTGCACCGGGAGCAGCTCCCCTACGACGGCGTCCGCGTGGTGGAGCTCCCCTGCGGGCTGGCGGTGGGCTCCCACGTCACCGTGGTGGCCCGGCCCCGGCCCGCCCGGCCCGAGTACGACCCCAAGATCGCCGAGCGCAAGGACGGGGAGGCCGCGGTCATGGTGTCG------------------------------CAGTTCATGGTCGAGCTGGTCGGCACC---------------------------AAGGCCGTCGACGGGGAGGCGCCGCCCAGGATCCTGCACTTGAACCCCAGGATCCGCGGGGACTACAGCCGGAAGCCCGTC---------------------------------------------------GTCGAGATGAACAGCTGCTACCGGATGCAGTGGGGACAGTCGCAGCGCTGCGAGGGCTTCGCCTCCCGCCCCGTCGAGGACACCGTTGACGGGCAACTCAAGTGTGAGAAATGGATCCGTGACGATGACAGCAAGTCAGAGGAATCAAAGATGAAATGGTGGGTCAAGCGTTTGATTGGCAGGCCTAAGGATGTCCGCATCATTTGGCCATACCCATTCACGGAAGGCAAGCTATTTGTTATGACTTTAACAGCTGGTTTGGAAGGTTACCATGTTAATGTTGATGGGCGGCAT---------------------------------------GTTGCTTCGTTTCCTTACCGCACTGGTTACTCTCTTGAGGATGCAACTGCATTATCCCTGAATGGAGACATCGATATTGAGTCGATTTTTGCTAGTTCTCTACCCAATTCGCATCCAAGCTTCGCTCCCGAGCGATACCTTGAGATGTCTGAACAGTGGAGAGCTCCACCTCTG------CCCACTGAACCTGTTGAGCTTTTCATCGGCATTCTTTCTGCAGCC------------------AGCCATTTTGCTGAGCGTATGGCTGTAAGGAAATCGTGGATGATGTATACA---------------------------------------------------------AGGAAATCATCCAATGTTGTAGCTCGGTTCTTTGTGGCTCTGAATGGAAAGAAGGAGGTTAACGCAGAGCTCAAGAAGGAGGCAGAGTTCTTCCAGGACATTGTCATAGTGCCTTTTATCGATACCTATGACCTCGTTGTGTTGAAGACCGTTGCCATTGCTGAGTATGGGGTGCGCGTCGTCCCTGCAAAGTACGTAATGAAATGCGACGACGACACATTCGTGAGGATCGATTCGGTACTGGAT---------CAAGTGAAGAATGTTGGAAACGATAAAAGCGTT------TACGTAGGGAGTATAAACTAC------TTCCATCGACCACTAAGATCTGGCAAGTGGGCAGTAACGTACGAGGAATGGCCTGAA------GCACTGTATCCGAATTATGCTAATGGACCTGGCTACGTAATTTCATCCGATATTGCTCGCTACATCGTGTCCGAATTCGACAACCAGACGCTTCGGCTGTTTAAGATGGAGGATGTGAGCATGGGCATGTGGGTGGAGAAGTTCAACAGGACGCGGCGGGCGGTGGAGATCCGGCACGACGTGCGGTTCTACCAGTCGGGCTGCTACAACGGCTACTTCACGGCGCACTACCAGTCCCCGCAGCACATGATCTGCCTGTGGCGGAAGCTGCAGTCCGGGAGTGCCCGGTGCTGCAACGTCAGATGACGCATTGCGAGAGAGAGCCTGATTTTGTACTCTTTCTTGATCAAAGAGGAGAGAAACAGATGGTGGTGGACGACGGGTCGGCAGCCCGTAAGCGCAGCTCTTCTGCGATGGACACAGCTGACGACGACCCGTTACGACGGTGGGTTTGCAGGAGGAGGTTGCTCTTCTGGACCTTGTGATGCGATGATTCTTTCATTCTTTTGGTCGGTGGCCCGTTTGAGCTGCTGATTCTGACAGCCCTGGTCGGCGTCCATGGTCGGGGATTCTCTTATGCTGCTGCTGCTGCTACCACCTGTTGATATTTTTAGGTGGTAGATCCAGTACATGAGGCTAAGTAGGGCTCCGGATCATATGGGATCTATCCTTGTGCTTTGCGTCAAACTTCTTTGACCTAGAAATTTTAACTTGGGTGAGTTCGGTTGGTAGGCTGTGCTTGTCTATAAAAAATGATTTTCTGAGTTTGTATTTGTGTTGGCTTATCTTATATACGAACTTGTGCGTGAAAAAAAAAATCAACGTGTCTTCTTTTGTTATGCC------"/>
+                    <sequence id="seq_Zm00008a010410_T01" taxon="Zm00008a010410_T01" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------GACGCCGTCGCGGCG---------------------------------------------------------------GGTGCCCGCGCGTTCTCCGACCTCGAGGCCCTCGAC---------------CCCGCCGCCGTCGCCGCGCCCTCCGGCGAGAGCGACGCGGCCAGGTGCCCGCACTCGATCGCGCTCACCGCGGAGGAGCTCGGCGCGCGGGGC---CGCGTGGTGGAGCTGCCCTGCGGGCTCGCGCTGGGGTCCCACATCACGGTCGCCGCGACGCCCCGGGCGCCGCACGAGGAGCGGAACCCCGCGATCGCGGTGCTCAGGGACGGGGAGCGGCACGCCATGGTGTCT------------------------------CAGTTCATGGTGGAGCTGCAGGGGCTC------------------------------------------------------------------------------------------------------------------------------------------------------------------AGGGCGAACACCTGCTACCGCATGAGCTGGGGCGCCGCGCAGCGCTGCGATGGATGGAGGTCACGCCCGGATGAGGAGACTGTGGATGGGTTGGTCAAGTGCGAGAAGTGGATTAGGGACGATGATGACAGGTTGGAGAAATCGAAGACAACATCA------------------------------------------------------------AAGACGGCATGGCTCTTTGTTCTTACTCTCAGTGCTGGGTTGGAGGGTTACCATGTGAGCGTTGATGGGCGACAT---------------------------------------GTCACTTCGTTTCCTTACCGCACTGGGTTTGTGTTGGAGGACGCTACAGGCCTGTCACTGAATGGGGACCTAGATGTGCATTCAGTGATTGCAGGGTCTTTGCCCACTACACACCCAAGTTTTGCGCCACATAATTATCTGGAGTTTTCTAATGTTTGGCAGGCTCCTCTGCTG------CCTGATGAGCCAGTTGAGATTTTCATTGGCATTCTGTCAGCAGCC------------------AATCATTTTGCTGAACGTATGGGTGTGAGGAAGACATGGATGTCTGCTGTC---------------------------------------------------------CACAAGTCACCAAACATGGTGGCTCGTTTCTTCGTTGCACTGCATGGCAGAATGGAAGTGAATGCGGAGTTGAAGAAGGAAGCTGAATTTTTTCGGGACATTGTTTTTGTGCCCTTCCTGGACAACTATGATCTTGTTGTTATGAAGACTCTTGCAATATGCGAGTATGGGGTTCATGTTGTCTCTGCTAAATATGTAATGAAGTGTGATGATGATACTTTCGTGAGACTTGATTCAGTAGTCACT---------GAAATTAAGAAGGTACCAGGTGGGAGAAGTCTT------TACATGGGGAGTATGAATATA------CAACACAAGCCACTACGCCATGGGAAATGGGCTGTAACCTATGAGGAGTGGCCACAA------GAGGTGTATCCGTTATATGCAAATGGCCCTGGATATGTTATATCATCTGATATTGCTGATTTTATCATGTCAGAATTCATGAAGCAAAAGTTGATGCTCTTCAAAATGGAAGATGTGAGCTTGGGTGTGTGGGTTGAGCAGTTCAATAAGACA---AGACCCGTTGAATACGTTCACAGCGACAAATTTTGTCCAAATGGATGCGTCCCTGACTACTATACTGCTCATTACCAATCGCCAAGGCTAATGCTATGCATGTGGCAGAAGTTACTGGAAGGAAGACCAGACTGTTGCAATGCGAGATAA---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                    <sequence id="seq_Zm00008a010412_T01" taxon="Zm00008a010412_T01" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------GTTGACGGGCAACTCAAGTGTGAGAAATGGATCCGTGACGATGACAGCAAGTCAGAGGAATCAAAGATGAAATGGTGGGTGAAGCGTTTGATTGGCAGGCCTAAGGATGTCCGCATCATTTGGCCATACCCATTCACGGAAGGCAAGCTATTTGTTATGACTTTAACAGCTGGTTTGGAAGGTTACCATGTCAACGTTGATGGGCGGCAT---------------------------------------GTTGCTTCGTTTCCTTACCGCACTGGTTACTCTCTTGAGGATGCAACTGCATTATCCGTGAATGGAGACATCGATATTGAGTCGATTTTTGCTAGTTCTCTACCCAATTCGCATCCAAGCTTCGCTCCCGAGCGATACCTTGAGATGTCTGAACAGTGGAGAGCCCCACCTCTG------CCCACTCAACCTGTTGAGCTTTTCATCGGCATCCTTTCTGCAGCC------------------AGCCATTTTGCTGAGCGTATGGCTGTAAGGAAATCGTGGATGATGTATACA---------------------------------------------------------AGGAAATCATCCAATGTTGTAGCTCGGTTCTTTGTGGCTCTGAATGGAAAGAAGGAGGTTAACGCAGAGCTGAAGAAGGAGGCAGAGTTCTTCCAGGACATTGTCATAGTGCCTTTTATCGATACCTATGACCTCGTTGTGTTGAAGACCGTTGCCATTGCTGAGTATGGGGTGCGCGTCGTCCCTGCAAAGTACGTAATGAAATGCGACGACGACACATTCGTGAGGATCGATTCGGTGCTGGAT---------CAAGTGAAGAATGTTGGAAACGATAAAAGCGTT------TACGTAGGGAGTATAAACTAC------TTCCATCGACCACTAAGATCTGGCAAGTGGGCAGTAACGTACGAGGAATGGCCTGAA------GCACTGTATCCGAATTATGCTAATGGACCTGGCTACGTAATTTCATCCGATATTGCTCGCTACATCGTGTCCGAATTCGACAACCAGACGCTTCGGCTGTTTAAGATGGAGGATGTGAGCATGGGCATGTGGGTGGAGAAGTTCAACAGGACGCGGCGGGCGGTGGAGATCCGGCACGACGTGCGGTTCTACCAGTCGGGCTGCTACAACGGCTACTTCACGGCGCATTACCAGTCCCCGCAGCACATGATCTGCCTGTGGCGGAAGCTGCAGTCCGGGAGTGCCCGGTGCTGCAATGTCAGATGA---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                </data>
+
+
+    
+
+
+    
+
+
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="MCMC" chainLength="10000000">
+    <state id="state" storeEvery="5000">
+        <tree id="Tree.t:Syntenic_Dup_0025" name="stateNode">
+            <taxonset id="TaxonSet.Syntenic_Dup_0025" spec="TaxonSet">
+                <alignment idref="Syntenic_Dup_0025"/>
+            </taxonset>
+        </tree>
+        <parameter id="birthRate.t:Syntenic_Dup_0025" name="stateNode">1.0</parameter>
+        <parameter id="freqParameter.s:Syntenic_Dup_0025" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+        <parameter id="rateAC.s:Syntenic_Dup_0025" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="rateAG.s:Syntenic_Dup_0025" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="rateAT.s:Syntenic_Dup_0025" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="rateCG.s:Syntenic_Dup_0025" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="rateGT.s:Syntenic_Dup_0025" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="rateCT.s:Syntenic_Dup_0025" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="mutationRate.s:Syntenic_Dup_0025" name="stateNode">1.0</parameter>
+        <stateNode id="Indicators.c:Syntenic_Dup_0025" spec="parameter.BooleanParameter" dimension="8">false</stateNode>
+        <parameter id="clockrates.c:Syntenic_Dup_0025" dimension="8" name="stateNode">1.0</parameter>
+        <parameter id="meanClockRate.c:Syntenic_Dup_0025" name="stateNode">1.0</parameter>
+    </state>
+
+    <init id="RandomTree.t:Syntenic_Dup_0025" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:Syntenic_Dup_0025" taxa="@Syntenic_Dup_0025">
+        <populationModel id="ConstantPopulation0.t:Syntenic_Dup_0025" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:Syntenic_Dup_0025" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="YuleModel.t:Syntenic_Dup_0025" spec="beast.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:Syntenic_Dup_0025" tree="@Tree.t:Syntenic_Dup_0025"/>
+            <prior id="RRateChangesPrior.c:Syntenic_Dup_0025" name="distribution">
+                <x id="RRateChanges.c:Syntenic_Dup_0025" spec="util.Sum">
+                    <arg idref="Indicators.c:Syntenic_Dup_0025"/>
+                </x>
+                <distr id="Poisson.0" spec="beast.math.distributions.Poisson">
+                    <parameter id="RealParameter.13" estimate="false" name="lambda">0.6931471805599453</parameter>
+                </distr>
+            </prior>
+            <prior id="YuleBirthRatePrior.t:Syntenic_Dup_0025" name="distribution" x="@birthRate.t:Syntenic_Dup_0025">
+                <Uniform id="Uniform.1" name="distr" upper="Infinity"/>
+            </prior>
+            <prior id="RRatesPrior.c:sSyntenic_Dup_0025" name="distribution" x="@clockrates.c:Syntenic_Dup_0025">
+                <Gamma id="Gamma.0" name="distr">
+                    <parameter id="RealParameter.1" estimate="false" name="alpha">0.05</parameter>
+                    <parameter id="RealParameter.2" estimate="false" name="beta">10.0</parameter>
+                </Gamma>
+            </prior>
+            <prior id="RateACPrior.s:Syntenic_Dup_0025" distr="@Gamma.0" name="distribution" x="@rateAC.s:Syntenic_Dup_0025"/>
+            <prior id="RateAGPrior.s:Syntenic_Dup_0025" name="distribution" x="@rateAG.s:Syntenic_Dup_0025">
+                <Gamma id="Gamma.1" name="distr">
+                    <parameter id="RealParameter.3" estimate="false" name="alpha">0.05</parameter>
+                    <parameter id="RealParameter.4" estimate="false" name="beta">20.0</parameter>
+                </Gamma>
+            </prior>
+            <prior id="RateATPrior.s:Syntenic_Dup_0025" name="distribution" x="@rateAT.s:Syntenic_Dup_0025">
+                <Gamma id="Gamma.2" name="distr">
+                    <parameter id="RealParameter.5" estimate="false" name="alpha">0.05</parameter>
+                    <parameter id="RealParameter.6" estimate="false" name="beta">10.0</parameter>
+                </Gamma>
+            </prior>
+            <prior id="RateCGPrior.s:Syntenic_Dup_0025" name="distribution" x="@rateCG.s:Syntenic_Dup_0025">
+                <Gamma id="Gamma.3" name="distr">
+                    <parameter id="RealParameter.7" estimate="false" name="alpha">0.05</parameter>
+                    <parameter id="RealParameter.8" estimate="false" name="beta">10.0</parameter>
+                </Gamma>
+            </prior>
+            <prior id="RateCTPrior.s:Syntenic_Dup_0025" name="distribution" x="@rateCT.s:Syntenic_Dup_0025">
+                <Gamma id="Gamma.4" name="distr">
+                    <parameter id="RealParameter.9" estimate="false" name="alpha">0.05</parameter>
+                    <parameter id="RealParameter.10" estimate="false" name="beta">20.0</parameter>
+                </Gamma>
+            </prior>
+            <prior id="RateGTPrior.s:Syntenic_Dup_0025" name="distribution" x="@rateGT.s:Syntenic_Dup_0025">
+                <Gamma id="Gamma.5" name="distr">
+                    <parameter id="RealParameter.11" estimate="false" name="alpha">0.05</parameter>
+                    <parameter id="RealParameter.12" estimate="false" name="beta">10.0</parameter>
+                </Gamma>
+            </prior>
+            <distribution id="Maize-Sorghum.prior" spec="beast.math.distributions.MRCAPrior" monophyletic="true" tree="@Tree.t:Syntenic_Dup_0025">
+                <taxonset id="Maize-Sorghum" spec="TaxonSet">
+                    <taxon id="Sobic.002G068800.1" spec="Taxon"/>
+                    <taxon id="Zm00001d007762_T001" spec="Taxon"/>
+                    <taxon id="Zm00001d007764_T001" spec="Taxon"/>
+                    <taxon id="Zm00008a010410_T01" spec="Taxon"/>
+                    <taxon id="Zm00008a010412_T01" spec="Taxon"/>
+                </taxonset>
+                <Normal id="Normal.0" name="distr">
+                    <parameter id="RealParameter.14" estimate="false" name="mean">11.9</parameter>
+                    <parameter id="RealParameter.15" estimate="false" name="sigma">1.0</parameter>
+                </Normal>
+            </distribution>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.Syntenic_Dup_0025" spec="ThreadedTreeLikelihood" data="@Syntenic_Dup_0025" tree="@Tree.t:Syntenic_Dup_0025">
+                <siteModel id="SiteModel.s:Syntenic_Dup_0025" spec="SiteModel" gammaCategoryCount="1" mutationRate="@mutationRate.s:Syntenic_Dup_0025">
+                    <parameter id="gammaShape.s:Syntenic_Dup_0025" estimate="false" name="shape">1.0</parameter>
+                    <parameter id="proportionInvariant.s:Syntenic_Dup_0025" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="gtr.s:Syntenic_Dup_0025" spec="GTR" rateAC="@rateAC.s:Syntenic_Dup_0025" rateAG="@rateAG.s:Syntenic_Dup_0025" rateAT="@rateAT.s:Syntenic_Dup_0025" rateCG="@rateCG.s:Syntenic_Dup_0025" rateCT="@rateCT.s:Syntenic_Dup_0025" rateGT="@rateGT.s:Syntenic_Dup_0025">
+                        <frequencies id="estimatedFreqs.s:Syntenic_Dup_0025" spec="Frequencies" frequencies="@freqParameter.s:Syntenic_Dup_0025"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="RandomLocalClock.c:Syntenic_Dup_0025" spec="beast.evolution.branchratemodel.RandomLocalClockModel" clock.rate="@meanClockRate.c:Syntenic_Dup_0025" indicators="@Indicators.c:Syntenic_Dup_0025" rates="@clockrates.c:Syntenic_Dup_0025" tree="@Tree.t:Syntenic_Dup_0025"/>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="YuleBirthRateScaler.t:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@birthRate.t:Syntenic_Dup_0025" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="YuleModelTreeScaler.t:Syntenic_Dup_0025" spec="ScaleOperator" scaleFactor="0.5" tree="@Tree.t:Syntenic_Dup_0025" weight="3.0"/>
+
+    <operator id="YuleModelTreeRootScaler.t:Syntenic_Dup_0025" spec="ScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:Syntenic_Dup_0025" weight="3.0"/>
+
+    <operator id="YuleModelUniformOperator.t:Syntenic_Dup_0025" spec="Uniform" tree="@Tree.t:Syntenic_Dup_0025" weight="30.0"/>
+
+    <operator id="YuleModelSubtreeSlide.t:Syntenic_Dup_0025" spec="SubtreeSlide" tree="@Tree.t:Syntenic_Dup_0025" weight="15.0"/>
+
+    <operator id="YuleModelNarrow.t:Syntenic_Dup_0025" spec="Exchange" tree="@Tree.t:Syntenic_Dup_0025" weight="15.0"/>
+
+    <operator id="YuleModelWide.t:Syntenic_Dup_0025" spec="Exchange" isNarrow="false" tree="@Tree.t:Syntenic_Dup_0025" weight="3.0"/>
+
+    <operator id="YuleModelWilsonBalding.t:Syntenic_Dup_0025" spec="WilsonBalding" tree="@Tree.t:Syntenic_Dup_0025" weight="3.0"/>
+
+    <operator id="FrequenciesExchanger.s:Syntenic_Dup_0025" spec="DeltaExchangeOperator" delta="0.01" weight="0.1">
+        <parameter idref="freqParameter.s:Syntenic_Dup_0025"/>
+    </operator>
+
+    <operator id="RateACScaler.s:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@rateAC.s:Syntenic_Dup_0025" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="RateAGScaler.s:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@rateAG.s:Syntenic_Dup_0025" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="RateATScaler.s:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@rateAT.s:Syntenic_Dup_0025" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="RateCGScaler.s:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@rateCG.s:Syntenic_Dup_0025" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="RateGTScaler.s:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@rateGT.s:Syntenic_Dup_0025" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="RateCTScaler.s:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@rateCT.s:Syntenic_Dup_0025" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="FixMeanMutationRatesOperator" spec="DeltaExchangeOperator" delta="0.75" weight="2.0">
+        <parameter idref="mutationRate.s:Syntenic_Dup_0025"/>
+        <weightvector id="weightparameter" spec="parameter.IntegerParameter" estimate="false" lower="0" upper="0">3165</weightvector>
+    </operator>
+
+    <operator id="IndicatorsBitFlip.c:Syntenic_Dup_0025" spec="BitFlipOperator" parameter="@Indicators.c:Syntenic_Dup_0025" weight="15.0"/>
+
+    <operator id="ClockRateScaler.c:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@clockrates.c:Syntenic_Dup_0025" scaleFactor="0.5" weight="15.0"/>
+
+    <operator id="randomClockScaler.c:Syntenic_Dup_0025" spec="ScaleOperator" parameter="@meanClockRate.c:Syntenic_Dup_0025" scaleFactor="0.5" weight="1.0"/>
+
+    <operator id="randomClockUpDownOperator.c:Syntenic_Dup_0025" spec="UpDownOperator" scaleFactor="0.75" weight="3.0">
+        <up idref="meanClockRate.c:Syntenic_Dup_0025"/>
+        <down idref="Tree.t:Syntenic_Dup_0025"/>
+    </operator>
+
+    <logger id="tracelog" fileName="Syntenic_Dup_0025.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.Syntenic_Dup_0025"/>
+        <log id="TreeHeight.t:Syntenic_Dup_0025" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:Syntenic_Dup_0025"/>
+        <log idref="YuleModel.t:Syntenic_Dup_0025"/>
+        <log idref="birthRate.t:Syntenic_Dup_0025"/>
+        <log idref="freqParameter.s:Syntenic_Dup_0025"/>
+        <log idref="rateAC.s:Syntenic_Dup_0025"/>
+        <log idref="rateAG.s:Syntenic_Dup_0025"/>
+        <log idref="rateAT.s:Syntenic_Dup_0025"/>
+        <log idref="rateCG.s:Syntenic_Dup_0025"/>
+        <log idref="rateGT.s:Syntenic_Dup_0025"/>
+        <log idref="rateCT.s:Syntenic_Dup_0025"/>
+        <log idref="mutationRate.s:Syntenic_Dup_0025"/>
+        <log idref="Indicators.c:Syntenic_Dup_0025"/>
+        <log idref="clockrates.c:Syntenic_Dup_0025"/>
+        <log idref="RRateChanges.c:Syntenic_Dup_0025"/>
+        <log idref="Maize-Sorghum.prior"/>
+        <log idref="meanClockRate.c:Syntenic_Dup_0025"/>
+    </logger>
+
+    <logger id="screenlog" logEvery="1000">
+        <log idref="posterior"/>
+        <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:Syntenic_Dup_0025" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:Syntenic_Dup_0025" spec="beast.evolution.tree.TreeWithMetaDataLogger" branchratemodel="@RandomLocalClock.c:Syntenic_Dup_0025" tree="@Tree.t:Syntenic_Dup_0025"/>
+    </logger>
+
+</run>
+
+</beast>

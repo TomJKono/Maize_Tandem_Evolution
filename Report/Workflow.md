@@ -84,13 +84,43 @@ also produce alignments of tandem duplicate gene sequences for divergence
 date estimation:
 
 ```bash
-python Syntenic_Tandem_Cluster_Align_withSingles Syn_out/ > Syntenic_Cluster_Assignments.txt
-python Nonsyntenic_Tandem_Cluster_Align_withSingles Nonsyn_out/ > Nonsyntenic_Cluster_Assignments.txt
+python Syntenic_Tandem_Cluster_Align_withSingles.py Syn_out/ > Syntenic_Cluster_Assignments.txt
+python Nonsyntenic_Tandem_Cluster_Align_withSingles.py Nonsyn_out/ > Nonsyntenic_Cluster_Assignments.txt
 ```
 
 Alignments are written in the directory provided as the argument to the above
 Python script.
 
+Next, we wanted to generate a plot of the distribution of tandem duplicates
+relative to other genomic features, such as subgenome assignment, gene density,
+and TE density. To do this, we need to generate files that give the densities
+of these genomic features in windows across the genome:
+
+```bash
+python B73_DNA_TE_Gene_Density.py B73_Genes.gff \
+    B73_DNA_TE.gff \
+    B73_RNA_TE.gff \
+    B73_genome.fa.fai > B73_Genomic_Densities.txt
+```
+
+We also need to make a GFF that has the positions of the tandemly duplicated
+genes:
+
+```bash
+cut -f 2 B73_True_Tandem_Clusters.txt | tr ',' '\n' > B_tandem_genes.txt
+grep -f B_tandem_genes.txt B73_Genes.gff > B_tandem_genes.gff
+```
+Then, plot the data with `Scripts/Plotting/B73_Chr2_Plot.R`. Edit the scipt to
+potint to the syntenic blocks assignments from ABB, the tandem gene GFF, and the
+genomic feature density file. An example for chromosome 2 is shown below:
+
+![Tandem duplications across chromosome 2](B73-PH207_Chr2_Tandem.png)
+
+The top panel shows B73 Chr2, and the bottom panel shows PH207 Chr2. The green
+shading is maize1, and the blue shading is maize2. Purple tick marks are
+tandem duplicate genes. The black line shows genes per Mb, the red line shows
+RNA TEs per Mb, and the orange line shows DNA TEs per MB. Structural annotation
+for the TEs in PH207 is not yet available.
 ## Divergence Date Estimation
  Divergence dates were estimated with 
 ## Evolutionary Hypothesis Tests

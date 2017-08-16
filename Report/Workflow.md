@@ -64,6 +64,15 @@ Based on this plot, putative tandem duplicate genes from SynMap and adjacent
 genes with at least 0.3 adjusted similarity were kept as true tandem duplicates.
 
 ## Tandem Duplicate Summaries
+The first summary of tandem duplicates is a raw count:
+
+| Genotype | Maize1 Clusters | Maize2 Clusters | Nonsyntenic Clusters |
+|----------|-----------------|-----------------|----------------------|
+| B73      | 938             | 420             | 1,297*               |
+| PH207    | 691             | 316             | 1,005*               |
+*: Some clusters overlap syntenic and nonsyntenic genes. This happens when a
+tandem duplicate happens at the edge of a syntenic block, and the cluster
+includes both syntenic and nonsyntenic genes.
 
 ## Divergence Date Estimation
 ## Evolutionary Hypothesis Tests

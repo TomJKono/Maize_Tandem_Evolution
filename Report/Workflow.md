@@ -372,3 +372,35 @@ done
 
 ### CodeML (PAML) Tests
 ## Software Versions and Environment
+Analyses were perfomed on both MacOS X 10.12.6:
+
+```
+uname -a
+Darwin C02SR6DZHF1R 16.7.0 Darwin Kernel Version 16.7.0: Thu Jun 15 17:36:27 PDT 2017; root:xnu-3789.70.16~2/RELEASE_X86_64 x86_64
+```
+
+and GNU/Linux:
+
+```
+uname -a
+Linux ln0006 2.6.32-696.6.3.el6.x86_64 #1 SMP Wed Jul 12 14:17:22 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+The scripting language versions are
+
+- Python 2.7.13
+- R 3.4.1
+
+Software tool versions:
+
+- `analysis`: NA
+- ClustalOmega 1.2.1
+- SAMTools 1.4
+- BEAST/TreeAnnotator 2.4.7
+- Biopython 1.68
+- Orthofinder 1.1.5
+    - BLAST 2.5.0
+    - MCL 14.137
+- ETE Toolkit 3.0.0b36
+- RAxML 8.2.11
+- PAML 4.9e

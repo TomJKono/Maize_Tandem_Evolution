@@ -167,7 +167,7 @@ plot(
     density(m1_shared),
     xlim=c(-2, 15),
     ylim=c(0, 0.35),
-    main="Distribution of Estiamted Tandem Duplicate Ages",
+    main="Distribution of Estimated Tandem Duplicate Ages",
     xlab="Estimated Age (MYA)",
     ylab="Density",
     col="#4daf4a",

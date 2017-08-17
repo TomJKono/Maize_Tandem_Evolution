@@ -205,12 +205,19 @@ program, pacakged with BEAST. Annotation was done on the MSI servers with
 the `Scripts/Job_Scripts/TreeAnnotator.job` script.
 
 The directory of trees was downloaded and parsed locally to obtain distributions
-of estimated duplication times. The `Scrits/Analysis/Syntenic_Tandem_Ages.py`
-and `Scripts/Analysis/Nonsyntenic_Tandem_Ages.py` will parse the annotated
-trees from syntenic duplications and nonsyntenic duplications and print the
-ages:
+of estimated duplication times. Note that trees need to be edited slightly
+before dates can be parsed from them. Specifically, the '&' characters need to
+be removed from the node labels, because these cause a Biopython parse error.
+The `Scrits/Analysis/Syntenic_Tandem_Ages.py` and
+`Scripts/Analysis/Nonsyntenic_Tandem_Ages.py` will parse the annotated trees
+from syntenic duplications and nonsyntenic duplications and print the ages:
 
 ```bash
+cd Syn_Annotated_Trees/
+for i in *_Ann.tree; do sed -i.bak -e 's/&//g' ${i}; done
+cd ../Nonsyn_Annotated_Trees/
+for i in *_Ann.tree; do sed -i.bak -e 's/&//g' ${i}; done
+cd ../
 python Syntenic_Tandem_Ages.py Syn_Annotated_Trees/ > Syntenic_Duplicate_Ages.txt
 python Nonsyntenic_Tandem_Ages.py Nonsyn_Annotated_Trees/ > Nonsyntenic_Duplicate_Ages.txt
 ```

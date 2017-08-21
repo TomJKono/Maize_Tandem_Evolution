@@ -378,6 +378,20 @@ done
 ```
 
 ### CodeML (PAML) Tests
+Prior to running evolutionary tests on tandem duplicates, we want to filter the
+orthogroups. Orthogroups that are very large likely represent big gene families,
+and are likely not representative of tandem duplicates genome-wide. Orthogroups
+that are very small may not have enough evolutionary history sampled to test
+whether or not tandem duplicates have a significantly different substitution
+rate than other genes.
+
+Plotted is a distribution of sizes for orthogroups that contain maize tandem
+duplicate genes:
+
+![Sizes of orthogroups with maize tandems](Tandem_Orthogroup_Sizes.png)
+
+The shaded area contains orthogroups with between 10 and 75 genes. These will
+be used for PAML tests. There are 1,630 orthogroups that will be used.
 
 ## Key Results Files
 

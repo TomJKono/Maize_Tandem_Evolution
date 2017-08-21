@@ -478,6 +478,23 @@ For example:
    \-Aegilops_tauschii|EMT12872, Grass,
 ```
 
+The script for marking the trees is
+`Scripts/Data_Handling/Mark_Trees_For_CodeML.py`. Note that it must be run with
+a Python installation that has `ete3` available. This is usually different from
+the system default Python installation, because ETE recommends installation
+throgh the Conda framework. This script will also generate a CodeML control
+file for running the codon models.
+
+Before the models are run, though, the names in the alignment and the tree
+need to be fixed. PAML cannot read sequence names that are longer than 50
+characters, so we shorten them. The genes from *Triticum aestivum* are the ones
+that tend to go over 50 char, so we use `sed` to shorten them:
+
+```bash
+sed -i.bak -e 's/Triticum_aestivum/T_a/g' [OG_Bkt.fa]
+sed -i.bak -e 's/Triticum_aestivum/T_a/g' [OG_Marked.tree]
+```
+
 #### LRT For Model Comparison
 
 ## Key Results Files

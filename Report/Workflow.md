@@ -393,6 +393,93 @@ duplicate genes:
 The shaded area contains orthogroups with between 10 and 75 genes. These will
 be used for PAML tests. There are 1,630 orthogroups that will be used.
 
+#### Marking Trees
+We take the following marking scheme:
+
+- Maize tandem duplicates and common ancestors of only maize tandem duplicates
+  get the label `#1`
+- Maize non-tandems and common ancestors of only maize non-tandems get the label
+  `#2`
+- Grass genes and their common ancestors are unlabeled (implied `#0`).
+
+For example:
+
+```
+            /-Triticum_aestivum|TRIAE_CS42_2BL_TGACv1_130256_AA0407420.1, Grass,
+           |
+         /,       /-Triticum_aestivum|TRIAE_CS42_2AL_TGACv1_096847_AA0321750.1, Grass,
+        |  |   /,
+        |  |  |   \-Triticum_urartu|TRIUR3_33825-P1, Grass,
+        |   \,
+        |     |   /-Triticum_aestivum|TRIAE_CS42_2DL_TGACv1_160462_AA0550800.1, Grass,
+        |      \,
+        |         \-Aegilops_tauschii|EMT23925, Grass,
+        |
+        |         /-Oryza_sativa|OS04T0561800-00, Grass,
+        |      /,
+        |     |   \-Leersia_perrieri|LPERR04G17650.1, Grass,
+        |     |
+        |     |   /-Oropetium_thomaeum|Oropetium_20150105_01377A, Grass,
+        |     |  |
+        |     |  |         /-Panicum_hallii|Pahal.G01930.1, Grass,
+        |   /,   |      /,
+        |  |  |  |     |  |   /-Panicum_virgatum|Pavir.Ga01028.1.p, Grass,
+      /,   |  |  |     |   \,
+     |  |  |  |  |     |      \-Panicum_virgatum|Pavir.Gb01072.1.p, Grass,
+     |  |  |  |  |     |
+     |  |  |  |  |     |      /-Setaria_italica|Seita.7G198400.1.p, Grass,
+     |  |  |  |  |   /,      |
+     |  |  |   \,   |  |   /,       /-Panicum_virgatum|Pavir.Gb01074.1.p, Grass,
+     |  |  |     |  |  |  |  |   /,
+     |  |  |     |  |  |  |   \,    \-Panicum_virgatum|Pavir.Ga01116.1.p, Grass,
+     |  |  |     |  |  |  |     |
+     |  |  |     |  |  |  |      \-Panicum_hallii|Pahal.G01928.1, Grass,
+     |  |  |     |  |   \,
+     |  |  |     |  |     |      /-Sorghum_bicolor|Sobic.006G178200.1.p, Grass,
+     |  |  |     |  |     |   /,
+     |  |  |     |  |     |  |  |     /-PH207|Zm00008a006552_C01_1, Maize,  #2
+     |  |  |     |  |     |  |   \,  #2
+     |  |  |     |  |     |  |       |     /-B73|Zm00001d002675_T001_1, Maize,  #2
+     |  |  |      \,       \,         \,  #2
+     |  |  |        |        |             \-PH207|Zm00008a006551_C01_1, Maize,  #2
+     |   \,         |        |
+     |     |        |        |     /-PH207|Zm00008a038461_C01_1, Tandem,  #1
+     |     |        |         \,  #1
+   /,      |        |              \-B73|Zm00001d026134_T001_1, Tandem,  #1
+  |  |     |        |
+  |  |     |        |           /-PH207|Zm00008a038460_C01_1, Tandem,  #1
+  |  |     |        |      /,  #1
+  |  |     |        |   /,      \-B73|Zm00001d026133_T001_1, Tandem,  #1
+  |  |     |        |  |  |
+  |  |     |        |  |   \-Sorghum_bicolor|Sobic.006G178300.2.p, Grass,
+  |  |     |        |  |
+  |  |     |         \,       /-Panicum_hallii|Pahal.G01929.1, Grass,
+  |  |     |           |   /,
+  |  |     |           |  |  |   /-Panicum_virgatum|Pavir.Gb01073.1.p, Grass,
+  |  |     |           |  |   \,
+  |  |     |            \,      |   /-Panicum_virgatum|Pavir.Ga01029.1.p, Grass,
+  |  |     |              |      \,
+  |  |     |              |         \-Panicum_virgatum|Pavir.J34810.1.p, Grass,
+-,   |     |              |
+  |  |     |               \-Setaria_italica|Seita.7G198500.1.p, Grass,
+  |  |     |
+  |  |      \-Brachypodium_distachyon|Bradi5g18307.1.p, Grass,
+  |  |
+  |  |   /-Aegilops_tauschii|EMT12874, Grass,
+  |  |  |
+  |   \,       /-Aegilops_tauschii|EMT12873, Grass,
+  |     |   /,
+  |      \,    \-Triticum_aestivum|TRIAE_CS42_2AL_TGACv1_099609_AA0327240.1, Grass,
+  |        |
+  |         \-Triticum_urartu|TRIUR3_10956-P1, Grass,
+  |
+  |--Triticum_urartu|TRIUR3_32933-P1, Grass,
+  |
+   \-Aegilops_tauschii|EMT12872, Grass,
+```
+
+#### LRT For Model Comparison
+
 ## Key Results Files
 
 | Path                                                       | Description                                                                                      |

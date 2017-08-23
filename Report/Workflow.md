@@ -274,6 +274,48 @@ As expected, duplications that are shared between the subgenomes tend to be
 older than duplications that are pricate to a subgenome. Nonsyntenic tandem
 duplicates show a high proportion of recent duplicates.
 
+### GC Content of Tandem Duplicates
+One way to see if gene conversion is having an effect on the estimated dates
+of tandem duplications is to compare the GC content of tandem duplicates that
+are "ancient" and those that are "recent." Gene conversion is biased toward GC
+rich regions. If duplications that look new tend to have high GC content, then
+it is plausible that gene conversion is affecting our estimates of duplication
+dates.
+
+GC content for the longest transcripts of each annotated gene were calculated
+with `Scripts/Analysis/Gene_GC_Content.py`:
+
+```bash
+python Gene_GC_Content.py B73_Longest_Nuc.fasta > B73_Genes_GC_Prop.txt
+python Gene_GC_Content.py PH207_Longest_Nuc.fasta > PH207_Genes_GC_Prop.txt
+```
+
+Then, a table listing genes involved with tandem duplications, the estimated
+duplication age, and the GC content of the genes was generated with
+`Scripts/Analysis/Tandem_Duplicate_GC.py`:
+
+```bash
+python Tandem_Duplicate_GC.py \
+    Results/Dating/Syntenic_Duplicate_Ages.txt \
+    Results/Dating/Nonsyntenic_Duplicate_Ages.txt \
+    B73_Genes_GC_Prop.txt \
+    PH207_Genes_GC_Prop.txt > Tandem_Dates_with_GC.txt
+```
+
+A summary plot of GC contents for B73 genes, PH207 genes, and tandem duplicate
+genes is shown below:
+
+![Tandem duplicate GC contents](All_Genes_GC.png)
+
+Tandem duplicates, particularly syntenic tandem duplicates, have much higher
+GC content than genes genome-wide.
+
+When linking tandem duplicate age and GC content, it does not appear as though
+there is a difference between "ancient" and "recent" duplications:
+
+![Tandem duplicate GC contents and ages](Tandem_GC_Ages.png)
+![Old and new tandem duplicate GC contents](Binary_Age_GC.png)
+
 ## Evolutionary Hypothesis Tests
 We are interested in whether tandem duplicates show different evolutionary rates
 than non-tandem genes in maize. To test this, we compare sequence substitution
@@ -511,6 +553,7 @@ sed -i.bak -e 's/Triticum_aestivum/T_a/g' [OG_Marked.tree]
 | `Results/Filtering/Nonsyntenic_Cluster_Assignments.txt`    | Lists clusters and duplicate genes that are homologous and in nonsyntenic positions              |
 | `Results/Dating/Syntenic_Duplicate_Ages.txt`               | Estimated ages of syntenic tandem duplicates                                                     |
 | `Results/Dating/Nonsyntenic_Duplicate_Ages.txt`            | Estimated ages of nonsyntenic tandem duplicates                                                  |
+| `Results/Dating/Tandem_Dates_with_GC`                      | GC contents of tandem duplicates and their estimated ages                                        |
 | `Results/Orthofinder/Orthogroups_1.csv.gz`                 | All orthologous group relationships identified by Orthofinder                                    |
 | `Results/Orthofinder/Tandem_Orthogroup_Assignments.txt.gz` | Gene-by-gene orthogroup and tandem duplicate status list for each gene in B73 and PH207          |
 | `Results/Orthofinder/Orthogroup_Tandem_Gene_IDs.txt`       | The gene IDs for maize tandem duplicates within each orthogroup                                  |

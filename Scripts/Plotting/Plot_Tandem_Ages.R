@@ -162,25 +162,28 @@ dev.off()
 subg1_priv <- c(b1_priv, p1_priv)
 subg2_priv <- c(b2_priv, p2_priv)
 ns <- c(ns_b_priv, ns_p_priv, ns_shared)
-pdf(file="Tandem_Ages_Clean.pdf", height=6, width=6)
+pdf(file="Tandem_Ages_Clean_Pub.pdf", height=3, width=3)
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1))
 plot(
     density(m1_shared),
     xlim=c(-2, 15),
     ylim=c(0, 0.35),
-    main="Distribution of Estimated Tandem Duplicate Ages",
+    main="",
     xlab="Estimated Age (MYA)",
     ylab="Density",
     col="#4daf4a",
     lwd=2)
 lines(density(m2_shared), col="#377eb8", lwd=2)
-lines(density(subg1_priv), col="#4daf4a", lwd=2, lty=2)
-lines(density(subg2_priv), col="#377eb8", lwd=2, lty=2)
+lines(density(subg1_priv), col="#4daf4a", lwd=2, lty=3)
+lines(density(subg2_priv), col="#377eb8", lwd=2, lty=3)
 lines(density(ns), col="#e41a1c", lwd=2)
 legend(
     "topleft",
     c("Maize 1, Shared", "Maize 2, Shared", "Maize 1, Private", "Maize 2, Private", "Nonsyntenic"),
     col=c("#4daf4a", "#377eb8", "#4daf4a", "#377eb8", "#e41a1c"),
     lwd=2,
-    lty=c(1, 1, 2, 2, 1)
+    lty=c(1, 1, 3, 3, 1),
+    cex=0.7
     )
 dev.off()

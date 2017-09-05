@@ -1,0 +1,11 @@
+Syntenic_Dup_0365
+Syntenic_Dup_0952
+Syntenic_Dup_1021
+Syntenic_Dup_1120
+Syntenic_Dup_1307
+Syntenic_Dup_1336
+Syntenic_Dup_1510
+Syntenic_Dup_1551
+Syntenic_Dup_1571
+Syntenic_Dup_1617
+Syntenic_Dup_1768

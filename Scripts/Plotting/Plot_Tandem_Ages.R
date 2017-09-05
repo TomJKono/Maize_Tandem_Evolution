@@ -164,7 +164,7 @@ subg2_priv <- c(b2_priv, p2_priv)
 ns <- c(ns_b_priv, ns_p_priv, ns_shared)
 pdf(file="Tandem_Ages_Clean_Pub.pdf", height=3, width=3)
 # Set margins. The order is bottom, left, top, right
-par(mar=c(4, 4, 0.1, 0.1))
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, .5))
 plot(
     density(m1_shared),
     xlim=c(-2, 15),
@@ -172,16 +172,16 @@ plot(
     main="",
     xlab="Estimated Age (MYA)",
     ylab="Density",
-    col="#4daf4a",
+    col="black",
     lwd=2)
-lines(density(m2_shared), col="#377eb8", lwd=2)
-lines(density(subg1_priv), col="#4daf4a", lwd=2, lty=3)
-lines(density(subg2_priv), col="#377eb8", lwd=2, lty=3)
-lines(density(ns), col="#e41a1c", lwd=2)
+lines(density(m2_shared), col="darkgrey", lwd=2)
+lines(density(subg1_priv), col="black", lwd=2, lty=3)
+lines(density(subg2_priv), col="darkgrey", lwd=2, lty=3)
+lines(density(ns), col="red", lwd=2)
 legend(
     "topleft",
     c("Maize 1, Shared", "Maize 2, Shared", "Maize 1, Private", "Maize 2, Private", "Nonsyntenic"),
-    col=c("#4daf4a", "#377eb8", "#4daf4a", "#377eb8", "#e41a1c"),
+    col=c("black", "darkgrey", "black", "darkgrey", "red"),
     lwd=2,
     lty=c(1, 1, 3, 3, 1),
     cex=0.7

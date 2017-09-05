@@ -36,41 +36,50 @@ dev.off()
 
 
 # Plot distributions of the GC content for all genes and tandem genes
-pdf(file="All_Genes_GC.pdf", 6, 6)
+pdf(file="All_Genes_GC_Pub.pdf", 3, 3)
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, .5))
 plot(
-    density(b_genome),
-    col="blue",
+    density(c(b_genome, p_genome)),
+    col="grey",
     lwd=2,
-    xlab="Proportion GC in Longest Transcript",
+    xlab="GC Content",
     ylab="Density",
-    main="GC Content Distributions",
+    main="",
     xlim=c(0.2, 0.9),
     ylim=c(0, 6.5))
-lines(density(p_genome), col="red", lwd=2)
 lines(density(c(syn$Gene1_GC, syn$Gene2_GC)), col="black", lwd=2)
-lines(density(c(nonsyn$Gene1_GC, nonsyn$Gene2_GC)), col="grey", lwd=2)
+lines(density(c(nonsyn$Gene1_GC, nonsyn$Gene2_GC)), col="red", lwd=2)
 legend(
     "topleft",
-    c("B73 Genes", "PH207 Genes", "Syntenic Tandems", "Nonsyntenic Tandems"),
-    col=c("blue", "red", "black", "grey"),
-    lwd=2)
+    c("Genome wide", "Syntenic T.", "Nonsyntenic T."),
+    col=c("grey", "black", "red"),
+    lwd=2,
+    cex=0.7)
 dev.off()
 
-# Perhaps it is more informative to look at "old" and "new" tandems instead
+# Perhaps it is more informative to look at "old" and "new" tandems instead.
+# This one will go into the paper.
 old <- tandem[tandem$Age >= 10,]
 new <- tandem[tandem$Age <= 2,]
-pdf(file="Binary_Age_GC.pdf", 6, 6)
+pdf(file="Binary_Age_GC_Pub.pdf", 3, 3)
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, .5))
 plot(
     density(c(old$Gene1_GC, old$Gene2_GC)),
     col="black",
     lwd=2,
-    xlab="Proportion GC in Longest Transcript",
+    xlab="GC Content",
     ylab="Density",
-    main="GC Content Distribuions for Ancient and Recent Tandems")
-lines(density(c(new$Gene1_GC, new$Gene2_GC)), col="red", lwd=2)
+    xlim=c(0.2, 0.9),
+    ylim=c(0, 6.5),
+    main="")
+lines(density(c(new$Gene1_GC, new$Gene2_GC)), col="black", lwd=2, lty=3)
+lines(density(c(b_genome, p_genome)), col="grey", lwd=2)
 legend(
     "topleft",
-    c(">= 10MYA (N=2,107)", "<= 2MYA (N=1,039)"),
-    col=c("black", "red"),
-    lwd=2)
+    c(">= 10MYA", "<= 2MYA", "Genome-wide"),
+    col=c("black", "black", "grey"),
+    lwd=2,
+    lty=c(1, 3, 1),
+    cex=0.7)
 dev.off()

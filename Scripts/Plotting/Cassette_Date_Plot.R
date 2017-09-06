@@ -29,7 +29,7 @@ p_age_range <- p_age_range[is.finite(p_age_range)]
 # Plot them
 pdf(file="Cassette_Ages.pdf", 3, 3)
 # Set margins. The order is bottom, left, top, right
-par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, .5))
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 plot(
     density(b_age_range),
     col="black",

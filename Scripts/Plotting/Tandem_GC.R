@@ -37,7 +37,7 @@ dev.off()
 
 # Plot distributions of the GC content for all genes and tandem genes
 pdf(file="All_Genes_GC_Pub.pdf", 3, 3)
-par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, .5))
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 plot(
     density(c(b_genome, p_genome)),
     col="grey",
@@ -63,7 +63,7 @@ old <- tandem[tandem$Age >= 10,]
 new <- tandem[tandem$Age <= 2,]
 pdf(file="Binary_Age_GC_Pub.pdf", 3, 3)
 # Set margins. The order is bottom, left, top, right
-par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, .5))
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 plot(
     density(c(old$Gene1_GC, old$Gene2_GC)),
     col="black",

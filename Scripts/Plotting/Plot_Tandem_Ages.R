@@ -164,7 +164,7 @@ subg2_priv <- c(b2_priv, p2_priv)
 ns <- c(ns_b_priv, ns_p_priv, ns_shared)
 pdf(file="Tandem_Ages_Clean_Pub.pdf", height=3, width=3)
 # Set margins. The order is bottom, left, top, right
-par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, .5))
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 plot(
     density(m1_shared),
     xlim=c(-2, 15),

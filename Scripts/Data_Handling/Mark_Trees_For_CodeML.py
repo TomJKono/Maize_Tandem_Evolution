@@ -114,14 +114,13 @@ def label_branches(tree, tandem_ids, hyp):
         maize = []
         # This hypothesis marks tandems, maize non-tandems, and other grass
         # genes with different labels.
+        for i in new_tree.get_monophyletic(values=['Maize'], target_attr='cat'):
+            for node in i.traverse():
+                maize.append(node.node_id)
         for i in new_tree.get_monophyletic(values=['Tandem'], target_attr='cat'):
             # For each monophyletic sub-tree, we want to label the branches
             for node in i.traverse():
                 tandem.append(node.node_id)
-        # Same for maize
-        for i in new_tree.get_monophyletic(values=['Maize'], target_attr='cat'):
-            for node in i.traverse():
-                maize.append(node.node_id)
         # Then apply the marks!
         new_tree.mark_tree(tandem + maize, marks=['#1']*len(tandem) + ['#2']*len(maize))
         return new_tree
@@ -179,13 +178,7 @@ def write_ctl(og, hyp, outdir):
     if hyp == 'Null':
         handle.write('model = 0\n')
         handle.write('NSsites = 22\n')
-    elif hyp == 'Ha1':
-        handle.write('model = 3\n')
-        handle.write('NSsites = 2\n')
-    elif hyp == 'Ha2':
-        handle.write('model = 3\n')
-        handle.write('NSsites = 2\n')
-    elif hyp == 'Ha3':
+    else
         handle.write('model = 3\n')
         handle.write('NSsites = 2\n')
     #   icode=0: Standard genetic code
@@ -211,8 +204,8 @@ def write_ctl(og, hyp, outdir):
     #   We do not want ancestral state reconstruction nor ancestral rates
     handle.write('RateAncestor = 0\n')
     #   Set the convergence tolerance
-    handle.write('Small_Diff = 0.5e-6\n')
-    #   Treat gaps as missing
+    handle.write('Small_Diff = 1e-6\n')
+    #   Keep gapping structure - do not remove sites with gaps
     handle.write('cleandata = 0\n')
     #   Do not fix branch lengths
     handle.write('fix_blength = 0\n')

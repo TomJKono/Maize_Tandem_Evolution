@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Filter sites in a nucleotide alignmetn that have missing data greater than
+"""Filter sites in a nucleotide alignment that have missing data greater than
 a supplied proportion. Sites failing the filter are dropped from the alignment.
 Takes two arguments:
     1) Alignment
@@ -62,8 +62,20 @@ def main(aln, prop):
     alignment = AlignIO.read(aln, 'fasta')
     mcols = missing_cols(alignment, fprop)
     flt_aln = filter_columns(alignment, mcols)
-    # Write the filtered alignment to stdout
-    SeqIO.write(flt_aln, sys.stdout, 'fasta')
+    # Write the filtered alignment to stdout, omitting sequences that are all
+    # gapped sites.
+    nogap = []
+    for s in flt_aln:
+        is_gap = [
+            True
+            if base == '-'
+            else False
+            for base in s.seq]
+        if all(is_gap) or len(s.seq) == 0:
+            continue
+        else:
+            nogap.append(s)
+    SeqIO.write(nogap, sys.stdout, 'fasta')
     return
 
 

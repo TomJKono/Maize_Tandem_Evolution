@@ -425,6 +425,19 @@ done
 
 This step is relatively fast.
 
+Then, we filter orthogroup alignments. We remove sites with more than 25%
+missing data, and remove any sequences that are all gaps after site filtering.
+This is implemented in `Scripts/Data_Handling/OG_Site_Filter.py`:
+
+```bash
+cd Backtranslated/
+mkdir ../25gap_FLT/
+for i in *.fa
+do
+    python OG_Site_Filter.py ${i} 0.25 > ../25gap_FLT/${i/.fa/_25Flt.fa}
+done
+```
+
 Finally, we use RAxML to estimate a tree of the sequences in the aligned and
 backtranslated orthogroup. We use the following parameters:
 
@@ -433,10 +446,10 @@ backtranslated orthogroup. We use the following parameters:
 
 ```bash
 mkdir Trees/
-cd Backtranslated/
-for i in *Backtranslated.fa
+cd 25gap_FLT/
+for i in *25FLT.fa
 do
-    raxml -f d -m GTRGAMMAX -n ${i/_Backtranslated.fa/} -s ${i} -p 123 -w /full/path/to/Trees
+    raxml -f d -m GTRGAMMAX -n ${i/_25FLT.fa/} -s ${i} -p 123 -w /full/path/to/Trees
 done
 ```
 

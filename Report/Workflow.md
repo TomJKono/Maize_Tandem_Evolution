@@ -568,7 +568,7 @@ python Scripts/Data_Handling/Compile_PAML_lnL.py PAML_Tests/ > PAML_Results.txt
 | `Results/Filtering/Nonsyntenic_Cluster_Assignments.txt`    | Lists clusters and duplicate genes that are homologous and in nonsyntenic positions              |
 | `Results/Dating/Syntenic_Duplicate_Ages.txt`               | Estimated ages of syntenic tandem duplicates                                                     |
 | `Results/Dating/Nonsyntenic_Duplicate_Ages.txt`            | Estimated ages of nonsyntenic tandem duplicates                                                  |
-| `Results/Dating/Tandem_Dates_with_GC`                      | GC contents of tandem duplicates and their estimated ages                                        |
+| `Results/Dating/Tandem_Dates_with_GC.txt`                  | GC contents of tandem duplicates and their estimated ages                                        |
 | `Results/Orthofinder/Orthogroups_1.csv.gz`                 | All orthologous group relationships identified by Orthofinder                                    |
 | `Results/Orthofinder/Tandem_Orthogroup_Assignments.txt.gz` | Gene-by-gene orthogroup and tandem duplicate status list for each gene in B73 and PH207          |
 | `Results/Orthofinder/Orthogroup_Tandem_Gene_IDs.txt`       | The gene IDs for maize tandem duplicates within each orthogroup                                  |

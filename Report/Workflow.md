@@ -206,15 +206,6 @@ python Scripts/Data_Handling/Generate_Genome_Intervals.py 1000000 \
     > Data/References/B73_1Mb_Windows.bed
 ```
 
-Also, generate a GFF that has the annotations for tandem duplicate genes only:
-
-```bash
-cut -f 2 Results/Filtering/B73_True_Tandem_Clusters.txt \
-    | tr ',' '\n' \
-    | sort -u \
-    > Data/References/B73_True_Tandem_Positions.gff
-```
-
 Generate BED files for the maize1 and maize2 syntenic blocks:
 
 ```bash

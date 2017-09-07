@@ -891,8 +891,10 @@ Software tool versions:
 - BEAST/TreeAnnotator 2.4.7
 - Biopython 1.68
 - Orthofinder 1.1.5
-    - BLAST 2.5.0
-    - MCL 14.137
+    - BLAST 2.6.0
+    - MCL 10.201
+    - MAFFT 7.305
+    - fasttree 2.1.8
 - ETE Toolkit 3.0.0b36
 - RAxML 8.2.9_pthread
 - PAML 4.9e

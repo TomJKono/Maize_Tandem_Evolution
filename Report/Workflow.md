@@ -895,6 +895,8 @@ Software tool versions:
     - MCL 10.201
     - MAFFT 7.305
     - fasttree 2.1.8
+    - fastme 2.1.5
+    - dlcpar 1.0
 - ETE Toolkit 3.0.0b36
 - RAxML 8.2.9_pthread
 - PAML 4.9e

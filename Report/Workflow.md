@@ -514,8 +514,12 @@ GC content for the longest transcripts of each annotated gene were calculated
 with `Scripts/Analysis/Gene_GC_Content.py`:
 
 ```bash
-python Scripts/Analysis/Gene_GC_Content.py B73_Longest_Nuc.fasta > B73_Genes_GC_Prop.txt
-python Scripts/Analysis/Gene_GC_Content.py PH207_Longest_Nuc.fasta > PH207_Genes_GC_Prop.txt
+python Scripts/Analysis/Gene_GC_Content.py \
+    Data/References/B73_Longest_Nuc.fasta \
+    > Data/References/B73_Genes_GC_Prop.txt
+python Scripts/Analysis/Gene_GC_Content.py \
+    Data/References/PH207_Longest_Nuc.fasta \
+    > Data/References/PH207_Genes_GC_Prop.txt
 ```
 
 Then, a table listing genes involved with tandem duplications, the estimated
@@ -526,8 +530,9 @@ duplication age, and the GC content of the genes was generated with
 python Scripts/Analysis/Tandem_Duplicate_GC.py \
     Results/Dating/Syntenic_Duplicate_Ages.txt \
     Results/Dating/Nonsyntenic_Duplicate_Ages.txt \
-    B73_Genes_GC_Prop.txt \
-    PH207_Genes_GC_Prop.txt > Tandem_Dates_with_GC.txt
+    Data/References/B73_Genes_GC_Prop.txt \
+    Data/References/PH207_Genes_GC_Prop.txt \
+    > Results/Dating/Tandem_Dates_with_GC.txt
 ```
 
 A summary plot of GC contents for B73 genes, PH207 genes, and tandem duplicate
@@ -594,11 +599,11 @@ Orthofinder. The `Scripts/Data_Handling/Generate_Orthogroup_Seqs.py` script
 will do this:
 
 ```bash
-mkdir Orthogroup_Seqs/
+mkdir /scratch/Orthogroup_Seqs/
 python Scripts/Data_Handling/Generate_Orthogroup_Seqs.py \
-    Orthogroups.csv.gz \
+    Results/Orthofinder/Orthogroups.csv.gz \
     /path/to/Ortho_Base/ \
-    Orthogroup_Seqs/
+    /scratch/Orthogroup_Seqs/
 ```
 
 Note that this script requires `samtools` to be available, because it uses
@@ -607,11 +612,17 @@ Note that this script requires `samtools` to be available, because it uses
 Then, we align each orthogroup with ClustalOmega:
 
 ```bash
-mkdir Aligned/
-cd Orthogroup_Seqs/
+mkdir /scratch/OG/Aligned
+cd /scratch/Orthogroup_Seqs/
 for i in *.fa
 do
-    clustalo -v -i ${i} -t Protein --full-iter --iter=10 --out ../Aligned/${i/.fa/_Aligned.fa}
+    clustalo \
+        -v \
+        -i ${i} \
+        -t Protein \
+        --full-iter \
+        --iter=10 \
+        --out /scratch/OG/Aligned/${i/.fa/_Aligned.fa}
 done
 ```
 
@@ -622,11 +633,14 @@ nucleotides. The script `Scripts/Data_Handling/Backtranslate_Orthogroup.py`
 will do this:
 
 ```bash
-mkdir Backtranslated/
-cd Aligned/
+mkdir /scratch/OG/Backtranslated
+cd /scratch/OG/Aligned/
 for i in *Aligned.fa
 do
-    python Backtranslate_Orthogroup.py /path/to/Ortho_Nuc ${i} > ../Backtranslated/${i/_Aligned/_Backtranslated}
+    python Scripts/Data_Handling/Backtranslate_Orthogroup.py \
+        /path/to/Ortho_Nuc \
+        ${i} \
+        > /scratch/OG/Backtranslated/${i/_Aligned/_Backtranslated}
 done
 ```
 
@@ -637,11 +651,14 @@ missing data, and remove any sequences that are all gaps after site filtering.
 This is implemented in `Scripts/Data_Handling/OG_Site_Filter.py`:
 
 ```bash
-cd Backtranslated/
-mkdir ../25gap_FLT/
+mkdir /scratch/OG/25gap_FLT
+cd /scratch/OG/Backtranslated
 for i in *.fa
 do
-    python OG_Site_Filter.py ${i} 0.25 > ../25gap_FLT/${i/.fa/_25Flt.fa}
+    python Scripts/Data_Handling/OG_Site_Filter.py \
+    ${i} \
+    0.25 \
+    > /scratch/OG/25gat_FLT/25gap_FLT/${i/.fa/_25Flt.fa}
 done
 ```
 
@@ -652,11 +669,17 @@ backtranslated orthogroup. We use the following parameters:
 - GTR+Gamma nucleotide substitution model (`-m GTRGAMMAX`)
 
 ```bash
-mkdir Trees/
-cd 25gap_FLT/
+mkdir /scratch/OG/Trees/
+cd /scartch/OG/25gap_FLT/
 for i in *25Flt.fa
 do
-    raxml -f d -m GTRGAMMAX -n ${i/_25Flt.fa/} -s ${i} -p 123 -w /full/path/to/Trees
+    raxml \
+        -f d \
+        -m GTRGAMMAX \
+        -n ${i/_25Flt.fa/} \
+        -s ${i} \
+        -p 123 \
+        -w /scratch/OG/Trees
 done
 ```
 

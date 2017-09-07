@@ -63,8 +63,7 @@ image(
     col=heat.colors(12),
     xlab="B73 Cluster Size",
     ylab="PH207 Cluster Size",
-    main="Homologous Syntenic Cluster Sizes",
-    cex.axis=0.8
+    main="Homologous Syntenic Cluster Sizes"
     )
 abline(c(0, 0), 1, lwd=2, col="black")
 dev.off()
@@ -77,8 +76,7 @@ image(
     col=heat.colors(12),
     xlab="B73 Cluster Size",
     ylab="PH207 Cluster Size",
-    main="Homologous Nonsyntenic Cluster Sizes",
-    cex.axis=0.8
+    main="Homologous Nonsyntenic Cluster Sizes"
     )
 abline(c(0, 0), 1, lwd=2, col="black")
 dev.off()

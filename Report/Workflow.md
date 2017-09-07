@@ -39,21 +39,47 @@ For each pair of adjacent genes:
 2. Align them with ClustalOmega, with 10 iterations of refinement.
 3. Back-translate the amino acid alignment into nucleotides.
 4. Calculate the proportion of gaps and pairwise similarity (1 - `ThetaPi`)
-   with `compute` from the `analysis` package. `compute` can interpret shell
-   globbing characters (need to be in single quotes):
-
-    ```bash
-    compute -i '*.fasta' > Genomewide_Stats.txt
-    ```
-
+   with `compute` from the `analysis` package.
 5. Calculate adjusted pairwise similarity as `(1 - ThetaPi) * (nsites_ug/nsites)`
 
 This procedure was performed for both B73 and PH207. We ran it on both all
 adjacent genes genome-wide, and for pairs of genes within SynMap putative
 tandem duplicate clusters.
 
-The alignment is implemented in `Scripts/Analysis/Adjacent_Gene_Similarity.py`,
-and the plotting is in `Scripts/Plotting/Tandem_Adjusted_Similarity.R`.
+The alignment is implemented in `Scripts/Analysis/Adjacent_Gene_Similarity.py`:
+
+```bash
+python Scripts/Analysis/Adjacent_Gene_Similarity.py \
+    Data/References/B73_Genes_Sorted.gff \
+    Data/References/B73_Longest_Nuc.fasta \
+    /scratch/B73_Adjacent
+python Scripts/Analysis/Adjacent_Gene_Similarity.py \
+    Data/References/PH207_Genes_Sorted.gff \
+    Data/References/PH207_Longest_Nuc.fasta \
+    /scratch/PH207_Adjacent
+cd /scratch/B73_Adjacent
+compute -i '*.fasta' > Results/Divergence/B73_Genomewide_Stats.txt
+cd /scratch/PH207_Adjacent
+compute -i '*.fasta' > Results/Divergence/PH207_Genomewide_Stats.txt
+```
+
+Take the same procedure for the tandem duplicates, using
+`Scripts/Analysis/Tandem_Gene_Similarity.py`:
+
+```bash
+python Scripts/Analysis/Tandem_Gene_Similarity.py \
+    Data/B73v4vSb_tandem_duplicates.csv \
+    Data/References/B73_Longest_Nuc.fasta \
+    /scratch/B73_Tandem
+python Scripts/Analysis/Tandem_Gene_Similarity.py \
+    Data/PH207vSb_tandem_duplicates_geneid.csv \
+    /Data/References/PH207_Longest_Nuc.fasta \
+    /scratch/PH207_Tandem
+cd /scratch/B73_Tandem
+compute -i '*.fasta' > Results/Divergence/B73_Tandem_Alignment_Stats.txt
+cd /scratch/PH207_Tandem
+compute -i '*.fasta' > Results/Divergence/PH207_Tandem_Alignment_Stats.txt
+```
 
 A distribution of adjusted pairwise similarity for adjacent B73 genes, adjacent
 PH207 genes, B73 putative tandem genes, and PH207 putative tandem genes is
@@ -69,11 +95,14 @@ The tandem duplicate clusters were generated with the
 
 ```bash
 python Scripts/Analysis/Generate_Tandem_Clusters.py \
-    B73_Tandem_Alignment_Stats.txt \
-    B73_Genomewide_Stats.txt > B73_True_Tandem_Clusters.txt
+    Results/Divergence/B73_Tandem_Alignment_Stats.txt \
+    Results/Divergence/B73_Genomewide_Stats.txt \
+    > Results/Filtering/B73_True_Tandem_Clusters.txt
+python Scripts/Analysis/Generate_Tandem_Clusters.py \
+    Results/Divergence/PH207_Tandem_Alignment_Stats.txt \
+    Results/Divergence/PH207_Genomewide_Stats.txt \
+    > Results/Filtering/PH207_True_Tandem_Clusters.txt
 ```
-
-Run the same for PH207.
 
 ## Tandem Duplicate Summaries
 ### Counts of Tandem Duplicate Clusters
@@ -95,11 +124,11 @@ ABB. The script to classify them is
 alignments of the syntenic and nonsyntenic duplicates:
 
 ```bash
-python Generate_Tandem_Cluster_Alignments.py \
-    Syntenic_Cluster_Assignments.txt \
-    Nonsyntenic_Cluster_Assignments.txt \
-    Syntenic_Dups/ \
-    Nonsyntenic_Dups/
+python Scripts/Analysis/Generate_Tandem_Cluster_Alignments.py \
+    Results/Filtering/Syntenic_Cluster_Assignments.txt \
+    Results/Filtering/Nonsyntenic_Cluster_Assignments.txt \
+    /scratch/Syntenic_Dups/ \
+    /scratch/Nonsyntenic_Dups/
 ```
 
 The alignments are back-translated alignments of the amino acid sequencs from
@@ -118,25 +147,30 @@ of these genomic features in windows across the genome:
 
 ```bash
 awk '$3 == "LINE_element" || $3 == "LTR_retrotransposon" || $3 == "solo_LTR" || $3 == "SINE_element" {print}' \
-    B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
-    > B73_RNA_TEs.gff
+    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > Data/References/B73_RNA_TEs.gff
 awk '$3 == "helitron" || $3 == "terminal_inverted_repeat_element" {print}' \
-    B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
-    > B73_DNA_TEs.gff
-python B73_DNA_TE_Gene_Density.py \
-    B73_Genes.gff \
-    B73_DNA_TEs.gff \
-    B73_RNA_TEs.gff \
-    B73_genome.fa.fai > B73_Genomic_Densities.txt
+    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > Data/References/B73_DNA_TEs.gff
+python Scripts/Analysis/B73_DNA_TE_Gene_Density.py \
+    Data/References/B73_Genes_Sorted.gff \
+    Data/References/B73_DNA_TEs.gff \
+    Data/References/B73_RNA_TEs.gff \
+    Data/References/B73_genome.fa.fai \
+    > Data/B73_GeneDensity_TEDensity.txt
 ```
 
 We also need to make a GFF that has the positions of the tandemly duplicated
 genes:
 
 ```bash
-cut -f 2 B73_True_Tandem_Clusters.txt | tr ',' '\n' > B_tandem_genes.txt
-grep -f B_tandem_genes.txt B73_Genes.gff > B_tandem_genes.gff
+cut -f 2 Results/Filtering/B73_True_Tandem_Clusters.txt \
+    | tr ',' '\n' \
+    > /scratch/B_tandem_genes.txt
+grep -f /scratch/B_tandem_genes.txt Data/Results/B73_Genes_Sorted.gff \
+    > Data/References/B73_True_Tandem_Positions.gff
 ```
+
 Then, plot the data with `Scripts/Plotting/B73_Chr2_Plot.R`. Edit the scipt to
 potint to the syntenic blocks assignments from ABB, the tandem gene GFF, and the
 genomic feature density file. An example for chromosome 2 is shown below:

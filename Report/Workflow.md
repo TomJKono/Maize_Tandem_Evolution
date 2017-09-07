@@ -447,9 +447,9 @@ backtranslated orthogroup. We use the following parameters:
 ```bash
 mkdir Trees/
 cd 25gap_FLT/
-for i in *25FLT.fa
+for i in *25Flt.fa
 do
-    raxml -f d -m GTRGAMMAX -n ${i/_25FLT.fa/} -s ${i} -p 123 -w /full/path/to/Trees
+    raxml -f d -m GTRGAMMAX -n ${i/_25Flt.fa/} -s ${i} -p 123 -w /full/path/to/Trees
 done
 ```
 

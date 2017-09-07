@@ -238,13 +238,13 @@ python Scripts/Data_Handling/Make_Tandem_Location_Table.py \
 
 It looks like maize subgenome2 has significantly fewer tandem duplicates than
 maize subgenome1 or nonsyntenic regions. As expected, tandem duplicate density
-is most strongly associated with gene density:
+is most strongly associated with gene density. The output from model fitting in
+R is shown below.
 
-```R
-> dat <- read.table("Results/Tandem_Locations/Tandem_Location_Summary.txt", header=TRUE)
-> mod1 <- glm(dat$Prop_Tandem ~ dat$Prop_Genes + dat$Prop_RNATE + dat$Prop_DNATE + dat$Subgenome)
-> mod2 <- glm(dat$Prop_Tandem ~ dat$Prop_Genes*dat$Subgenome + dat$Prop_RNATE + dat$Prop_DNATE)
-> anova(mod1, mod2)
+There is no evidence for a significant effect of an interaction effect of
+gene density and subgenome:
+
+```
 Analysis of Deviance Table
 
 Model 1: dat$Prop_Tandem ~ dat$Prop_Genes + dat$Prop_RNATE + dat$Prop_DNATE +
@@ -254,8 +254,11 @@ Model 2: dat$Prop_Tandem ~ dat$Prop_Genes * dat$Subgenome + dat$Prop_RNATE +
   Resid. Df Resid. Dev Df   Deviance
 1      2105    0.18279
 2      2103    0.18258  2 0.00021061
-> summary(mod1)
+```
 
+Summary of model with only main effects:
+
+```
 Call:
 glm(formula = dat$Prop_Tandem ~ dat$Prop_Genes + dat$Prop_RNATE +
     dat$Prop_DNATE + dat$Subgenome)
@@ -266,14 +269,12 @@ Deviance Residuals:
 
 Coefficients:
                            Estimate Std. Error t value Pr(>|t|)
-(Intercept)              -0.0051275  0.0022762  -2.253 0.024384 *
-dat$Prop_Genes            0.0733802  0.0051058  14.372  < 2e-16 ***
-dat$Prop_RNATE            0.0064295  0.0030330   2.120 0.034134 *
-dat$Prop_DNATE            0.0097906  0.0045333   2.160 0.030909 *
-dat$SubgenomeMaize2      -0.0017345  0.0004468  -3.882 0.000107 ***
+(Intercept)              -0.0051275  0.0022762  -2.253 0.024384
+dat$Prop_Genes            0.0733802  0.0051058  14.372  < 2e-16
+dat$Prop_RNATE            0.0064295  0.0030330   2.120 0.034134
+dat$Prop_DNATE            0.0097906  0.0045333   2.160 0.030909
+dat$SubgenomeMaize2      -0.0017345  0.0004468  -3.882 0.000107
 dat$SubgenomeNonsyntenic -0.0007172  0.0006776  -1.058 0.289978
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for gaussian family taken to be 8.683701e-05)
 
@@ -282,9 +283,11 @@ Residual deviance: 0.18279  on 2105  degrees of freedom
 AIC: -13742
 
 Number of Fisher Scoring iterations: 2
+```
 
-> summary(mod2)
+Summary of model with an interaction between subgenome and gene density:
 
+```
 Call:
 glm(formula = dat$Prop_Tandem ~ dat$Prop_Genes * dat$Subgenome +
     dat$Prop_RNATE + dat$Prop_DNATE)
@@ -303,19 +306,6 @@ dat$Prop_RNATE                           0.0064808  0.0030329   2.137   0.0327
 dat$Prop_DNATE                           0.0097215  0.0045359   2.143   0.0322
 dat$Prop_Genes:dat$SubgenomeMaize2      -0.0132485  0.0092422  -1.433   0.1519
 dat$Prop_Genes:dat$SubgenomeNonsyntenic -0.0167071  0.0188962  -0.884   0.3767
-
-(Intercept)                             *
-dat$Prop_Genes                          ***
-dat$SubgenomeMaize2
-dat$SubgenomeNonsyntenic
-dat$Prop_RNATE                          *
-dat$Prop_DNATE                          *
-dat$Prop_Genes:dat$SubgenomeMaize2
-dat$Prop_Genes:dat$SubgenomeNonsyntenic
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for gaussian family taken to be 8.681945e-05)
 
     Null deviance: 0.20807  on 2110  degrees of freedom
 Residual deviance: 0.18258  on 2103  degrees of freedom

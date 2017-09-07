@@ -117,10 +117,16 @@ and TE density. To do this, we need to generate files that give the densities
 of these genomic features in windows across the genome:
 
 ```bash
+awk '$3 == "LINE_element" || $3 == "LTR_retrotransposon" || $3 == "solo_LTR" || $3 == "SINE_element" {print}' \
+    B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > B73_RNA_TEs.gff
+awk '$3 == "helitron" || $3 == "terminal_inverted_repeat_element" {print}' \
+    B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > B73_DNA_TEs.gff
 python B73_DNA_TE_Gene_Density.py \
     B73_Genes.gff \
-    B73_DNA_TE.gff \
-    B73_RNA_TE.gff \
+    B73_DNA_TEs.gff \
+    B73_RNA_TEs.gff \
     B73_genome.fa.fai > B73_Genomic_Densities.txt
 ```
 
@@ -143,10 +149,180 @@ tandem duplicate genes. The black line shows genes per Mb, the red line shows
 RNA TEs per Mb, and the orange line shows DNA TEs per MB. Structural annotation
 for the TEs in PH207 is not yet available.
 
+### Association of Tandem Duplicates With Genomic Features
 It looks like tandem duplications occur where there are genes. That is, it does
 not seem like tandem duplications are more common in one subgenome than the
 other, nor do they enriched outside of syntenic blocks or around any broad class
 of transposable elements.
+
+To test this, we make a data table that has the following values for 1Mb windows
+across the B73v4 genome:
+
+- Proportion of bases in genes
+- Proportion of bases in tandem duplicates
+- Proportion of bases in RNA TEs
+- Proportion of bases in DNA TEs
+- Majority subgenome assignment
+
+`Scripts/Data_Handling/Generate_Genome_Intervals.py` will generate a BED file
+with non-overlapping windows of a specified size:
+
+```bash
+python Scripts/Data_Handling/Generate_Genome_Intervals.py 1000000 \
+    > Data/References/B73_1Mb_Windows.bed
+```
+
+Also, generate a GFF that has the annotations for tandem duplicate genes only:
+
+```bash
+cut -f 2 Results/Filtering/B73_True_Tandem_Clusters.txt \
+    | tr ',' '\n' \
+    | sort -u \
+    > Data/References/B73_True_Tandem_Positions.gff
+```
+
+Generate BED files for the maize1 and maize2 syntenic blocks:
+
+```bash
+grep 'maize1' Data/ABB_Synteny/b73-syntenic-blocks-merged.txt \
+    | cut -f 1-3 \
+    > Data/ABB_Synteny/B73_Maize1.bed
+grep 'maize2' Data/ABB_Synteny/b73-syntenic-blocks-merged.txt \
+    | cut -f 1-3 \
+    > Data/ABB_Synteny/B73_Maize2.bed
+```
+
+`bedtools` will calculate the fraction of interval overlap. Run it on all the
+intervals files:
+
+```bash
+bedtools coverage \
+    -a Data/References/B73_1Mb_Windows.bed \
+    -b Data/References/B73_Genes_Sorted.gff \
+    > Results/Tandem_Locations/Prop_Coding.txt
+bedtools coverage \
+    -a Data/References/B73_1Mb_Windows.bed \
+    -b Data/References/B73_True_Tandem_Positions.gff \
+    > Results/Tandem_Locations/Prop_Tandem.txt
+bedtools coverage \
+    -a Data/References/B73_1Mb_Windows.bed \
+    -b Data/References/B73_RNA_TEs.gff \
+    > Results/Tandem_Locations/Prop_RNA.txt
+bedtools coverage \
+    -a Data/References/B73_1Mb_Windows.bed \
+    -b Data/References/B73_DNA_TEs.gff \
+    > Results/Tandem_Locations/Prop_DNA.txt
+bedtools coverage \
+    -a Data/References/B73_1Mb_Windows.bed \
+    -b Data/ABB_Synteny/B73_Maize1.bed \
+    > Results/Tandem_Locations/Prop_M1.txt
+bedtools coverage \
+    -a Data/References/B73_1Mb_Windows.bed \
+    -b Data/ABB_Synteny/B73_Maize2.bed \
+    > Results/Tandem_Locations/Prop_M2.txt
+```
+
+`Scripts/Data_Handling/Make_Tandem_Location_Table.py` will compile the overlap
+files and produce a table that can be analyzed with linear models:
+
+```bash
+python Scripts/Data_Handling/Make_Tandem_Location_Table.py \
+    Results/Tandem_Locations/Prop_Coding.txt \
+    Results/Tandem_Locations/Prop_Tandem.txt \
+    Results/Tandem_Locations/Prop_RNA.txt \
+    Results/Tandem_Locations/Prop_DNA.txt \
+    Results/Tandem_Locations/Prop_M1.txt \
+    Results/Tandem_Locations/Prop_M2.txt \
+    > Results/Tandem_Locations/Tandem_Location_Summary.txt
+```
+
+It looks like maize subgenome2 has significantly fewer tandem duplicates than
+maize subgenome1 or nonsyntenic regions. As expected, tandem duplicate density
+is most strongly associated with gene density:
+
+```R
+> dat <- read.table("Results/Tandem_Locations/Tandem_Location_Summary.txt", header=TRUE)
+> mod1 <- glm(dat$Prop_Tandem ~ dat$Prop_Genes + dat$Prop_RNATE + dat$Prop_DNATE + dat$Subgenome)
+> mod2 <- glm(dat$Prop_Tandem ~ dat$Prop_Genes*dat$Subgenome + dat$Prop_RNATE + dat$Prop_DNATE)
+> anova(mod1, mod2)
+Analysis of Deviance Table
+
+Model 1: dat$Prop_Tandem ~ dat$Prop_Genes + dat$Prop_RNATE + dat$Prop_DNATE +
+    dat$Subgenome
+Model 2: dat$Prop_Tandem ~ dat$Prop_Genes * dat$Subgenome + dat$Prop_RNATE +
+    dat$Prop_DNATE
+  Resid. Df Resid. Dev Df   Deviance
+1      2105    0.18279
+2      2103    0.18258  2 0.00021061
+> summary(mod1)
+
+Call:
+glm(formula = dat$Prop_Tandem ~ dat$Prop_Genes + dat$Prop_RNATE +
+    dat$Prop_DNATE + dat$Subgenome)
+
+Deviance Residuals:
+      Min         1Q     Median         3Q        Max
+-0.015198  -0.005041  -0.002360   0.001791   0.094179
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)
+(Intercept)              -0.0051275  0.0022762  -2.253 0.024384 *
+dat$Prop_Genes            0.0733802  0.0051058  14.372  < 2e-16 ***
+dat$Prop_RNATE            0.0064295  0.0030330   2.120 0.034134 *
+dat$Prop_DNATE            0.0097906  0.0045333   2.160 0.030909 *
+dat$SubgenomeMaize2      -0.0017345  0.0004468  -3.882 0.000107 ***
+dat$SubgenomeNonsyntenic -0.0007172  0.0006776  -1.058 0.289978
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for gaussian family taken to be 8.683701e-05)
+
+    Null deviance: 0.20807  on 2110  degrees of freedom
+Residual deviance: 0.18279  on 2105  degrees of freedom
+AIC: -13742
+
+Number of Fisher Scoring iterations: 2
+
+> summary(mod2)
+
+Call:
+glm(formula = dat$Prop_Tandem ~ dat$Prop_Genes * dat$Subgenome +
+    dat$Prop_RNATE + dat$Prop_DNATE)
+
+Deviance Residuals:
+      Min         1Q     Median         3Q        Max
+-0.016006  -0.004997  -0.002385   0.001864   0.093700
+
+Coefficients:
+                                          Estimate Std. Error t value Pr(>|t|)
+(Intercept)                             -0.0056322  0.0022989  -2.450   0.0144
+dat$Prop_Genes                           0.0795582  0.0064818  12.274   <2e-16
+dat$SubgenomeMaize2                     -0.0006711  0.0008676  -0.774   0.4393
+dat$SubgenomeNonsyntenic                 0.0002263  0.0011280   0.201   0.8410
+dat$Prop_RNATE                           0.0064808  0.0030329   2.137   0.0327
+dat$Prop_DNATE                           0.0097215  0.0045359   2.143   0.0322
+dat$Prop_Genes:dat$SubgenomeMaize2      -0.0132485  0.0092422  -1.433   0.1519
+dat$Prop_Genes:dat$SubgenomeNonsyntenic -0.0167071  0.0188962  -0.884   0.3767
+
+(Intercept)                             *
+dat$Prop_Genes                          ***
+dat$SubgenomeMaize2
+dat$SubgenomeNonsyntenic
+dat$Prop_RNATE                          *
+dat$Prop_DNATE                          *
+dat$Prop_Genes:dat$SubgenomeMaize2
+dat$Prop_Genes:dat$SubgenomeNonsyntenic
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for gaussian family taken to be 8.681945e-05)
+
+    Null deviance: 0.20807  on 2110  degrees of freedom
+Residual deviance: 0.18258  on 2103  degrees of freedom
+AIC: -13741
+
+Number of Fisher Scoring iterations: 2
+```
 
 ### Tandem Duplicate Homology
 The next summary we want to make relates to the homology of tandem duplicate
@@ -172,26 +348,6 @@ homologous cluster sizes is shown below:
 There is substantial off-diagonal heat, but it still seems like most of the
 time, when a gene is in a tandem duplicate cluster in one genotype, it is in a
 cluster of similar size in the other genotype.
-
-### Association of Tandem Duplicates With Genomic Features
-We want to ask if genomic features such as subgenome assignment or TE density
-explain variation for tandem duplicate density. To do this, we fit several
-linear models. Note that this can only be done for B73 for now.
-
-Make a data table that will be analyzed with linear models. We take the genome
-and break it into 1Mb non-overlapping windows. For each window, get the number
-of annotated genes, number of RNA TEs, number of DNA TEs, and the majority
-subgenome assignment. This is implemented in 
-`Scripts/Data_Handling/Make_Tandem_Location_Table.py`
-
-```bash
-python Scripts/Data_Handling/Make_Tandem_Location_Table.py \
-    Results/Filtering/B73_True_Tandem_Clusters.txt \
-    Data/References/B73_Genes_Sorted.gff \
-    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
-    Data/ABB_Synteny/b73-syntenic-blocks-merged.txt \
-    > Results/Filtering/Tandem_Genomic_Features.txt
-```
 
 ## Divergence Date Estimation
 Divergence dates were estimated with BEAST. We used the alignments generated by

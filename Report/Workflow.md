@@ -683,6 +683,8 @@ do
 done
 ```
 
+Note that RAxML requires a full absolute path to the `-w` argument.
+
 ### CodeML (PAML) Tests
 Prior to running evolutionary tests on tandem duplicates, we want to filter the
 orthogroups. Orthogroups that are very large likely represent big gene families,

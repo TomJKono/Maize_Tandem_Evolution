@@ -587,6 +587,36 @@ nucleotide files are saved in `Ortho_Nuc`.
 Orthologue searching was run on MSI, and the job file is given in
 `Scripts/Jobs/Orthofinder.job`.
 
+#### Orthofinder Setup
+Orthofinder has several dependencies. `mcl`, `ncbi_blast+`, `mafft`, and
+`fasttree` are available as modules on MSI. `fastme` and `dlcpar` must be
+installed locally.
+
+`fastme` can be installed with the standard `./configure; make` procedure. Be
+sure that the `fastme` binary is in your `$PATH`.
+
+`dlcpar` is a Python library, so it must be installed slightly differently. It
+uses the `setup.py` method. Download, and unzip it. `cd` into the directory,
+then run:
+
+```bash
+python setup.py install --prefix=${HOME}/.local/
+```
+
+It will install Python modules into a user-writeable location that is part of
+the default Python module search path.
+
+With `fastme` in `$PATH` and `dlcpar` installed into the local Python search
+path, you can add these lines to job scripts that run Orthofinder on MSI:
+
+```bash
+module load python-epd/1.5.2
+module load mcl/10.201
+module load ncbi_blast+/2.6.0
+module load mafft/7.305
+module load fasttree/2.1.8
+```
+
 ### Generating Trees
 The next step in generating the input files is to generate nucleotide sequence
 alignments and phylogenetic trees that relate the sequences in each orthologous

@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -l mem=48gb,nodes=1:ppn=16,walltime=6:00:00
+#PBS -A hirschc1
+#PBS -m abe
+#PBS -M konox006@umn.edu
+#PBS -q lab
+
+# Load modules
+module load java/jdk1.8.0_45
+module load beagle/2.1.2
+module load parallel
+
+# Set the path to the treeannotator executable. We are using v. 2.4.7.
+T_ANN="/panfs/roc/groups/14/hirschc1/konox006/Software/beast/bin/treeannotator"
+
+# Set the trees directory
+TREES_DIR="/panfs/roc/scratch/tk_maize/Tandem/Dating/Syn_Trees"
+
+cd ${TREES_DIR}
+for x in *.trees
+do
+    outfile=${x/.trees/_Ann.tree}
+    echo "${T_ANN} -heights keep -b 10 -limit 0.5 -lowMem ${x} ${outfile}"
+    done | parallel

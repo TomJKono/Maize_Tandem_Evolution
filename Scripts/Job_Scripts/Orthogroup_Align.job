@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -l mem=22gb,nodes=1:ppn=16,walltime=24:00:00 
+#PBS -m abe 
+#PBS -M konox006@umn.edu 
+#PBS -q lab
+
+# load modules
+module load clustalo
+module load parallel
+
+# set paths
+SEQDIR="/panfs/roc/scratch/tk_maize/Tandem/Orthofinder/CDS_Seq_List"
+TANDEM_FILE="/panfs/roc/scratch/tk_maize/Tandem/Orthofinder/Orthogroup_Tandem_Gene_IDs.txt"
+OUTDIR="/panfs/roc/scratch/tk_maize/Tandem/Orthofinder/Alignments"
+
+mkdir -p ${OUTDIR}
+
+# Align the orthogroups that have maize tandems in them
+#for i in $(cut -f 1 ${TANDEM_FILE} | tac)
+for i in OG0000001 OG0000002
+do
+   echo "clustalo -v -i ${SEQDIR}/${i}.fa -t Protein --full-iter --iter=10 --threads=8 --out ${OUTDIR}/${i}_Aligned.fa"
+done | parallel

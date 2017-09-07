@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -l mem=22gb,nodes=1:ppn=16,walltime=24:00:00 
+#PBS -m abe 
+#PBS -M konox006@umn.edu 
+#PBS -q lab
+
+# load modules
+module load clustalo
+module load python-epd
+
+# set paths
+OUTPUT_DIR="/panfs/roc/scratch/tk_maize/Tandem/B73_Genome/${PBS_ARRAYID}/"
+ALN_SCRIPT="/panfs/roc/groups/14/hirschc1/konox006/Projects/Maize_Tandem_Evolution/Scripts/Analysis/All_Gene_Similarity.py"
+GENE_LIST="/panfs/roc/groups/14/hirschc1/konox006/Projects/Maize_Tandem_Evolution/Data/B73_Genes_${PBS_ARRAYID}.txt"
+TX_SEQS="/panfs/roc/groups/14/hirschc1/konox006/Projects/Maize_Tandem_Evolution/Data/B73_Longest.fasta"
+
+# Run the script!
+python ${ALN_SCRIPT} ${GENE_LIST} ${TX_SEQS} ${OUTPUT_DIR}

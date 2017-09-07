@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -l mem=144gb,nodes=1:ppn=24,walltime=60:00:00
+#PBS -A hirschc1
+#PBS -m abe
+#PBS -M konox006@umn.edu
+#PBS -q mesabi
+
+# Load modules
+module load parallel
+
+# Set PATH so that we can find the codeml executable
+export PATH=${PATH}:/home/hirschc1/konox006/Software/paml4.9e/bin
+
+cd /panfs/roc/scratch/tk_maize/Tandem
+parallel < PAML_Cmds.txt

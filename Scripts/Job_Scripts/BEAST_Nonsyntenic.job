@@ -1,0 +1,22 @@
+#!/bin/bash
+#PBS -l mem=144gb,nodes=1:ppn=24,walltime=6:00:00
+#PBS -A hirschc1
+#PBS -m abe
+#PBS -M konox006@umn.edu
+#PBS -q mesabi
+
+# Load modules
+module load java/jdk1.8.0_45
+module load beagle/2.1.2
+module load parallel
+
+# Set the path to the BEAST executable. We are using version 2.4.7
+BEAST="/panfs/roc/groups/14/hirschc1/konox006/Software/beast/bin/beast"
+
+# Set some other directories
+XML_DIR="/panfs/roc/scratch/tk_maize/Tandem/Dating/Nonsyntenic_BEAST_XML"
+
+cd ${XML_DIR}
+for x in *.xml
+    do echo "${BEAST} -beagle -threads 1 ${x}"
+    done | parallel

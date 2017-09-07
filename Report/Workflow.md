@@ -796,7 +796,9 @@ these files, and compare the model fit with a series of likelihood ratio tests.
 Use `Scripts/Data_Handling/Compile_PAML_lnL.py` to do this:
 
 ```
-python Scripts/Data_Handling/Compile_PAML_lnL.py PAML_Tests/ > PAML_Results.txt
+python Scripts/Data_Handling/Compile_PAML_lnL.py \
+    /path/to/PAML_Tests/ \
+    > Results/Orthofinder/PAML_Results.txt
 ```
 
 ## Key Results Files

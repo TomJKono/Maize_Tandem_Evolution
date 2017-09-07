@@ -601,7 +601,7 @@ will do this:
 ```bash
 mkdir /scratch/Orthogroup_Seqs/
 python Scripts/Data_Handling/Generate_Orthogroup_Seqs.py \
-    Results/Orthofinder/Orthogroups.csv.gz \
+    Results/Orthofinder/Orthogroups_1.csv.gz \
     /path/to/Ortho_Base/ \
     /scratch/Orthogroup_Seqs/
 ```
@@ -710,6 +710,18 @@ generally.
 We further filter the list of orthogroups to analyze to those that contain
 duplications that are private to B73 maize1, B73 maize2, PH207 maize1, or PH207
 maize2. The tandem duplications must not be "split" across multiple orthogroups.
+`Scripts/Data_Handling/Select_PAML_Tandems.py` does the filtering:
+
+```bash
+python Scripts/Data_Handling/Select_PAML_Tandems.py \
+    Results/Filtering/Syntenic_Cluster_Assignments.txt \
+    Results/Orthofinder/Tandem_Orthogroup_Assignments.txt \
+    > Results/Orthofinder/PAML_Private_Dups.txt
+cut -f 2 Results/Orthofinder/PAML_Private_Dups.txt \
+    > Results/Orthofinder/Selected_OGs.txt
+grep -f Results/Orthofinder/Selected_OGs.txt > Selected_OGs_TandemIDs.txt
+```
+
 A total of 123 orthogroups match these criteria.
 
 Each orthogroup has a total of four evolutionary models appled to it. They are
@@ -817,8 +829,9 @@ python Scripts/Data_Handling/Compile_PAML_lnL.py \
 | `Results/Dating/Nonsyntenic_Duplicate_Ages.txt`            | Estimated ages of nonsyntenic tandem duplicates                                                  |
 | `Results/Dating/Tandem_Dates_with_GC.txt`                  | GC contents of tandem duplicates and their estimated ages                                        |
 | `Results/Orthofinder/Orthogroups_1.csv.gz`                 | All orthologous group relationships identified by Orthofinder                                    |
-| `Results/Orthofinder/Tandem_Orthogroup_Assignments.txt.gz` | Gene-by-gene orthogroup and tandem duplicate status list for each gene in B73 and PH207          |
+| `Results/Orthofinder/Tandem_Orthogroup_Assignments.txt`    | Gene-by-gene orthogroup and tandem duplicate status list for each gene in B73 and PH207          |
 | `Results/Orthofinder/Orthogroup_Tandem_Gene_IDs.txt`       | The gene IDs for maize tandem duplicates within each orthogroup                                  |
+| `Results/Orthofinder/Selected_OGs_TandemIDs.txt`           | Orthogroups that pass filtering critera for analysis with PAML. Private dups to B1, B2, P1, P2   |
 
 ## Software Versions and Environment
 Analyses were perfomed on both MacOS X 10.12.6:
@@ -851,5 +864,5 @@ Software tool versions:
     - BLAST 2.5.0
     - MCL 14.137
 - ETE Toolkit 3.0.0b36
-- RAxML 8.2.11
+- RAxML 8.2.9_pthread
 - PAML 4.9e

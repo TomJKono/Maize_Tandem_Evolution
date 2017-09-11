@@ -178,7 +178,7 @@ def write_ctl(og, hyp, outdir):
     if hyp == 'Null':
         handle.write('model = 0\n')
         handle.write('NSsites = 22\n')
-    else
+    else:
         handle.write('model = 3\n')
         handle.write('NSsites = 2\n')
     #   icode=0: Standard genetic code

@@ -201,7 +201,7 @@ python Scripts/Analysis/Count_Repr_Exons.py \
 When searching the full coding sequence of the representative transcript against
 the sequences of the B73 TE annotation, no tandem duplicate genes show any
 sequence similarity to known TEs. The searches were performed with BLASTN,
-requiring at least 50% coverage and 75% identity.
+requiring at least 50% coverage, 75% identity, and an E-value of 1e-10 or less.
 
 Tandem duplicate genes, however, do have fewer exons than genome-wide averages:
 

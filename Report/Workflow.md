@@ -442,25 +442,29 @@ It looks like syntenic regions have more similar tandem duplicate cluster sizes
 than nonsyntenic regions.
 
 Further, we are interested in the degree of sharing in syntenic and nonsyntenic
-regions. `Scripts/Analysis/Count_Shared_Private.py` will parse the homologous
-sizes table and print the number of duplications that are private to B73,
-private to PH207, and shared, respectively:
+regions. `Scripts/Analysis/Count_Shared_Private.py` will print the sharing
+summary:
 
 ```bash
 python Scripts/Analysis/Count_Shared_Private.py \
-    Results/Homology/Syntenic_Homologous_Sizes.txt
-python Scripts/Analysis/Count_Shared_Private.py \
-    Results/Homology/Nonsyntenic_Homologous_Sizes.txt
+    Results/Filtering/Syntenic_Cluster_Assignments.txt \
+    Results/Filtering/Nonsyntenic_Cluster_Assignments.txt
+762 313 515 246 203 122
+148 103 162
 ```
 
 | Class       | Private to B73 | Private to PH207 | Shared |
 |-------------|----------------|------------------|--------|
-| Syntenic    | 761            | 325              | 1,075  |
+| Maize1      | 515            | 203              | 762    |
+| Maize2      | 246            | 122              | 313    |
 | Nonsyntenic | 148            | 103              | 162    |
 
 About half of the duplications are shared between genotypes. B73 has more
 private duplicates than PH207. This is probably due to the better ability to
-resolve duplicated genes in B73 than PH207.
+resolve duplicated genes in B73 than PH207. Note that the cluster counts do not
+add up exactly, because some clusters are homolgous to both duplicated and
+non-duplicated genes. i.e., some duplications may be double-counted as both
+shared and private.
 
 ## Divergence Date Estimation
 Divergence dates were estimated with BEAST. First, generate alignments of

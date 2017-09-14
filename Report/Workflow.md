@@ -143,6 +143,26 @@ contain those syntenic genes. The nonsyntenic alignments only contain homologous
 B73 and PH207 genes and their tandem duplicates. These alignments will be used
 for the date analysis.
 
+### TE Sequence Similarity and Number of Exons
+When searching the full coding sequence of the representative transcript against
+the sequences of the B73 TE annotation, no tandem duplicate genes show any
+sequence similarity to known TEs. The searches were performed with BLASTN,
+requiring at least 50% coverage and 75% identity.
+
+Tandem duplicate genes, however, do have fewer exons than genome-wide averages:
+
+| Partition         | Mean | Median |
+|-------------------|------|--------|
+| B73 Tandem        | 3.4  | 2      |
+| PH207 Tandem      | 3.7  | 3      |
+| B73 Genome wide   | 5.2  | 4      |
+| PH207 Genome wide | 5.1  | 3      |
+
+Plots of mean number of exons are shown below:
+
+![Distribution of number of exons in B73](B73_Tandem_NumExons.png)
+![Distribution of number of exons in PH207](PH207_Tandem_NumExons.png)
+
 ### Tandem Duplicates Across the Genome
 Next, we wanted to generate a plot of the distribution of tandem duplicates
 relative to other genomic features, such as subgenome assignment, gene density,

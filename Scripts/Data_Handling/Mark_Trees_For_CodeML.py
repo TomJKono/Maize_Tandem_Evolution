@@ -199,8 +199,8 @@ def write_ctl(og, hyp, outdir):
     #   Fix rho (rates at adjacent sites)
     handle.write('fix_rho = 1\n')
     handle.write('rho = 0\n')
-    #   We want standard errors
-    handle.write('getSE = 1\n')
+    #   Don't try to get SEs - they cause problems when estimating sub rates
+    handle.write('getSE = 0\n')
     #   We do not want ancestral state reconstruction nor ancestral rates
     handle.write('RateAncestor = 0\n')
     #   Set the convergence tolerance

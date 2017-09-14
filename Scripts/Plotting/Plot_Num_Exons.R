@@ -48,7 +48,7 @@ at <- barplot(t(b_plot),
     axes=FALSE)
 axis(side=2)
 axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
-legend("topright", c("Genomewide (mean=5.2, median=4)", "Tandem (mean=3.4, median=2)"), fill=c("black", "grey"))
+legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
 dev.off()
 
 pdf(file="PH207_Tandem_NumExons.pdf", 6, 6)
@@ -61,5 +61,5 @@ at <- barplot(t(p_plot),
     axes=FALSE)
 axis(side=2)
 axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
-legend("topright", c("Genomewide (mean=5.1, median=4)", "Tandem (mean=3.7, median=3)"), fill=c("black", "grey"))
+legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
 dev.off()

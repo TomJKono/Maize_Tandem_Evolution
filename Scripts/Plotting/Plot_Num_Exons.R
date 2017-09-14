@@ -18,6 +18,9 @@ print(c(mean(b_tandem), median(b_tandem)))
 print(c(mean(p_genome), median(p_genome)))
 print(c(mean(p_tandem), median(p_tandem)))
 
+t.test(b_tandem, b_genome)
+t.test(p_tandem, p_genome)
+
 # Trim down the data range to just 10 exons
 b_genome[b_genome > 10] <- 11
 p_genome[p_genome > 10] <- 11

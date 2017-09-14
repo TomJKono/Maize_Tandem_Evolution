@@ -144,6 +144,60 @@ B73 and PH207 genes and their tandem duplicates. These alignments will be used
 for the date analysis.
 
 ### TE Sequence Similarity and Number of Exons
+To search the tandem duplicates for TE sequence similartiy and count the number
+of exons, we need to generate a BLAST-searchable TE database and generate GFF
+files with representative transcripts. The PH207 GFF file already has
+representative transcripts listed. The B73 GFF file needs to be trimmed. We use
+the longest transcript as a proxy for representative:
+
+```bash
+python Scripts/Data_Handling/Subset_GFF.py \
+    Data/References/B73_Longest_Tx_ID.txt \
+    /scratch/Zea_mays.AGPv4.33.gff5 \
+    > B73_Rep_Transcript.gff
+```
+
+Make a BLAST-searchable database for the B73 TE sequences. We assume that the
+TE sequences in B73 will be similar to the TE sequences in PH207:
+
+```bash
+mkdir /scratch/TE_DB
+python Extract_Sequences_From_GFF.py \
+    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    /scratch/Zea_mays.AGPv4.dna.genome.fa \
+    > /scratch/TE_DB/B73v4_TEs.fasta
+makeblastdb -in /scratch/TE_DB/B73v4_TEs.fasta -dbtype nucl -out /scratch/TE_DB/B73v4_TEs
+```
+
+Then, use `Scripts/Analysis/TE_Sim_NumExons.py` to search the database and count
+the number of exons in the representative transcripts:
+
+```bash
+python Scripts/Analysis/TE_Sim_NumExons.py \
+    Results/Filtering/B73_True_Tandem_Clusters.txt \
+    Data/References/B73_Rep_Transcript.gff \
+    Data/References/B73_Longest_Nuc.fasta.gz \
+    /scratch/TE_DB/B73v4_TEs \
+    > Results/TEs/B73_TE_NumExons.txt
+python Scripts/Analysis/TE_Sim_NumExons.py \
+    Results/Filtering/PH207_True_Tandem_Clusters.txt \
+    Data/References/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0.gff3 \
+    Data/References/PH207_Longest_Nuc.fasta.gz \
+    /scratch/TE_DB/B73v4_TEs \
+    > Results/TEs/PH207_TE_NumExons.txt
+```
+
+Also, generate values for all genes, genome-wide:
+
+```bash
+python Scripts/Analysis/Count_Repr_Exons.py \
+    Data/References/B73_Rep_Transcript.gff \
+    > Results/TEs/B73_Genomewide_NumExons.txt
+python Scripts/Analysis/Count_Repr_Exons.py \
+    Data/References/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0.gff3 \
+    > Results/TEs/PH207_Genomewide_NumExons.txt
+```
+
 When searching the full coding sequence of the representative transcript against
 the sequences of the B73 TE annotation, no tandem duplicate genes show any
 sequence similarity to known TEs. The searches were performed with BLASTN,

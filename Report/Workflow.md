@@ -441,6 +441,27 @@ cluster sizes:
 It looks like syntenic regions have more similar tandem duplicate cluster sizes
 than nonsyntenic regions.
 
+Further, we are interested in the degree of sharing in syntenic and nonsyntenic
+regions. `Scripts/Analysis/Count_Shared_Private.py` will parse the homologous
+sizes table and print the number of duplications that are private to B73,
+private to PH207, and shared, respectively:
+
+```bash
+python Scripts/Analysis/Count_Shared_Private.py \
+    Results/Homology/Syntenic_Homologous_Sizes.txt
+python Scripts/Analysis/Count_Shared_Private.py \
+    Results/Homology/Nonsyntenic_Homologous_Sizes.txt
+```
+
+| Class       | Private to B73 | Private to PH207 | Shared |
+|-------------|----------------|------------------|--------|
+| Syntenic    | 761            | 325              | 1,075  |
+| Nonsyntenic | 148            | 103              | 162    |
+
+About half of the duplications are shared between genotypes. B73 has more
+private duplicates than PH207. This is probably due to the better ability to
+resolve duplicated genes in B73 than PH207.
+
 ## Divergence Date Estimation
 Divergence dates were estimated with BEAST. First, generate alignments of
 syntenic homologues and homeologues with

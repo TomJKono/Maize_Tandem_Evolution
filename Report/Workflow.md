@@ -417,6 +417,113 @@ AIC: -13741
 Number of Fisher Scoring iterations: 2
 ```
 
+#### Distances From Tandem Duplicates to TEs
+We are interested in asking if tandem duplicates are closer to annotated TEs,
+on average, compared to the genomewide average. One hypothesis for tandem
+duplication is the local sequence homology contributes to unequal crossing over
+and tandem formation.
+
+First, generate GFFs for each major class of TE:
+
+```bash
+for type in $(gzip -cd Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3.gz | grep -vE '^#' | cut -f 3 | sort | uniq)
+do
+    gzip -cd B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3.gz | awk -v type=$type '$3 == type {print}' > Data/References/B73_${type}.gff
+done
+```
+
+Combine `LTR_retrotransposon` and `solo_LTR` into one file:
+
+```bash
+cat \
+    Data/References/B73_LTR_retrotransposon.gff \
+    Data/References/B73_solo_LTR.gff \
+    | sort -k1,1V -k4,4V \
+    > Data/References/B73_LTR.gff
+```
+
+Then calculate the distances from tandems to the nearest TE:
+
+```bash
+python Scripts/Analysis/TE_Dist.py \
+    Results/Filtering/B73_True_Tandem_Clusters.txt \
+    Data/References/B73_LTR.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_LTR_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Results/Filtering/B73_True_Tandem_Clusters.txt \
+    Data/References/B73_LINE_element.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_LINE_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Results/Filtering/B73_True_Tandem_Clusters.txt \
+    Data/References/B73_SINE_element.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_SINE_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Results/Filtering/B73_True_Tandem_Clusters.txt \
+    Data/References/B73_terminal_inverted_repeat_element.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_TIR_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Results/Filtering/B73_True_Tandem_Clusters.txt \
+    Data/References/B73_helitron.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_Helitron_Proximity.txt
+```
+
+Do the same calculation for all genes genome-wide:
+
+```bash
+grep '>' Data/References/B73_Full_Genes.fasta \
+    | sed -e 's/>//g' > /scratch/b.txt
+paste /scratch/b.txt /scratch/b.txt > Data/References/B73_Gene_IDs_Dummy.txt
+python Scripts/Analysis/TE_Dist.py \
+    Data/References/B73_Gene_IDs_Dummy.txt \
+    Data/References/B73_LTR.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_Genomewide_LTR_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Data/References/B73_Gene_IDs_Dummy.txt \
+    Data/References/B73_LINE_element.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_Genomewide_LINE_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Data/References/B73_Gene_IDs_Dummy.txt \
+    Data/References/B73_SINE_element.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_Genomewide_SINE_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Data/References/B73_Gene_IDs_Dummy.txt \
+    Data/References/B73_terminal_inverted_repeat_element.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_Genomewide_TIR_Proximity.txt
+python Scripts/Analysis/TE_Dist.py \
+    Data/References/B73_Gene_IDs_Dummy.txt \
+    Data/References/B73_helitron.gff \
+    Data/References/B73_Genes_Sorted.gff \
+    > Results/TEs/B73_Genomewide_Helitron_Proximity.txt
+```
+
+The distances to TEs is summarized below:
+
+| Partition     | Genomewide Mean | Genomewide Median | Tandem Mean | Tandem Median |
+|---------------|-----------------|-------------------|-------------|---------------|
+| Up + Down LTR | 24345.56        | 20221.50          | 24711.26    | 19653.00      |
+| Up + Down LTR | 54317121        | 36940192          | 53587225    | 35957284      |
+| Up + Down LTR | 4237695         | 3540085           | 4376255     | 3815423       |
+| Up + Down LTR | 273509.5        | 206633.0          | 269721.1    | 206833.5      |
+| Up + Down LTR | 74335.35        | 60473.00          | 76150.08    | 59821.50      |
+| Closest LTR   | 6175.130        | 4384.000          | 5987.929    | 4079.500      |
+| Closest LTR   | 12430112        | 8017816           | 12243870    | 7811996       |
+| Closest LTR   | 1052050         | 753961            | 1072961     | 763336        |
+| Closest LTR   | 62835.17        | 34481.00          | 63381.97    | 36880.00      |
+| Closest LTR   | 17993.48        | 12118.00          | 18225.61    | 11738.00      |
+
+![Flanking distance to nearest TEs](B73_True_Tandems_TE_Distances.png)
+
+![Distance to closest TE](B73_True_Tandems_Closest_TE_Distances.png)
+
 ### Tandem Duplicate Homology
 The next summary we want to make relates to the homology of tandem duplicates
 between B73 and PH207. We can use the syntenic and nonsyntenic cluster

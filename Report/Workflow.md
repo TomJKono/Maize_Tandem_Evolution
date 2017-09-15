@@ -521,7 +521,6 @@ The distances to TEs is summarized below:
 | Closest Helitron   | 17993.48        | 12118.00          | 18225.61    | 11738.00      |
 
 ![Flanking distance to nearest TEs](B73_True_Tandems_TE_Distances.png)
-
 ![Distance to closest TE](B73_True_Tandems_Closest_TE_Distances.png)
 
 ### Tandem Duplicate Homology
@@ -542,7 +541,6 @@ Use `Scripts/Plotting/Tandem_Homology.R` to plot heatmaps of the homologous
 cluster sizes:
 
 ![Homologous syntenic cluster sizes](Syntenic_Homologous_Sizes.png)
-
 ![Homologous nonsyntenic cluster sizes](Nonsyntenic_Homologous_Sizes.png)
 
 It looks like syntenic regions have more similar tandem duplicate cluster sizes

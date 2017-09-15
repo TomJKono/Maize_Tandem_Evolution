@@ -507,18 +507,18 @@ python Scripts/Analysis/TE_Dist.py \
 
 The distances to TEs is summarized below:
 
-| Partition     | Genomewide Mean | Genomewide Median | Tandem Mean | Tandem Median |
-|---------------|-----------------|-------------------|-------------|---------------|
-| Up + Down LTR | 24345.56        | 20221.50          | 24711.26    | 19653.00      |
-| Up + Down LTR | 54317121        | 36940192          | 53587225    | 35957284      |
-| Up + Down LTR | 4237695         | 3540085           | 4376255     | 3815423       |
-| Up + Down LTR | 273509.5        | 206633.0          | 269721.1    | 206833.5      |
-| Up + Down LTR | 74335.35        | 60473.00          | 76150.08    | 59821.50      |
-| Closest LTR   | 6175.130        | 4384.000          | 5987.929    | 4079.500      |
-| Closest LTR   | 12430112        | 8017816           | 12243870    | 7811996       |
-| Closest LTR   | 1052050         | 753961            | 1072961     | 763336        |
-| Closest LTR   | 62835.17        | 34481.00          | 63381.97    | 36880.00      |
-| Closest LTR   | 17993.48        | 12118.00          | 18225.61    | 11738.00      |
+| Partition          | Genomewide Mean | Genomewide Median | Tandem Mean | Tandem Median |
+|--------------------|-----------------|-------------------|-------------|---------------|
+| Up + Down LTR      | 24345.56        | 20221.50          | 24711.26    | 19653.00      |
+| Up + Down LINE     | 54317121        | 36940192          | 53587225    | 35957284      |
+| Up + Down SINE     | 4237695         | 3540085           | 4376255     | 3815423       |
+| Up + Down TIR      | 273509.5        | 206633.0          | 269721.1    | 206833.5      |
+| Up + Down Helitron | 74335.35        | 60473.00          | 76150.08    | 59821.50      |
+| Closest LTR        | 6175.130        | 4384.000          | 5987.929    | 4079.500      |
+| Closest LINE       | 12430112        | 8017816           | 12243870    | 7811996       |
+| Closest SINE       | 1052050         | 753961            | 1072961     | 763336        |
+| Closest TIR        | 62835.17        | 34481.00          | 63381.97    | 36880.00      |
+| Closest Helitron   | 17993.48        | 12118.00          | 18225.61    | 11738.00      |
 
 ![Flanking distance to nearest TEs](B73_True_Tandems_TE_Distances.png)
 

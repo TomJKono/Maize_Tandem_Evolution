@@ -4,8 +4,8 @@
 
 # Set up paths
 SP_NAME="/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Scripts/Data_Handling/Shorten_Species.sed"
-PAML_IN_DIR="/Volumes/LaCie/Maize_Tandem_Evolution/Orthofinder/PAML_Tests"
-SEL_OGS="/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Orthofinder/Selected_OGs_TandemIDs.txt"
+PAML_IN_DIR="/Volumes/LaCie/Maize_Tandem_Evolution/Orthofinder/PAML_Comp_Tests"
+SEL_OGS="/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Orthofinder/Selected_OGs_Compensated_TandemIDs.txt"
 BKTFLT="/Volumes/LaCie/Maize_Tandem_Evolution/Orthofinder/25gap_FLT"
 MARK_SCRIPT="/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Scripts/Data_Handling/Mark_Trees_For_CodeML.py"
 TREES="/Volumes/LaCie/Maize_Tandem_Evolution/Orthofinder/Tree_25"

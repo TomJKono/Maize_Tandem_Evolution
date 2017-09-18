@@ -14,11 +14,19 @@ import pprint
 # Define a constant for the patterns of duplicates that we want to analyze with
 # PAML tests. Basically - genotype and subgenome private duplicates and all
 # homeologous genes retained
+# PAML_CLUST = [
+#     (2, 1, 1, 1),
+#     (1, 2, 1, 1),
+#     (1, 1, 2, 1),
+#     (1, 1, 1, 2)
+#     ]
+# Uncomment this one to print out duplicates that are "compensentaed" - they are
+# duplicated in one subgenome and their homeologue is deleted.
 PAML_CLUST = [
-    (2, 1, 1, 1),
-    (1, 2, 1, 1),
-    (1, 1, 2, 1),
-    (1, 1, 1, 2)
+    (2, 0, 1, 1),
+    (0, 2, 1, 1),
+    (1, 1, 2, 0),
+    (1, 1, 0, 2)
     ]
 
 def classify_tandem(syn_line):

@@ -1,0 +1,6 @@
+TE_Type	Count
+LINE_element	5
+LTR_retrotransposon	72756
+helitron	13799
+solo_LTR	209
+terminal_inverted_repeat_element	374

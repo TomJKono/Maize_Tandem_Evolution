@@ -1066,6 +1066,7 @@ python Scripts/Data_Handling/Compile_PAML_lnL.py \
 | `Results/Orthofinder/Tandem_Orthogroup_Assignments.txt`    | Gene-by-gene orthogroup and tandem duplicate status list for each gene in B73 and PH207          |
 | `Results/Orthofinder/Orthogroup_Tandem_Gene_IDs.txt`       | The gene IDs for maize tandem duplicates within each orthogroup                                  |
 | `Results/Orthofinder/Selected_OGs_TandemIDs.txt`           | Orthogroups that pass filtering critera for analysis with PAML. Private dups to B1, B2, P1, P2   |
+| `Results/Orthofinder/PAML_Private_Dups_Model_Summary.txt`  | Summary of best model, omega values, and proportions of site classes for private duplicates      |
 
 ## Software Versions and Environment
 Analyses were perfomed on both MacOS X 10.12.6:

@@ -198,7 +198,7 @@ python Scripts/Analysis/Count_Repr_Exons.py \
     > Results/TEs/PH207_Genomewide_NumExons.txt
 ```
 
-When searching the full coding sequence of the representative transcript against
+When searching just the coding sequence of the representative transcript against
 the sequences of the B73 TE annotation, no tandem duplicate genes show any
 sequence similarity to known TEs. The searches were performed with BLASTN,
 requiring at least 50% coverage, 75% identity, and an E-value of 1e-10 or less.
@@ -216,6 +216,78 @@ Plots of mean number of exons are shown below:
 
 ![Distribution of number of exons in B73](B73_Tandem_NumExons.png)
 ![Distribution of number of exons in PH207](PH207_Tandem_NumExons.png)
+
+Next, we searched for TE similarty among full annotated gene sequences for both
+tandem duplicates and genomewide genes. Use the same script, but with the full
+gene sequences instead:
+
+```bash
+# Extract full gene sequences
+python Extract_Sequences_From_GFF.py \
+    Data/References/B73_Genes_Sorted.gff \
+    /scratch/Zea_mays.AGPv4.dna.genome.fa \
+    > Data/References/B73_Full_Genes.fasta
+python Extract_Sequences_From_GFF.py \
+    Data/References/PH207_Genes_Sorted.gff \
+    /scratch/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0.fasta \
+    > Data/References/PH207_Full_Genes.fasta
+# Search for tandem-TE similarity with full sequences
+python Scripts/Analysis/TE_Sim_NumExons.py \
+    Results/Filtering/B73_True_Tandem_Clusters.txt \
+    Data/References/B73_Rep_Transcript.gff \
+    Data/References/B73_Full_Genes.fasta \
+    /scratch/TE_DB/B73v4_TEs \
+    > Results/TEs/B73_FullGene_TE_NumExons.txt
+python Scripts/Analysis/TE_Sim_NumExons.py \
+    Results/Filtering/PH207_True_Tandem_Clusters.txt \
+    Data/References/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0.gff3 \
+    Data/References/PH207_Full_Genes.fasta \
+    /scratch/TE_DB/B73v4_TEs \
+    > Results/TEs/PH207_FullGene_TE_NumExons.txt
+# Search for genomewide gene-TE similarity with full sequences
+python Scripts/Analysis/TE_Sim_NumExons.py \
+    Data/References/B73_Gene_IDs_Dummy.txt \
+    Data/References/B73_Rep_Transcript.gff \
+    Data/References/B73_Full_Genes.fasta \
+    /scratch/TE_DB/B73v4_TEs \
+    > Results/TEs/B73_FullGene_Genomewide_TE_NumExons.txt
+python Scripts/Analysis/TE_Sim_NumExons.py \
+    Data/References/PH207_Gene_IDs_Dummy \
+    Data/References/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0.gff3 \
+    Data/References/PH207_Full_Genes.fasta \
+    /scratch/TE_DB/B73v4_TEs \
+    > Results/TEs/PH207_FullGene_Genomewide_TE_NumExons.txt
+```
+
+Then, summarize the tables with `Scripts/Analysis/Count_TE_Types.py`:
+
+```bash
+python Scripts/Analysis/Count_TE_Types.py \
+    Results/TEs/B73_FullGene_TE_NumExons.txt \
+    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > B73_FullGene_Tandem_TE_Summary.txt
+python Scripts/Analysis/Count_TE_Types.py \
+    Results/TEs/B73_FullGene_Genomewide_TE_NumExons.txt \
+    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > B73_FullGene_Genomewide_TE_Summary.txt
+python Scripts/Analysis/Count_TE_Types.py \
+    Results/TEs/PH207_FullGene_TE_NumExons.txt \
+    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > PH207_FullGene_Tandem_TE_Summary.txt
+python Scripts/Analysis/Count_TE_Types.py \
+    Results/TEs/PH207_FullGene_Genomewide_TE_NumExons.txt \
+    Data/References/B73v4_structural_filtered_newTIRID_detectMITE_noSINEdup.Feb92017.noDepreciatedSolos.gff3 \
+    > PH207_FullGene_Genomewide_TE_Summary.txt
+```
+
+When searching for TE sequence similarity in full gene sequences (including
+introns and UTRs when available), there appears to be an enrichment for SINE
+sequences in tandem duplicates in both B73 and PH207. It appears as though there
+is a de-enrichment for LINE sequence similarity in B73 tandem duplicates, but
+not in PH207 tandem duplicates. Other TE classes appear at genomewide
+proportions.
+
+![TE class enrichment](TE_Class_Enrichment.png)
 
 ### Tandem Duplicates Across the Genome
 Next, we wanted to generate a plot of the distribution of tandem duplicates

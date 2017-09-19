@@ -1,8 +1,35 @@
-# Maize Tandem Duplicate Evolution
+# <a name="top"></a>Maize Tandem Duplicate Evolution
 This document describes the detailed procedure that was taken for the various
 maize tandem duplicate evolution analyses and data handling.
 
-## Overview
+[Return to top](#top)
+
+## <a name="toc"></a>Table of Contents
+- [Top](#top)
+- [Table of Contents](#toc)
+- [Overview](#overview)
+- [Tandem Duplicate Identification](#identification)
+- [Tandem Duplicate Summaries](#summaries)
+    - [Counts of Tandem Duplicate Clusters](#counts)
+    - [TE Sequence Similarity and Number of Exons](#nexons)
+    - [Tandem Duplicates Across the Genome](#genome)
+    - [Association of Tandem Duplicates with Genomic Features](#features)
+    - [Distances from Tandem Duplicates to TEs](#tedist)
+    - [Tandem Duplicate Homology](#homology)
+- [Divergence Date Estimation](#dating)
+    - [GC Content of Tandem Duplicates](#gc)
+- [Evolutionary Hypothesis Tests](#evol)
+    - [Identifying Grass Orthologues](#ortho)
+        - [Orthofinder Setup](#ortho_setup)
+    - [Generating Trees](#trees)
+    - [CodeML (PAML) Tests](#codeml)
+        - [Marking Trees](#marking)
+        - [LRT For Model Comparison](#lrt)
+- [Key Results Files](#key_res)
+- [Software Versions and Environment](#env)
+
+[Return to top](#top)
+## <a name="overview"></a>Overview
 The general categories of the analysis fall into four categories:
 
 - Tandem duplicate identification
@@ -14,7 +41,8 @@ They will be detailed in the following sections. Commands and scripts will be
 given. At the end of the report, there is a listing of the key analysis files,
 and a description of their contents.
 
-## Tandem Duplicate Identification
+[Return to top](#top)
+## <a name="identification"></a>Tandem Duplicate Identification
 Tandem duplicates were identified in two ways:
 
 - Filtering SynMap tandem duplicate output
@@ -108,8 +136,9 @@ python Scripts/Analysis/Generate_Tandem_Clusters.py \
     > Results/Filtering/PH207_True_Tandem_Clusters.txt
 ```
 
-## Tandem Duplicate Summaries
-### Counts of Tandem Duplicate Clusters
+[Return to top](#top)
+## <a name="summaries"></a>Tandem Duplicate Summaries
+### <a name="counts"></a>Counts of Tandem Duplicate Clusters
 The first summary of tandem duplicates is a raw count:
 
 | Genotype | Maize1 Clusters | Maize2 Clusters | Nonsyntenic Clusters | Total |
@@ -143,7 +172,8 @@ contain those syntenic genes. The nonsyntenic alignments only contain homologous
 B73 and PH207 genes and their tandem duplicates. These alignments will be used
 for the date analysis.
 
-### TE Sequence Similarity and Number of Exons
+[Return to top](#top)
+### <a name="nexons"></a>TE Sequence Similarity and Number of Exons
 To search the tandem duplicates for TE sequence similartiy and count the number
 of exons, we need to generate a BLAST-searchable TE database and generate GFF
 files with representative transcripts. The PH207 GFF file already has
@@ -287,7 +317,8 @@ proportions. SINE elements do not show up at all in genes.
 
 ![TE class enrichment](TE_Class_Enrichment.png)
 
-### Tandem Duplicates Across the Genome
+[Return to top](#top)
+### <a name="genome"></a>Tandem Duplicates Across the Genome
 Next, we wanted to generate a plot of the distribution of tandem duplicates
 relative to other genomic features, such as subgenome assignment, gene density,
 and TE density. To do this, we need to generate files that give the densities
@@ -331,7 +362,8 @@ tandem duplicate genes. The black line shows genes per Mb, the red line shows
 RNA TEs per Mb, and the orange line shows DNA TEs per MB. Structural annotation
 for the TEs in PH207 is not yet available.
 
-### Association of Tandem Duplicates With Genomic Features
+[Return to top](#top)
+### <a name="features"></a>Association of Tandem Duplicates With Genomic Features
 It looks like tandem duplications occur where there are genes. That is, it does
 not seem like tandem duplications are more common in one subgenome than the
 other, nor do they enriched outside of syntenic blocks or around any broad class
@@ -487,7 +519,8 @@ AIC: -13741
 Number of Fisher Scoring iterations: 2
 ```
 
-#### Distances From Tandem Duplicates to TEs
+[Return to top](#top)
+#### <a name="tedist"></a>Distances From Tandem Duplicates to TEs
 We are interested in asking if tandem duplicates are closer to annotated TEs,
 on average, compared to the genomewide average. One hypothesis for tandem
 duplication is the local sequence homology contributes to unequal crossing over
@@ -593,7 +626,8 @@ The distances to TEs is summarized below:
 ![Flanking distance to nearest TEs](B73_True_Tandems_TE_Distances.png)
 ![Distance to closest TE](B73_True_Tandems_Closest_TE_Distances.png)
 
-### Tandem Duplicate Homology
+[Return to top](#top)
+### <a name="homology"></a>Tandem Duplicate Homology
 The next summary we want to make relates to the homology of tandem duplicates
 between B73 and PH207. We can use the syntenic and nonsyntenic cluster
 assignments generated in a previous section to count up the sizes of tandem
@@ -641,7 +675,8 @@ add up exactly, because some clusters are homolgous to both duplicated and
 non-duplicated genes. i.e., some duplications may be double-counted as both
 shared and private.
 
-## Divergence Date Estimation
+[Return to top](#top)
+## <a name="dating"></a>Divergence Date Estimation
 Divergence dates were estimated with BEAST. First, generate alignments of
 syntenic homologues and homeologues with
 `Scripts/Analysis/Syntenic_Tandem_Cluster_Align_withSingles.py`. Use
@@ -776,7 +811,8 @@ As expected, duplications that are shared between the subgenomes tend to be
 older than duplications that are pricate to a subgenome. Nonsyntenic tandem
 duplicates show a high proportion of recent duplicates.
 
-### GC Content of Tandem Duplicates
+[Return to top](#top)
+### <a name="gc"></a>GC Content of Tandem Duplicates
 One way to see if gene conversion is having an effect on the estimated dates
 of tandem duplications is to compare the GC content of tandem duplicates that
 are "ancient" and those that are "recent." Gene conversion is biased toward GC
@@ -823,13 +859,15 @@ there is a difference between "ancient" and "recent" duplications:
 ![Tandem duplicate GC contents and ages](Tandem_GC_Ages.png)
 ![Old and new tandem duplicate GC contents](Binary_Age_GC.png)
 
-## Evolutionary Hypothesis Tests
+[Return to top](#top)
+## <a name="evol"></a>Evolutionary Hypothesis Tests
 We are interested in whether tandem duplicates show different evolutionary rates
 than non-tandem genes in maize. To test this, we compare sequence substitution
 rates among maize tandem duplications, maize genes generally, and grass
 orthologues.
 
-### Identifying Grass Orthologues
+[Return to top](#top)
+### <a name="ortho"></a>Identifying Grass Orthologues
 We identified orthologues among publicly available grass genomes from
 Phytozome V12 and Ensembl Plants V34 with Orthofinder. The amino acid sequences
 from the following genome assmeblies were used as input:
@@ -861,7 +899,8 @@ nucleotide files are saved in `Ortho_Nuc`.
 Orthologue searching was run on MSI, and the job file is given in
 `Scripts/Jobs/Orthofinder.job`.
 
-#### Orthofinder Setup
+[Return to top](#top)
+#### <a name="ortho_setup"></a>Orthofinder Setup
 Orthofinder has several dependencies. `mcl`, `ncbi_blast+`, `mafft`, and
 `fasttree` are available as modules on MSI. `fastme` and `dlcpar` must be
 installed locally.
@@ -891,7 +930,8 @@ module load mafft/7.305
 module load fasttree/2.1.8
 ```
 
-### Generating Trees
+[Return to top](#top)
+### <a name="trees"></a>Generating Trees
 The next step in generating the input files is to generate nucleotide sequence
 alignments and phylogenetic trees that relate the sequences in each orthologous
 group. Because Orthofidner uses a modification of BLAST scores, it does not
@@ -989,7 +1029,8 @@ done
 
 Note that RAxML requires a full absolute path to the `-w` argument.
 
-### CodeML (PAML) Tests
+[Return to top](#top)
+### <a name="codeml"></a>CodeML (PAML) Tests
 Prior to running evolutionary tests on tandem duplicates, we want to filter the
 orthogroups. Orthogroups that are very large likely represent big gene families,
 and are likely not representative of tandem duplicates genome-wide. Orthogroups
@@ -1042,7 +1083,8 @@ described as follows:
 Each model will be fit to the alignments and trees with the `codeml` program
 from PAML.
 
-#### Marking Trees
+[Return to top](#top)
+#### <a name="marking"></a>Marking Trees
 Trees are marked according to the four models described above. Each model gets
 its own marked tree:
 
@@ -1105,7 +1147,8 @@ with tree, alignment, and control files under each model directory. `codeml`
 can then be run on each control file. This takes a long time; run it on the
 compute cluster.
 
-#### LRT For Model Comparison
+[Return to top](#top)
+#### <a name="lrt"></a>LRT For Model Comparison
 The results from each PAML analysis is stored in the `rst` files that are found
 in each of the model directories. We can extract the log-likelihood values from
 these files, and compare the model fit with a series of likelihood ratio tests.
@@ -1117,7 +1160,8 @@ python Scripts/Data_Handling/Compile_PAML_lnL.py \
     > Results/Orthofinder/PAML_Results.txt
 ```
 
-## Key Results Files
+[Return to top](#top)
+## <a name="key_res"></a>Key Results Files
 
 | Path                                                       | Description                                                                                      |
 |------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -1138,7 +1182,8 @@ python Scripts/Data_Handling/Compile_PAML_lnL.py \
 | `Results/Orthofinder/Selected_OGs_TandemIDs.txt`           | Orthogroups that pass filtering critera for analysis with PAML. Private dups to B1, B2, P1, P2   |
 | `Results/Orthofinder/PAML_Private_Dups_Model_Summary.txt`  | Summary of best model, omega values, and proportions of site classes for private duplicates      |
 
-## Software Versions and Environment
+[Return to top](#top)
+## <a name="env"></a>Software Versions and Environment
 Analyses were perfomed on both MacOS X 10.12.6:
 
 ```
@@ -1175,3 +1220,5 @@ Software tool versions:
 - ETE Toolkit 3.0.0b36
 - RAxML 8.2.9_pthread
 - PAML 4.9e
+
+[Return to top](#top)

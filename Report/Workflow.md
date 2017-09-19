@@ -281,11 +281,9 @@ python Scripts/Analysis/Count_TE_Types.py \
 ```
 
 When searching for TE sequence similarity in full gene sequences (including
-introns and UTRs when available), there appears to be an enrichment for SINE
-sequences in tandem duplicates in both B73 and PH207. It appears as though there
-is a de-enrichment for LINE sequence similarity in B73 tandem duplicates, but
-not in PH207 tandem duplicates. Other TE classes appear at genomewide
-proportions.
+introns and UTRs when available), LINEs do not show up at all in B73 tandem
+duplicates, but do show up in PH207 tandem duplicates at genome-wide
+proportions. SINE elements do not show up at all in genes.
 
 ![TE class enrichment](TE_Class_Enrichment.png)
 

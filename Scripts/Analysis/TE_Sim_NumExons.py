@@ -110,8 +110,7 @@ def te_check(geneid, cds, te_db, evalue='1e-10'):
         out=blast_temp.name,
         db=te_db,
         evalue=evalue,
-        perc_identity=75,
-        qcov_hsp_perc=50,
+        qcov_hsp_perc=25,
         outfmt=5)
     cline()
     #   Then parse the BLAST output

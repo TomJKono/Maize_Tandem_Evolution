@@ -49,12 +49,14 @@ def calc_width(cluster, gff):
 def main(tandems, gff):
     """Main function."""
     g_data = parse_gff(gff)
-    print 'Genes\tWidth\t'
+    print 'ClusterID\tGenes\tWidth\t'
     with open(tandems, 'r') as f:
         for line in f:
-            c_list = line.strip().split(',')
+            tmp = line.strip().split()
+            c_id = tmp[0]
+            c_list = tmp[1].split(',')
             w = calc_width(c_list, g_data)
-            print line.strip() + '\t' + str(w)
+            print c_id + '\t' + tmp[1] + '\t' + str(w)
     return
 
 

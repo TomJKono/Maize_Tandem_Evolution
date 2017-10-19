@@ -50,3 +50,20 @@ axis(side=2)
 axis(side=1, labels=seq(2, 20), at=apply(at, 2, mean), cex.axis=0.7)
 legend("topright", c("B73 Tandem", "PH207 Tandem"), fill=c("darkblue", "darkred"))
 dev.off()
+
+pdf(file="Tandem_Cluster_Sizes_Pub.pdf", 3, 3)
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
+at <- barplot(
+    t(to_plot),
+    beside=TRUE,
+    col=c("black", "grey"),
+    axes=FALSE,
+    ylab="N. Clusters",
+    xlab="N. Genes in Cluster",
+    main="")
+axis(side=2)
+axis(side=1, at=apply(at, 2, mean)[c(TRUE, FALSE, FALSE)], labels=NA)
+mtext(seq(2, 20)[c(TRUE, FALSE, FALSE)], side=1, at=apply(at, 2, mean)[c(TRUE, FALSE, FALSE)], padj=1)
+legend("topright", c("B73", "PH207"), fill=c("black", "grey"))
+dev.off()

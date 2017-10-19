@@ -104,7 +104,7 @@ def parse_synteny(syn):
 def parse_key(genekey):
     """Parse the gene key and identify genes that are in syntenic relationships.
     We will return a dictionary of lists, with the key being the genotype, and
-    the value bein gthe gene IDs that are syntenic."""
+    the value being the gene IDs that are syntenic."""
     syntenic = {'B73': [], 'PH207': []}
     with open(genekey, 'r') as f:
         for line in f:
@@ -144,6 +144,11 @@ def link_syntenic_dups(bclust, pclust, synteny, syn_output):
     handle.write('Duplicate_ID\tAnc_Gene\tB1_Cluster\tB2_Cluster\tP1_Cluster\tP2_Cluster\tB1_Genes\tB2_Genes\tP1_Genes\tP2_Genes\n')
     syn_clust = 0
     clusters = []
+    # Start a dictionary to keep track of syntenic clusters that we've already
+    # assigned, so that we don't double-count them
+    already_counted = {
+        'B73': [],
+        'PH207': []}
     for rel in synteny:
         # Unpack the syntenic relationship
         anc = rel[0]
@@ -156,7 +161,49 @@ def link_syntenic_dups(bclust, pclust, synteny, syn_output):
         b2_clust = bclust.get(b2, None)
         p1_clust = pclust.get(p1, None)
         p2_clust = pclust.get(p2, None)
+        # Check that we haven't seen these before
+        if b1_clust:
+            if b1_clust in already_counted['B73']:
+                continue
+        if b2_clust:
+            if b2_clust in already_counted['B73']:
+                continue
+        if p1_clust:
+            if p1_clust in already_counted['PH207']:
+                continue
+        if p2_clust:
+            if p2_clust in already_counted['PH207']:
+                continue
         # Get the genes that are part of the clusters
+        # Iterate through the synteny file again, and pick out cases where the
+        # ancestral genes look duplicated
+        anc_genes = [anc]
+        for other_rel in synteny:
+            other_b1_clust = bclust.get(other_rel[1], None)
+            other_b2_clust = bclust.get(other_rel[2], None)
+            other_p1_clust = pclust.get(other_rel[3], None)
+            other_p2_clust = pclust.get(other_rel[4], None)
+            b1_match = False
+            b2_match = False
+            p1_match = False
+            p2_match = False
+            if b1_clust:
+                if other_b1_clust == b1_clust:
+                    b1_match = True
+            if b2_clust:
+                if other_b2_clust == b2_clust:
+                    b2_match = True
+            if p1_clust:
+                if other_p1_clust == p1_clust:
+                    p1_match = True
+            if p2_clust:
+                if other_p2_clust == p2_clust:
+                    p2_match = True
+            if any([b1_match, b2_match, p1_match, p2_match]):
+                if other_rel[0] in anc_genes:
+                    continue
+                else:
+                    anc_genes.append(other_rel[0])
         b1_genes = []
         b2_genes = []
         p1_genes = []
@@ -196,7 +243,7 @@ def link_syntenic_dups(bclust, pclust, synteny, syn_output):
             p1_genes = sorted(p1_genes)
             p2_genes = sorted(p2_genes)
             # put all the genes together
-            clusters.append([anc] + b1_genes + b2_genes + p1_genes + p2_genes)
+            clusters.append(anc_genes + b1_genes + b2_genes + p1_genes + p2_genes)
             # Turn empty lists into NA
             if not b1_clust:
                 b1_clust = 'NA'
@@ -218,7 +265,7 @@ def link_syntenic_dups(bclust, pclust, synteny, syn_output):
             dup_id = 'Syntenic_Dup_' + str(syn_clust).zfill(4)
             handle.write('\t'.join([
                 dup_id,
-                anc,
+                ','.join(anc_genes),
                 b1_clust,
                 b2_clust,
                 p1_clust,
@@ -228,6 +275,15 @@ def link_syntenic_dups(bclust, pclust, synteny, syn_output):
                 ','.join(p1_genes),
                 ','.join(p2_genes)]) + '\n')
             syn_clust += 1
+            # Append the cluster IDs to the lists of IDs we've seen
+            if b1_clust:
+                already_counted['B73'].append(b1_clust)
+            if b2_clust:
+                already_counted['B73'].append(b2_clust)
+            if p1_clust:
+                already_counted['PH207'].append(p1_clust)
+            if p2_clust:
+                already_counted['PH207'].append(p2_clust)
     handle.flush()
     handle.close()
     return clusters
@@ -254,6 +310,9 @@ def link_nonsyntenic_dups(bclust, pclust, b_s, p_s, ns_out):
     ns_dups = []
     counted = []
     ns_clust = 0
+    already_counted = {
+        'B73': [],
+        'PH207': []}
     handle.write('Duplicate_ID\tB_Cluster\tP_Cluster\tB_Genes\tP_Genes\n')
     for ns in rels:
         b = ns[0]
@@ -267,12 +326,17 @@ def link_nonsyntenic_dups(bclust, pclust, b_s, p_s, ns_out):
             # Similarly, if they are in the list of syntenic duplicates, we
             # continue
             continue
-        elif (b_dup, p_dup) in counted:
+        elif b_dup and b_dup in already_counted['B73']:
             # If we've seen this combination of duplicate IDs before, we
             # continue
             continue
+        elif p_dup and p_dup in already_counted['PH207']:
+            continue
         else:
-            counted.append((b_dup, p_dup))
+            if b_dup:
+                already_counted['B73'].append(b_dup)
+            if p_dup:
+                already_counted['PH207'].append(p_dup)
             # Get the genes in each duplicate
             b_genes = []
             p_genes = []

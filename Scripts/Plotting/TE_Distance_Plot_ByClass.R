@@ -187,3 +187,24 @@ axis(side=2, at=c(0.001, 0.1, 2, 10, 100, 1000, 10000, 50000), labels=c("0.001",
 axis(side=1, at=c(1.5, 4.5, 7.5, 10.5, 13.5), labels=c("LTR", "LINE", "SINE", "TIR", "Helitron"))
 legend("topright", c("Genomewide", "Tandem Duplicates"), col=c("black", "blue"), lwd=1)
 dev.off()
+
+pdf(file="B73_True_Tandems_Closest_TE_Distances_Pub.pdf", width=6.5, height=3)
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
+boxplot(
+    toplot$Value/1000 ~ toplot$Label,
+    log="y",
+    lwd=2,
+    border=c("black", "blue"),
+    at=c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14),
+    pch=19,
+    cex=0.5,
+    las=2,
+    ylab="",
+    axes=F,
+    main=""
+    )
+axis(side=2, at=c(0.001, 0.1, 2, 10, 100, 1000, 10000, 50000), labels=c("1 bp", "100 bp", "2 kb", "10 kb", "100 kb", "1 Mb", "10 Mb", "50 Mb"), las=2)
+axis(side=1, at=c(1.5, 4.5, 7.5, 10.5, 13.5), labels=c("LTR", "LINE", "SINE", "TIR", "Helitron"))
+legend("topright", c("All Genes", "T. Dups."), col=c("black", "blue"), lwd=2, cex=1)
+dev.off()

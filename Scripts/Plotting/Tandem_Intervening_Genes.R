@@ -6,19 +6,14 @@
 b73_widths <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Filtering/B73_Cluster_Widths.txt", header=TRUE)
 ph207_widths <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Filtering/PH207_Cluster_Widths.txt", header=TRUE)
 
-# Define a function to subtract the number of tandem duplicate genes from the
-# cluster "width"
-calc_width <- function(x) {
-    ngenes <- length(unlist(strsplit(as.character(x["Genes"]), ",")))
-    w <- as.numeric(x["Width"]) - ngenes
-    return(w)
-}
+b_w <- as.numeric(unlist(strsplit(as.character(b73_widths$Width), ",")))
+p_w <- as.numeric(unlist(strsplit(as.character(ph207_widths$Width), ",")))
 
-b_w <- apply(b73_widths, 1, calc_width)
-p_w <- apply(ph207_widths, 1, calc_width)
+summary(b_w)
+summary(p_w)
 
 # Make a matrix to plot
-toplot <- matrix(0, ncol=2, nrow=17)
+toplot <- matrix(0, ncol=2, nrow=16)
 # Count up how many intervening genes there are between 0 and 15
 for(s in seq(0, 15)) {
     # R is 1-indexed, so to actually fill the matrix, we have to add 1 to the
@@ -29,9 +24,6 @@ for(s in seq(0, 15)) {
     toplot[r, 1] <- b_c
     toplot[r, 2] <- p_c
 }
-# Then, add the final row, for greater than 15
-toplot[17, 1] <- sum(b_w > 15)
-toplot[17, 2] <- sum(p_w > 15)
 
 pdf(file="Cluster_Intervening_Genes.pdf", 6, 6)
 at <- barplot(
@@ -43,6 +35,23 @@ at <- barplot(
     main="Number of Intervening Genes in Tandem Clusters",
     axes=F)
 axis(side=2)
-axis(side=1, at=apply(at, 2, mean)[c(TRUE, FALSE)], labels=c(as.character(0:15), ">15")[c(TRUE, FALSE)])
+axis(side=1, at=apply(at, 2, mean)[c(TRUE, FALSE)], labels=as.character(0:15)[c(TRUE, FALSE)])
+legend("topright", c("B73", "PH207"), fill=c("black", "grey"))
+dev.off()
+
+pdf(file="Cluster_Intervening_Genes_Pub.pdf", 3, 3)
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
+at <- barplot(
+    t(toplot),
+    beside=TRUE,
+    col=c("black", "grey"),
+    xlab="N. Intervening Genes",
+    ylab="Count",
+    main="",
+    axes=F)
+axis(side=2, at=c(0, 500, 1000, 1500), labels=c("0", "500", "1000", "1500"))
+axis(side=1, at=apply(at, 2, mean)[c(TRUE, FALSE)], labels=NA)
+mtext(as.character(0:15)[c(TRUE, FALSE)], side=1, at=apply(at, 2, mean)[c(TRUE, FALSE)], padj=1)
 legend("topright", c("B73", "PH207"), fill=c("black", "grey"))
 dev.off()

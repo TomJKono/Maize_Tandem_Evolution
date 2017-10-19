@@ -41,9 +41,14 @@ def calc_width(cluster, gff):
     indices = [chromgenes.index(g) for g in cluster]
     #   Sort it
     indices.sort()
-    #   Width is the end - start + 1
-    width = indices[-1] - indices[0] + 1
-    return width
+    # Calculate the number of intervening genes between tandems
+    intervening = []
+    for i in range(1, len(indices)):
+        # The number of intervening genes is one less than the differences of
+        # indices. E.g., if tandems are directly adjacent, the difference in
+        # their indices is 1, and there is 0=1-1 intervening genes.
+        intervening.append(indices[i] - indices[i-1] - 1)
+    return intervening
 
 
 def main(tandems, gff):
@@ -56,7 +61,7 @@ def main(tandems, gff):
             c_id = tmp[0]
             c_list = tmp[1].split(',')
             w = calc_width(c_list, g_data)
-            print c_id + '\t' + tmp[1] + '\t' + str(w)
+            print c_id + '\t' + tmp[1] + '\t' + ','.join([str(i) for i in w])
     return
 
 

@@ -36,7 +36,7 @@ plot(
     lwd=2,
     xlim=c(-2, 15),
     ylim=c(0, 0.11),
-    xlab="Age Within Cassette (MYA)",
+    xlab="Age Range (MYA)",
     ylab="Density",
     main="")
 lines(density(p_age_range), col="black", lwd=2, lty=3)

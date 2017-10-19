@@ -63,3 +63,34 @@ axis(side=2)
 axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
 legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
 dev.off()
+
+# Plot them
+pdf(file="B73_Tandem_NumExons_Pub.pdf", 3, 3)
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
+at <- barplot(t(b_plot),
+    xlab="N. Exons",
+    ylab="Prop. Genes",
+    main="",
+    col=c("black", "grey"),
+    beside=TRUE,
+    axes=FALSE)
+axis(side=2)
+axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
+legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
+dev.off()
+
+pdf(file="PH207_Tandem_NumExons_Pub.pdf", 3, 3)
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
+at <- barplot(t(p_plot),
+    xlab="N. Exons",
+    ylab="Prop. Genes",
+    main="",
+    col=c("black", "grey"),
+    beside=TRUE,
+    axes=FALSE)
+axis(side=2)
+axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
+legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
+dev.off()

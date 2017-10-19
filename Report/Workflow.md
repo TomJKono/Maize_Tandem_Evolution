@@ -231,7 +231,7 @@ python Scripts/Analysis/Count_Repr_Exons.py \
 When searching just the coding sequence of the representative transcript against
 the sequences of the B73 TE annotation, no tandem duplicate genes show any
 sequence similarity to known TEs. The searches were performed with BLASTN,
-requiring at least 50% coverage, 75% identity, and an E-value of 1e-10 or less.
+requiring at least 25% query coverage, and an E-value of 1e-10 or less.
 
 Tandem duplicate genes, however, do have fewer exons than genome-wide averages:
 
@@ -318,6 +318,62 @@ proportions. SINE elements do not show up at all in genes.
 ![TE class enrichment](TE_Class_Enrichment.png)
 
 [Return to top](#top)
+
+### <a name="overlap"></a>Overlapping TEs and Tandem Duplicates
+We are interested in genes that are "captured" by TEs, and TEs that insert into
+genes. When a gene is "captured" by a TE, is it more likely to be a tandem
+duplicate than not? When a TE inserts into a gene, is it more likely to be into
+a tandemly duplicated gene? Use `bedtools` to calcuate overlaps between the gene
+annotations and the TE annotations. Use the `-f 1` and `-F 1` options to
+restrict the reports to just full overlaps. (If the overlap fraction is 1.0,
+then the gene is fully contained with in the TE, or the TE is fully contained
+within the gene)
+
+```bash
+# Find which genes are fully within TEs
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_LTR.gff -wo -f 1 \
+    > Results/TEs/Overlaps/Genes_in_LTR.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_LINE_element.gff -wo -f 1 \
+    > Results/TEs/Overlaps/Genes_in_LINE.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_SINE_element.gff -wo -f 1 \
+    > Results/TEs/Overlaps/Genes_in_SINE.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_terminal_inverted_repeat_element.gff -wo -f 1 \
+    > Results/TEs/Overlaps/Genes_in_TIR.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_helitron.gff -wo -f 1 \
+    > Results/TEs/Overlaps/Genes_in_Helitron.txt
+# Find which TEs are fully within genes
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_LTR.gff -wo -F 1 \
+    > Results/TEs/LTR_in_Genes.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_LINE_element.gff -wo -F 1 \
+    > Results/TEs/LINE_in_Genes.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_SINE_element.gff -wo -F 1 \
+    > Results/TEs/SINE_in_Genes.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_terminal_inverted_repeat_element.gff -wo -F 1 \
+    > Results/TEs/TIR_in_Genes.txt
+bedtools intersect \
+    -a Data/References/B73_Genes_Sorted.gff \
+    -b Data/References/B73_helitron.gff -wo -F 1 \
+    > Results/TEs/Helitron_in_Genes.txt
+```
+
 ### <a name="genome"></a>Tandem Duplicates Across the Genome
 Next, we wanted to generate a plot of the distribution of tandem duplicates
 relative to other genomic features, such as subgenome assignment, gene density,
@@ -627,6 +683,9 @@ The distances to TEs is summarized below:
 ![Distance to closest TE](B73_True_Tandems_Closest_TE_Distances.png)
 
 [Return to top](#top)
+
+
+
 ### <a name="homology"></a>Tandem Duplicate Homology
 The next summary we want to make relates to the homology of tandem duplicates
 between B73 and PH207. We can use the syntenic and nonsyntenic cluster

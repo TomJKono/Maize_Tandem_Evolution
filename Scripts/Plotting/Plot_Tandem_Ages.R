@@ -3,6 +3,11 @@
 syn_ages <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Dating/Syntenic_Duplicate_Ages.txt", header=TRUE)
 nonsyn_ages <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Dating/Nonsyntenic_Duplicate_Ages.txt", header=TRUE)
 
+# Define colors from the genome distribution plot.
+m1_col <- "#92af5a"
+m2_col <- "#566ea3"
+ns_col <- "#000000"
+
 # We want to be careful with how we identify shared/private duplications.
 # For shared duplications, if tandems in B1/P1 or B2/P2 have the same ages,
 # then we will assume they arose from the same duplication event. Because gene
@@ -172,18 +177,18 @@ plot(
     main="",
     xlab="Estimated Age (MYA)",
     ylab="Density",
-    col="black",
+    col=m1_col,
     lwd=2)
-lines(density(m2_shared), col="darkgrey", lwd=2)
-lines(density(subg1_priv), col="black", lwd=2, lty=3)
-lines(density(subg2_priv), col="darkgrey", lwd=2, lty=3)
-lines(density(ns), col="red", lwd=2)
+lines(density(m2_shared), col=m2_col, lwd=2)
+lines(density(subg1_priv), col=m1_col, lwd=2, lty=2)
+lines(density(subg2_priv), col=m2_col, lwd=2, lty=2)
+lines(density(ns), col=ns_col, lwd=2)
 legend(
     "topleft",
     c("Maize 1, Shared", "Maize 2, Shared", "Maize 1, Private", "Maize 2, Private", "Nonsyntenic"),
-    col=c("black", "darkgrey", "black", "darkgrey", "red"),
+    col=c(m1_col, m2_col, m1_col, m2_col, ns_col),
     lwd=2,
-    lty=c(1, 1, 3, 3, 1),
+    lty=c(1, 1, 2, 2, 1),
     cex=0.7
     )
 dev.off()

@@ -8,6 +8,11 @@ p_tandem <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Res
 b_genome <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/TEs/B73_Genomewide_NumExons.txt", header=FALSE)$V1
 p_genome <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/TEs/PH207_Genomewide_NumExons.txt", header=FALSE)$V1
 
+
+# Define colors for consistency
+tandem_col <- "#984ea3"
+gw_col <- "#999999"
+
 # Get the number of exons in tandems, which is stored as a vector of
 # comma-separated values.
 b_tandem <- as.numeric(unlist(strsplit(as.character(b_tandem$NumExons), ",")))
@@ -43,12 +48,12 @@ at <- barplot(t(b_plot),
     xlab="Number of Exons",
     ylab="Proportion",
     main="Number of Exons in B73 Representative Transcripts",
-    col=c("black", "grey"),
+    col=c(gw_col, tandem_col),
     beside=TRUE,
     axes=FALSE)
 axis(side=2)
 axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
-legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
+legend("topright", c("Genomewide", "Tandem"), fill=c(gw_col, tandem_col))
 dev.off()
 
 pdf(file="PH207_Tandem_NumExons.pdf", 6, 6)
@@ -56,12 +61,12 @@ at <- barplot(t(p_plot),
     xlab="Number of Exons",
     ylab="Proportion",
     main="Number of Exons in PH207 Representative Transcripts",
-    col=c("black", "grey"),
+    col=c(gw_col, tandem_col),
     beside=TRUE,
     axes=FALSE)
 axis(side=2)
 axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
-legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
+legend("topright", c("Genomewide", "Tandem"), fill=c(gw_col, tandem_col))
 dev.off()
 
 # Plot them
@@ -69,28 +74,30 @@ pdf(file="B73_Tandem_NumExons_Pub.pdf", 3, 3)
 # Set margins. The order is bottom, left, top, right
 par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 at <- barplot(t(b_plot),
-    xlab="N. Exons",
-    ylab="Prop. Genes",
+    xlab="Number of Exons",
+    ylab="Proportion of Genes",
     main="",
-    col=c("black", "grey"),
+    col=c(gw_col, tandem_col),
     beside=TRUE,
     axes=FALSE)
 axis(side=2)
 axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
-legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
+legend("topright", c("Genomewide", "Tandem"), fill=c(gw_col, tandem_col))
+box()
 dev.off()
 
 pdf(file="PH207_Tandem_NumExons_Pub.pdf", 3, 3)
 # Set margins. The order is bottom, left, top, right
 par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 at <- barplot(t(p_plot),
-    xlab="N. Exons",
-    ylab="Prop. Genes",
+    xlab="Number of Exons",
+    ylab="Proportion of Genes",
     main="",
-    col=c("black", "grey"),
+    col=c(gw_col, tandem_col),
     beside=TRUE,
     axes=FALSE)
 axis(side=2)
 axis(side=1, at=apply(at, 2, mean), labels=c(as.character(1:10), ">10"))
-legend("topright", c("Genomewide", "Tandem"), fill=c("black", "grey"))
+legend("topright", c("Genomewide", "Tandem"), fill=c(gw_col, tandem_col))
+box()
 dev.off()

@@ -6,6 +6,12 @@ b_genome <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Dat
 p_genome <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Data/References/PH207_Genes_GC_Prop.txt", header=F)$V2
 tandem <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Results/Dating/Tandem_Dates_with_GC.txt", header=T)
 
+# Define colors for consistency
+gw_col <- "#999999"
+sy_col <- "#566ea3"
+ns_col <- "#000000"
+tandem_col <- "#984ea3"
+
 # Make a scatterplot of age v. GC content (mean of two genes)
 tandem$Mean_GC <- (tandem$Gene1_GC + tandem$Gene2_GC)/2
 # Separate syntenic and nonsyntenic
@@ -16,7 +22,7 @@ pdf(file="Tandem_GC_Ages.pdf", 6, 6)
 plot(
     syn$Age ~ syn$Mean_GC,
     pch=19,
-    col="black",
+    col=sy_col,
     cex=0.25,
     xlab="Mean Proportion GC of Tandem Duplicates",
     ylab="Estimated Age (MYA)",
@@ -30,7 +36,7 @@ points(
 legend(
     "topright",
     c("Syntenic", "Nonsyntenic"),
-    col=c("black", "red"),
+    col=c(sy_col, "red"),
     pch=19)
 dev.off()
 
@@ -40,19 +46,19 @@ pdf(file="All_Genes_GC_Pub.pdf", 3, 3)
 par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 plot(
     density(c(b_genome, p_genome)),
-    col="grey",
+    col=gw_col,
     lwd=2,
     xlab="GC Content",
     ylab="Density",
     main="",
     xlim=c(0.2, 0.9),
     ylim=c(0, 6.5))
-lines(density(c(syn$Gene1_GC, syn$Gene2_GC)), col="black", lwd=2)
-lines(density(c(nonsyn$Gene1_GC, nonsyn$Gene2_GC)), col="red", lwd=2)
+lines(density(c(syn$Gene1_GC, syn$Gene2_GC)), col=sy_col, lwd=2)
+lines(density(c(nonsyn$Gene1_GC, nonsyn$Gene2_GC)), col=ns_col, lwd=2)
 legend(
     "topleft",
-    c("Genome wide", "Syntenic T.", "Nonsyntenic T."),
-    col=c("grey", "black", "red"),
+    c("Genome wide", "Syn. Tandem", "Nonsyn. Tandem"),
+    col=c(gw_col, sy_col, ns_col),
     lwd=2,
     cex=0.7)
 dev.off()
@@ -66,19 +72,19 @@ pdf(file="Binary_Age_GC_Pub.pdf", 3, 3)
 par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
 plot(
     density(c(old$Gene1_GC, old$Gene2_GC)),
-    col="black",
+    col=tandem_col,
     lwd=2,
     xlab="GC Content",
     ylab="Density",
     xlim=c(0.2, 0.9),
     ylim=c(0, 6.5),
     main="")
-lines(density(c(new$Gene1_GC, new$Gene2_GC)), col="black", lwd=2, lty=3)
-lines(density(c(b_genome, p_genome)), col="grey", lwd=2)
+lines(density(c(new$Gene1_GC, new$Gene2_GC)), col=tandem_col, lwd=2, lty=3)
+lines(density(c(b_genome, p_genome)), col=gw_col, lwd=2)
 legend(
     "topleft",
     c(">= 10MYA", "<= 2MYA", "Genome-wide"),
-    col=c("black", "black", "grey"),
+    col=c(tandem_col, tandem_col, gw_col),
     lwd=2,
     lty=c(1, 3, 1),
     cex=0.7)

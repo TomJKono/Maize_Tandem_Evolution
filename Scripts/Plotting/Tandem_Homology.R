@@ -24,6 +24,20 @@ for(value in 1:nrow(nonsyntenic)) {
 cor(syntenic$B_Size, syntenic$P_Size)
 cor(nonsyntenic$B_Size, nonsyntenic$P_Size)
 
+pdf(file="Homology_Heatmap.pdf", 3, 3, colormodel="cmyk")
+# Set margins. The order is bottom, left, top, right
+par(mar=c(4, 4, 0.1, 0.1), mgp=c(2, 1, 0))
+image(
+    log(1+syn_hmp+nonsyn_hmp),
+    x=seq(0:20),
+    y=seq(0:20),
+    col=rev(heat.colors(12)),
+    xlab="B73 Cluster Size",
+    ylab="PH207 Cluster Size"
+    )
+abline(c(0, 0), 1, lwd=2, col="black")
+dev.off()
+
 pdf(file="Syntenic_Homologous_Sizes_Pub.pdf", 3, 3)
 # Set margins. The order is bottom, left, top, right
 par(mar=c(4, 4, 0.1, 0.1))
@@ -33,8 +47,7 @@ image(
     y=seq(0:20),
     col=heat.colors(12),
     xlab="B73 Cluster Size",
-    ylab="PH207 Cluster Size",
-    cex.axis=0.8
+    ylab="PH207 Cluster Size"
     )
 abline(c(0, 0), 1, lwd=2, col="black")
 dev.off()

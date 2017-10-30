@@ -11,10 +11,9 @@ p_tandem <- read.table("/Users/tomkono/Dropbox/GitHub/Maize_Tandem_Evolution/Res
 
 # Define colors for B73 and PH207 for consistency
 #   This is a nice blue that is print-friendly
-b73_nontandem <- "#999999"
+nontandem <- "#999999"
 b73_tandem <- rgb(2/256, 112/256, 189/256)
 #   And a nice red that is print-friendly
-ph207_nontandem <- "#999999"
 ph207_tandem <- rgb(237/256, 28/256, 36/256)
 
 # Convert the comma-separated values into a character vector
@@ -63,21 +62,23 @@ boxplot(
     log="y",
     lwd=2,
     border=c(
-        b73_nontandem, b73_tandem,
-        b73_nontandem, b73_tandem,
-        ph207_nontandem, ph207_tandem,
-        ph207_nontandem, ph207_tandem),
+        nontandem, b73_tandem,
+        nontandem, b73_tandem,
+        nontandem, ph207_tandem,
+        nontandem, ph207_tandem),
     at=c(1, 2, 3, 4, 6, 7, 8, 9),
     pch=19,
     cex=0.5,
     las=2,
     ylab="Gene Length",
     axes=F,
-    main=""
+    main="",
+    ylim=c(0.1, 2000)
     )
-axis(side=2, at=c(0.1, 1, 10, 100), labels=c("100bp", "1kb", "10kb", "100kb"), cex.axis=0.95)
+axis(side=2, at=c(0.1, 1, 10, 100, 1000), labels=c("100bp", "1kb", "10kb", "100kb", "1Mb"), cex.axis=0.95)
 axis(side=1, at=c(1.5, 3.5, 6.5, 8.5), 
     labels=c("Single-Exon", "Multi-Exon", "Single-Exon", "Multi-Exon"))
 mtext(text=c("B73", "PH207"), side=1, line=3, at=c(2.5, 7.5))
+legend("topright", c("Non-tandem", "B73 Tandem", "PH207 Tandem"), col=c(nontandem, b73_tandem, ph207_tandem), lwd=2, cex=0.75)
 box()
 dev.off()
